@@ -1,0 +1,73 @@
+% Copyright 2017 by Antoine Rozo
+% Copyright 2006 by Fabrice Gadaud (CEA)
+% Copyright 2003 by Till Tantau <tantau@users.sourceforge.net>
+%
+% This program can be redistributed and/or modified under the terms
+% of the GNU Public License, version 2.
+
+
+\setlength\parskip{\medskipamount}
+\setlength\parindent{0pt}
+
+
+\mode<presentation>
+
+\defbeamertemplate*{navigation symbols} {}
+
+\setbeamertemplate{footline}
+{
+  \leavevmode
+  \ifx\insertframetitle\@empty
+  \else
+  \hbox{\color{beamer@zdsorange}\vrule width 1\paperwidth height2pt}
+
+  \hskip-2pt
+  \hbox{
+    \begin{beamercolorbox}[wd=1\paperwidth,dp=1ex,center]{footline}
+  \hspace*{.14\paperwidth}\begin{beamercolorbox}[wd=.42\paperwidth,ht=2.25ex,left]{title in head/foot}
+    \usebeamerfont{title in head/foot}\insertshorttitle
+  \end{beamercolorbox}
+  \hskip.32\paperwidth
+  \begin{beamercolorbox}[wd=.10\paperwidth,ht=2.25ex,right]{date in head/foot}
+    \insertframenumber{} / \inserttotalframenumber\hspace*{2ex}
+  \end{beamercolorbox}
+  \end{beamercolorbox}}
+  \fi
+}
+
+\setbeamertemplate{headline}{}
+
+\setbeamertemplate{frametitle}
+  {
+    \vskip-1pt
+    \begin{beamercolorbox}[sep=0.3cm,wd=1\paperwidth]{frametitle}
+      \usebeamerfont{frametitle}
+      \strut\insertframetitle\strut\par
+          {
+            \ifx\insertframesubtitle\@empty
+            \else
+                {\usebeamerfont{framesubtitle}\usebeamercolor[fg]{framesubtitle}\insertframesubtitle\strut\par}
+                \fi
+          }
+          \vskip-1ex
+      \hbox{\color{beamer@zdsorange}\vrule width 1\paperwidth height2pt}
+      \vskip-1ex
+      \vskip-2pt
+    \end{beamercolorbox}
+    }
+
+\RequirePackage{tikz}
+
+\setbeamertemplate{background}{
+  \begin{tikzpicture}
+    \ifx\insertframetitle\@empty
+      \fill[beamer@zdsblue] (0,0) rectangle (\the\paperwidth,\the\paperheight);
+    \fi
+  \end{tikzpicture}
+}
+
+\setbeamersize{text margin left=14pt,text margin right=10pt}
+
+
+\mode
+<all>
