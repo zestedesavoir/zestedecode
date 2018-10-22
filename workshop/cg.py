@@ -15,7 +15,7 @@ from math import ceil
 
 # Définition de constantes de jeu par défaut
 WIDTH = 640
-HEIGHT = 400
+HEIGHT = 416
 GRID = 32
 
 class Snake:

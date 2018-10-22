@@ -1,9 +1,14 @@
 ########################################
-###       Corrigé complet Snake      ###
+###         Troisième objectif       ###
 ###      (c) Zeste de Savoir (c)     ###
 ###           Licence GPL            ###
 ###         Auteur : TAlone          ###
 ########################################
+
+# Le troisième objectif vise à animer le serpent
+# (sous-objectif 1) - en ligne droite ;
+# (sous-objectif 2) - dans les autres directions ;
+# (sous-objectif 3) - avec les rotations qui s'imposent.
 
 # Import de la bibliothèque pygame (gestion des graphismes)
 import pygame
@@ -24,37 +29,14 @@ def main():
 	# Ajout queue et tête
 	jeu.addAsset("Queue", "assets/tail.png")
 	jeu.addAsset("Tête", "assets/head.png")
-	# Ajout de la pomme
-	jeu.addAsset("Pomme", "assets/apple.png")
 
 	# Ajout de l'asset spécial qui sera automatiquement mis en fond
 	jeu.addAsset("background", "assets/background.png")
 
 	# Variable controlant l'ouverture de la fenêtre
 	ouvert = True
-	# Par défaut, le serpent ne doit pas bouger
+	# (SO1) Par défaut, le serpent ne doit pas bouger
 	direction = snake.DIRECTIONS.STOP
-
-	# Fonction pour faire apparaitre la pomme
-	def spawnPomme():
-		# Stockage de la position de la pomme
-		pomme = jeu.randomPosition()
-
-		# Tant que la pomme est hors-zone, on la change de place
-		while jeu.isSide(pomme):
-			pomme = jeu.randomPosition()
-
-			# Ne pas mettre la pomme sur le serpent
-			for part in snake.partsIterator():
-				if jeu.collision(pomme, part.position):
-					# Tant que la pomme est sur le joueur, on la change de place
-					pomme = jeu.randomPosition()
-
-		# Retourne la position trouvée
-		return pomme
-
-	# Ajout de la pomme
-	pomme = spawnPomme()
 
 	# Boucle principale du jeu
 	while ouvert:
@@ -64,12 +46,12 @@ def main():
 			if event.type == pygame.QUIT:
 				# ...sortie de la boucle principale, et fermeture du jeu.
 				ouvert = False
-			# Lorsqu'une touche est appuyée...
+			# (SO1) Lorsqu'une touche est appuyée...
 			if event.type == pygame.KEYDOWN:
-				# ...on vérifie la direction droite...
+				# (SO1) ...on vérifie la direction droite...
 				if event.key == pygame.K_RIGHT:
 					direction = snake.DIRECTIONS.RIGHT
-				# ...et les autres directions.
+				# (SO2) ...et les autres directions.
 				elif event.key == pygame.K_UP:
 					direction = snake.DIRECTIONS.TOP
 				elif event.key == pygame.K_DOWN:
@@ -89,45 +71,23 @@ def main():
 		for part in snake.partsIterator():
 			# Choix du sprite en fonction de la partie à dessiner et rotation
 			if part.type == snake.PARTS.HEAD:
-				# Rotation de la tête
+				# (SO3) Rotation de la tête
 				sprite = jeu.asset("Tête", part.rotation)
 			elif part.type == snake.PARTS.TAIL:
+				# (SO3) Idem
 				sprite = jeu.asset("Queue", part.rotation)
 			else:
+				# (SO3) Idem
 				sprite = jeu.asset("Corps", part.rotation)
 
 			# Dessin du sprite à l'écran
 			jeu.draw(sprite, part.position)
 
-		# Dessin de la pomme
-		jeu.draw(jeu.asset("Pomme"), pomme)
-
 		# Ne pas oublier de terminer la phase de dessin
 		jeu.end()
 
-		# Déplacement du serpent
+		# (SO1) Déplacement du serpent
 		snake.move(direction)
 
-		# Si il y a collision entre la pomme et la tête du serpent
-		if jeu.collision(snake.getHeadPosition(), pomme):
-			# Le serpent grandit
-			snake.grow()
-			# La pomme change de position
-			pomme = spawnPomme()
-
-		# Vérifie que le serpent soit toujours à l'écran
-		for tile in jeu.screenIterator():
-			if jeu.isSide(tile) and jeu.collision(snake.getHeadPosition(), tile):
-				# Ferme le jeu si collision avec un mur
-				ouvert = False
-
-		# Vérifie que le serpent ne se mord pas
-		for part in snake.partsIterator():
-			# Attention : la tête est incluse, il faut donc la retirer
-			if jeu.collision(snake.getHeadPosition(), part.position) and part.type != snake.PARTS.HEAD:
-				# Ferme le jeu si le serpent se rentre dedans
-				ouvert = False
-
-# Lancement de main seulement si le fichier n'est pas importé comme module
-if __name__ == "__main__":
-	main()
+# Lancement de main : pas important
+main()
