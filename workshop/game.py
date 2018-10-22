@@ -91,10 +91,21 @@ def main():
 			# La pomme change de position
 			pomme = jeu.randomPosition()
 
+			# Tant que la pomme est hors-zone, on la change de place
+			while jeu.isSide(pomme):
+				pomme = jeu.randomPosition()
+
 		# Vérifie que le serpent soit toujours à l'écran
 		for tile in jeu.screenIterator():
 			if jeu.isSide(tile) and jeu.collision(snake.getHeadPosition(), tile):
 				# Ferme le jeu si collision avec un mur
+				running = 0
+
+		# Vérifie que le serpent ne se mord pas
+		for part in snake.partsIterator():
+			# Attention : la tête est incluse, il faut donc la retirer
+			if jeu.collision(snake.getHeadPosition(), part.position) and part.type != snake.PARTS.HEAD:
+				# Ferme le jeu si le serpent se rentre dedans
 				running = 0
 
 # Run the main function only if this module is executed as the main script
