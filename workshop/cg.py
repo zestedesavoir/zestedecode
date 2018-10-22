@@ -1,9 +1,16 @@
-# Importation des bibliothéques pygame et dotmap (faire attention à les installer: pip install pygame dotmap)
+########################################
+###        Bibliothèque Snake        ###
+###      (c) Zeste de Savoir (c)     ###
+###           Licence GPL            ###
+###         Auteur : TAlone          ###
+########################################
+
+# Import des bibliothéques pygame et dotmap (faire attention à les installer: pip install pygame dotmap)
 import pygame
 from dotmap import DotMap
 # Import de la fonction tirant des nombres aléatoires
 from random import randint
-
+# Import de la fonction d'arrondi au supérieur
 from math import ceil
 
 # Définition de constantes de jeu par défaut

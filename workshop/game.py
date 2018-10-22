@@ -1,3 +1,10 @@
+########################################
+###       Corrigé complet Snake      ###
+###      (c) Zeste de Savoir (c)     ###
+###           Licence GPL            ###
+###         Auteur : TAlone          ###
+########################################
+
 # Import de la bibliothèque pygame (gestion des graphismes)
 import pygame
 # Import de la bibliothèque du coding gouter (fonctions d'abstraction)
@@ -10,14 +17,14 @@ def main():
 	snake = cg.Snake()
 
 	# Déclaration des sprites
-	jeu.addAsset("Cactus", "cactus.png")
-	jeu.addAsset("Pomme", "apple.png")
-	jeu.addAsset("Corps", "body.png")
-	jeu.addAsset("Queue", "tail.png")
-	jeu.addAsset("Tête", "head.png")
+	jeu.addAsset("Cactus", "assets/cactus.png")
+	jeu.addAsset("Pomme", "assets/apple.png")
+	jeu.addAsset("Corps", "assets/body.png")
+	jeu.addAsset("Queue", "assets/tail.png")
+	jeu.addAsset("Tête", "assets/head.png")
 
 	# Asset spécial qui sera automatiquement mis en fond
-	jeu.addAsset("background", "background.png")
+	jeu.addAsset("background", "assets/background.png")
 
 	# Variable pour contrôler la boucle principale
 	running = True
@@ -47,10 +54,10 @@ def main():
 				elif event.key == pygame.K_RIGHT:
 					direction = snake.DIRECTIONS.RIGHT
 
-		# Premièrement, effaçons l'écran
+		# Premièrement, effacement de l'écran
 		jeu.eraseScreen()
 
-		# Dessinons tous les cactus
+		# Dessin de tous les cactus
 		for tile in jeu.screenIterator():
 			if jeu.isSide(tile):
 				jeu.draw(jeu.asset("Cactus"), tile)
@@ -77,17 +84,18 @@ def main():
 		# Déplacement du serpent
 		snake.move(direction)
 
+		# Si il y a collision entre la pomme et la tête du serpent
 		if jeu.collision(snake.getHeadPosition(), pomme):
+			# Le serpent grandit
 			snake.grow()
+			# La pomme change de position
 			pomme = jeu.randomPosition()
 
 		# Vérifie que le serpent soit toujours à l'écran
-		#if snakeX[0] >= (WIDTH - 32) or snakeX[0] <= 0:
-		#	stepX = 0
-		#if snakeY[0] >= (HEIGHT - 32) or snakeY[0] <= 0:
-		#	stepY = 0
-
-
+		for tile in jeu.screenIterator():
+			if jeu.isSide(tile) and jeu.collision(snake.getHeadPosition(), tile):
+				# Ferme le jeu si collision avec un mur
+				running = 0
 
 # Run the main function only if this module is executed as the main script
 if __name__ == "__main__":
