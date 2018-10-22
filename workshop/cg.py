@@ -4,10 +4,12 @@ from dotmap import DotMap
 # Import de la fonction tirant des nombres aléatoires
 from random import randint
 
+from math import ceil
+
 # Définition de constantes de jeu par défaut
 WIDTH = 640
 HEIGHT = 400
-STEP = 32
+GRID = 32
 
 class Snake:
 	# Liste de directions pour une utilisation simplifiée
@@ -27,9 +29,9 @@ class Snake:
 	})
 
 	# initX, initY : positions initiales de la tête
-	def __init__(self, initX=(WIDTH - 32) / 2, initY=(HEIGHT - 32) / 2):
+	def __init__(self, initX=160, initY=64):
 		# Positions (x, y) du serpent sur la fenêtre de jeu
-		self.sX = [initX, initX - 32, initX - 64]
+		self.sX = [initX, initX - GRID, initX - 2 * GRID]
 		self.sY = [initY, initY, initY]
 		# Rotations des morceaux de serpent
 		self.sR = [0, 0, 0]
@@ -41,7 +43,7 @@ class Snake:
 			self.sY[i] = self.sY[i - 1]
 			self.sR[i] = self.sR[i - 1]
 
-	def move(self, direction, step=STEP):
+	def move(self, direction, step=GRID):
 		# D'abord, bouger tout le corps
 		if direction != self.DIRECTIONS.STOP: self.nextFrame()
 
@@ -82,17 +84,17 @@ class Snake:
 
         # En fonction de la direction, il faut ajouter la composante à différents endroits
 		if direction == self.DIRECTIONS.RIGHT:
-			self.sX.append(self.sX[len(self.sX) - 1] - 32)
+			self.sX.append(self.sX[len(self.sX) - 1] - GRID)
 			self.sY.append(self.sY[len(self.sY) - 1])
 		elif direction == self.DIRECTIONS.LEFT:
-			self.sX.append(self.sX[len(self.sX) - 1] + 32)
+			self.sX.append(self.sX[len(self.sX) - 1] + GRID)
 			self.sY.append(self.sY[len(self.sY) - 1])
 		elif direction == self.DIRECTIONS.BOTTOM:
 			self.sX.append(self.sX[len(self.sX) - 1])
-			self.sY.append(self.sY[len(self.sY) - 1] - 32)
+			self.sY.append(self.sY[len(self.sY) - 1] - GRID)
 		elif direction == self.DIRECTIONS.TOP:
 			self.sX.append(self.sX[len(self.sX) - 1])
-			self.sY.append(self.sY[len(self.sY) - 1] + 32)
+			self.sY.append(self.sY[len(self.sY) - 1] + GRID)
 
 	def getHeadPosition(self):
 		# Donne la position de la tête du serpent
@@ -127,6 +129,12 @@ class Game:
 		# Remplis l'écran de blanc
 		self.screen.fill((255, 255, 255))
 
+		# Si un fond est défini, remplis l'écran avec ce fond
+		if self.assets["background"]:
+			for x in range(0, ceil(self.wWidth / GRID)):
+				for y in range(0, ceil(self.wHeight / GRID)):
+					self.screen.blit(self.assets["background"], (x * GRID, y * GRID))
+
 	def draw(self, sprite, position):
 		self.screen.blit(sprite, position)
 
@@ -138,8 +146,18 @@ class Game:
 
 	def randomPosition(self):
 		# Donne une position sur la zone de jeu
-		return (randint(0, self.wWidth), randint(0, self.wHeight))
+		return (randint(0, ceil(self.wWidth / GRID)) * GRID, randint(0, ceil(self.wHeight / GRID)) * GRID)
 
 	def collision(self, p1, p2):
 		# cf. https://developer.mozilla.org/en-US/docs/Games/Techniques/2D_collision_detection
-		return (p1[0] < p2[0] + 32) and (p1[0] + 32 > p2[0]) and (p1[1] < p2[1] + 32) and (p1[1] + 32 > p2[1])
+		return (p1[0] < p2[0] + GRID) and (p1[0] + GRID > p2[0]) and (p1[1] < p2[1] + GRID) and (p1[1] + GRID > p2[1])
+
+	def screenIterator(self):
+		# Renvoie un itérateur de chaque x et y disponible sur la grille
+		for x in range(0, ceil(self.wWidth / GRID)):
+			for y in range(0, ceil(self.wHeight / GRID)):
+				yield (x * GRID, y * GRID)
+
+	def isSide(self, position):
+		# Fonction de détection de côté de la zone de jeu
+		return position[0] == 0 or position[1] == 0 or position[0] >= self.wWidth - GRID or position[1] >= self.wHeight - GRID

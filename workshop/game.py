@@ -10,10 +10,14 @@ def main():
 	snake = cg.Snake()
 
 	# Déclaration des sprites
+	jeu.addAsset("Cactus", "cactus.png")
 	jeu.addAsset("Pomme", "apple.png")
 	jeu.addAsset("Corps", "body.png")
 	jeu.addAsset("Queue", "tail.png")
 	jeu.addAsset("Tête", "head.png")
+
+	# Asset spécial qui sera automatiquement mis en fond
+	jeu.addAsset("background", "background.png")
 
 	# Variable pour contrôler la boucle principale
 	running = True
@@ -45,6 +49,11 @@ def main():
 
 		# Premièrement, effaçons l'écran
 		jeu.eraseScreen()
+
+		# Dessinons tous les cactus
+		for tile in jeu.screenIterator():
+			if jeu.isSide(tile):
+				jeu.draw(jeu.asset("Cactus"), tile)
 
 		# Dessin du serpent à l'écran
 		for part in snake.partsIterator():
