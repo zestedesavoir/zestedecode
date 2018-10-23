@@ -1,0 +1,136 @@
+\documentclass{beamer}
+
+\usepackage[utf8x]{inputenc}
+\usepackage{listings}
+
+
+\title{Notions de programmation}
+\author{Zeste de Savoir}
+\usetheme{zestedesavoir}
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\section{Notions}
+
+\begin{frame}
+    \frametitle{Découverte de l'interpréteur}
+    Faire des calculs mathématiques simple
+    \begin{itemize}
+    \item \(1+1\)
+    \item \(6\times 7\)
+    \item \(4-2\)
+    \item \((6-4)\times 2\)
+    \item \(3.6 / 2\)
+    \end{itemize}
+
+    Exercice : calculer le triple de 5,2
+\end{frame}
+
+\begin{frame}
+    \frametitle{Découverte de l'interpréteur}
+    \textbf{Variable} : boite dans laquelle on peut mettre une valeur
+    \begin{itemize}
+        \item Taper \texttt{x=3} puis taper \texttt{x}
+        \item Taper \texttt{x+1} puis taper \texttt{x}
+        \\ La valeur de \texttt{x} a-t-elle changée ?
+        \item Taper \texttt{y=4} puis taper \texttt{y=y+2}
+        \\ La valeur de \texttt{y} a-t-elle changée ?
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Appeler une fonction}
+    \textbf{Fonction} : morceau de code que quelqu'un d'autre a déjà écrit pour vous, qu'on appelle avec son nom pour ne pas le ré-écrire.
+    \medbreak
+    \begin{lstlisting}[language=python]
+    print("Bonjour !")
+    \end{lstlisting}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Votre premier programme}
+  \begin{block}{Exercice}
+    Écrivez un programme qui calcule le double d'un nombre. Pour cela, votre programme va prendre en entrée une variable \texttt{x} et affichera le double de \texttt{x}.
+  \end{block}
+  Par exemple si \texttt{x=3}, le programme doit afficher \texttt{6}.
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Correction}
+  \begin{lstlisting}[language=python]
+    x = 3
+    x= 2*x
+    print(x)
+  \end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Conditions}
+    Si ton age est supérieur ou égal à 18 ans, alors tu es majeur !
+    \begin{lstlisting}[language=python]
+    age = 23\\
+    if age $>=$ 18:\\
+    ... print("Tu es majeur")
+    \end{lstlisting}
+
+    \medbreak
+    Liste des tests possibles :
+
+    \texttt{>}  : supérieur à\\
+    \texttt{>=} : supérieur ou égal à\\
+    \texttt{<}  : inférieur à\\
+    \texttt{<=} : inférieur ou égal à\\
+    \texttt{==} : égal à\\
+    \texttt{!=} : différent de\\
+
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Conditions (ET et OU)}
+    Si tu as plus que 11 ans mais moins que 18, alors tu es adolescent.
+    \medbreak
+    \begin{lstlisting}[language=python]
+    age = 14
+    if age $>$ 11 $\&\&$ age $<$ 18:
+    ... print("Tu es adolescent ! ")
+    \end{lstlisting}
+
+    \medbreak
+    \begin{itemize}
+    \item     \texttt{\&\&} correspond au ``ET'' logique \\
+    \item     \texttt{||} correspond au ``OU'' logique
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Conditions (avec else)}
+    Si tu as au moins 18 ans alors tu es majeur. Sinon, tu es mineur :
+    \medbreak
+    \begin{lstlisting}[language=python]
+    age = 23
+    if age $>=$ 18:
+    ... print("Tu es majeur")
+    else:
+    ... print("Tu es mineur")
+    \end{lstlisting}
+
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Boucles}
+
+    Pour tout les ages de 5 à 25 ans, dire si la personne est majeur.
+    \begin{lstlisting}[language=python]
+    for age in range(5,26):
+    ... print(age)
+    ... if age $>$ 18:
+    ... ... print(" = majeur \n")
+    ... else:
+    ... ... print(" = mineur \n")
+    \end{lstlisting}
+\end{frame}
+
+\end{document}
