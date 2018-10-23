@@ -1,9 +1,14 @@
 ########################################
-###       Corrigé complet Snake      ###
+###         Quatrième objectif       ###
 ###      (c) Zeste de Savoir (c)     ###
 ###           Licence GPL            ###
 ###         Auteur : TAlone          ###
 ########################################
+
+# Cet objectif voit la pomme apparaitre :
+# (sous-objectif 1) - indépendamment du serpent ;
+# (sous-objectif 2) - et le serpent peut la manger ;
+# (sous-objectif 3) - uniquement dans la zone de jeu (transition).
 
 # Import de la bibliothèque pygame (gestion des graphismes)
 import pygame
@@ -24,7 +29,7 @@ def main():
 	# Ajout queue et tête
 	jeu.addAsset("Queue", "assets/tail.png")
 	jeu.addAsset("Tête", "assets/head.png")
-	# Ajout de la pomme
+	# (SO1) Ajout de la pomme
 	jeu.addAsset("Pomme", "assets/apple.png")
 
 	# Ajout de l'asset spécial qui sera automatiquement mis en fond
@@ -35,26 +40,12 @@ def main():
 	# Par défaut, le serpent ne doit pas bouger
 	direction = snake.DIRECTIONS.STOP
 
-	# Fonction pour faire apparaitre la pomme
-	def spawnPomme():
-		# Stockage de la position de la pomme
+	# (SO1) Stockage de la position de la pomme
+	pomme = jeu.randomPosition()
+
+	# (SO3) Tant que la pomme est hors-zone, on la change de place
+	while jeu.isSide(pomme):
 		pomme = jeu.randomPosition()
-
-		# Tant que la pomme est hors-zone, on la change de place
-		while jeu.isSide(pomme):
-			pomme = jeu.randomPosition()
-
-			# Ne pas mettre la pomme sur le serpent
-			for part in snake.partsIterator():
-				if jeu.collision(pomme, part.position):
-					# Tant que la pomme est sur le joueur, on la change de place
-					pomme = jeu.randomPosition()
-
-		# Retourne la position trouvée
-		return pomme
-
-	# Ajout de la pomme
-	pomme = spawnPomme()
 
 	# Boucle principale du jeu
 	while ouvert:
@@ -99,7 +90,7 @@ def main():
 			# Dessin du sprite à l'écran
 			jeu.draw(sprite, part.position)
 
-		# Dessin de la pomme
+		# (SO1) Dessin de la pomme
 		jeu.draw(jeu.asset("Pomme"), pomme)
 
 		# Ne pas oublier de terminer la phase de dessin
@@ -108,26 +99,16 @@ def main():
 		# Déplacement du serpent
 		snake.move(direction)
 
-		# Si il y a collision entre la pomme et la tête du serpent
+		# (SO2) Si il y a collision entre la pomme et la tête du serpent
 		if jeu.collision(snake.getHeadPosition(), pomme):
-			# Le serpent grandit
+			# (SO2) Le serpent grandit
 			snake.grow()
-			# La pomme change de position
-			pomme = spawnPomme()
+			# (SO2) La pomme change de position
+			pomme = jeu.randomPosition()
 
-		# Vérifie que le serpent soit toujours à l'écran
-		for tile in jeu.screenIterator():
-			if jeu.isSide(tile) and jeu.collision(snake.getHeadPosition(), tile):
-				# Ferme le jeu si collision avec un mur
-				ouvert = False
+			# (SO3) Tant que la pomme est hors-zone, on la change de place
+			while jeu.isSide(pomme):
+				pomme = jeu.randomPosition()
 
-		# Vérifie que le serpent ne se mord pas
-		for part in snake.partsIterator():
-			# Attention : la tête est incluse, il faut donc la retirer
-			if jeu.collision(snake.getHeadPosition(), part.position) and part.type != snake.PARTS.HEAD:
-				# Ferme le jeu si le serpent se rentre dedans
-				ouvert = False
-
-# Lancement de main seulement si le fichier n'est pas importé comme module
-if __name__ == "__main__":
-	main()
+# Lancement de main : pas important
+main()
