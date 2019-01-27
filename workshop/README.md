@@ -26,6 +26,8 @@ Ces objectifs sont des recommandations pour l'apprentissage, et ne sont en aucun
 
 La présentation ici vise à guider les organisateurs afin d'aiguiller les participants perdus au cas par cas ; ce document n'est pas destiné à être lu oralement dans son intégralité.
 
+Note avant de commencer : ce projet ne tourne plus que sous Python 3, suite aux gestions calamiteuses d'à-peu-près tout dans Python 2 ; de plus, le support de Python 2 s'arrête cette année, profitez-en pour vous  mettre à jour.
+
 ### Code initial : affichage d'une fenêtre
 
 Le code initialement proposé est à réaliser avec les participants, il s'agit simplement d'afficher la fenêtre de jeu vide et d'écouter l'évènement de fermeture afin d'éviter d'être bloqué.

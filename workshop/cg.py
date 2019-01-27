@@ -108,9 +108,18 @@ class Snake:
 		return (self.sX[0], self.sY[0])
 
 class Game:
-	def __init__(self, width=WIDTH, height=HEIGHT):
+	def __init__(self, init=None, loop=None, width=WIDTH, height=HEIGHT):
 		# Initialisation de PyGame
 		pygame.init()
+
+		# Déclarations des paramètres facultatifs (fonctions du jeu)
+		if init is None:
+			def init(game):
+				return
+
+		if loop is None:
+			def loop(game):
+				return
 
 		# Ajout des variables internes
 		self.assets = { }
@@ -118,10 +127,34 @@ class Game:
 		self.clock = pygame.time.Clock()
 		self.wWidth = width
 		self.wHeight = height
+		self.opened = True
+		self.__init = init
+		self.__loop = loop
 
 		# Un peu d'esthétique
 		# pygame.display.set_icon(apple)
 		pygame.display.set_caption("Snake")
+
+		# Lancement de l'initialisation
+		self.__init(self)
+		# Lancement de la boulce infinie principale
+		self.loop()
+
+	def loop(self):
+		# Lancement de la boucle tant que le jeu est ouvert
+		while self.opened:
+			# Prétraitement des événements
+			self.events = {}
+
+			# Pour chaque évenement PyGame, on prémache le boulot
+			for e in pygame.event.get():
+				if e.type == pygame.KEYDOWN:
+					self.events[e.type] = e.key
+				else:
+					self.events[e.type] = 0
+			
+			# Lancement de la boucle utilisateur
+			self.__loop(self)
 
 	def asset(self, name, rotation=0):
         # Effectue une rotation (éventuelle) de la tile avant de la retourner
@@ -143,13 +176,17 @@ class Game:
 					self.screen.blit(self.assets["background"], (x * GRID, y * GRID))
 
 	def draw(self, sprite, position):
+		# Dessin simple d'un sprite à l'écran
 		self.screen.blit(sprite, position)
 
-	def end(self):
+	def endDraw(self):
 		# Rafraichissement de l'écran
 		pygame.display.flip()
-		# Délai avant la prochaine frame (5 FPS)
-		self.clock.tick(5)
+		# Délai avant la prochaine frame (6 FPS)
+		self.clock.tick(6)
+
+	def end(self):
+		self.opened = False
 
 	def randomPosition(self):
 		# Donne une position sur la zone de jeu
