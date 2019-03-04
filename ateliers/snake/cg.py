@@ -156,18 +156,13 @@ class Game:
 			# Lancement de la boucle utilisateur
 			self.__loop(self)
 
-	def asset(self, name, rotation=0):
-        # Effectue une rotation (éventuelle) de la tile avant de la retourner
-		sprite = pygame.transform.rotate(self.assets[name], rotation)
-		return sprite
-
     # Chargement d'un asset dans PyGame
 	def addAsset(self, name, path):
 		self.assets[name] = pygame.image.load(path)
 
 	def eraseScreen(self):
-		# Remplis l'écran de blanc
-		self.screen.fill((255, 255, 255))
+		# Remplit l'écran de jaune
+		self.screen.fill((255, 255, 0))
 
 		# Si un fond est défini, remplis l'écran avec ce fond
 		if self.assets["background"]:
@@ -175,8 +170,10 @@ class Game:
 				for y in range(0, ceil(self.wHeight / GRID)):
 					self.screen.blit(self.assets["background"], (x * GRID, y * GRID))
 
-	def draw(self, sprite, position):
-		# Dessin simple d'un sprite à l'écran
+	def draw(self, spriteName, position, rotation=0):
+		# Effectue une rotation (éventuelle) de la tile
+		sprite = pygame.transform.rotate(self.assets[spriteName], rotation)
+		# Dessin simple de la sprite à l'écran
 		self.screen.blit(sprite, position)
 
 	def endDraw(self):
