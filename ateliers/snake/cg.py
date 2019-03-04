@@ -185,9 +185,26 @@ class Game:
 	def end(self):
 		self.opened = False
 
-	def randomPosition(self):
+	def __randomPosition(self):
 		# Donne une position sur la zone de jeu
 		return (randint(0, ceil(self.wWidth / GRID)) * GRID, randint(0, ceil(self.wHeight / GRID)) * GRID)
+
+	def randomApplePosition(self):
+		# Stockage de la position de la pomme
+		apple = self.__randomPosition()
+
+		# Tant que la pomme est hors-zone, on la change de place
+		while self.isSide(apple):
+			apple = self.__randomPosition()
+
+			# Ne pas mettre la pomme sur le serpent
+			for part in self.snake.partsIterator():
+				if self.collision(apple, part.position):
+					# Tant que la pomme est sur le joueur, on la change de place
+					apple = self.randomPosition()
+
+		# Retourne la position trouvée
+		return apple
 
 	def collision(self, p1, p2):
 		# cf. https://developer.mozilla.org/en-US/docs/Games/Techniques/2D_collision_detection
