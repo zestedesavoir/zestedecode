@@ -67,9 +67,13 @@ class Snake:
 		# Les rotations sont plus simples grâce aux constantes
 		self.sR[0] = 90 * direction
 
-	def partsIterator(self):
+	def partsIterator(self, length):
+		# Vérifions que les participants ne fassent pas n'importe quoi
+		if(length > len(self.sX)):
+			length = len(self.sX)
+
 		# Pour chaque partie du corps...
-		for i in range(len(self.sX), 0, -1):
+		for i in range(length, 0, -1):
 			# ...on regarde d'abord le type...
 			type = self.PARTS.BODY
 			if i == 1: type = self.PARTS.HEAD
@@ -81,6 +85,9 @@ class Snake:
 				"rotation": self.sR[i - 1],
 				"type": type
 			})
+	
+	def size(self):
+		return len(self.sX)
 
 	def grow(self):
         # On regarde d'abord la direction de la dernière partie du serpent

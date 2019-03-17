@@ -52,4 +52,10 @@ Suite à cette initiation, les participants seront invités à créer un premier
 
 ### Seconde partie : création d’un Snake
 
-TODO : tout ça...
+#### Premier objectif
+
+Le premier objectif consiste en la découverte du fonctionnement de la bibliothèque ; cet objectif reste très guidé par rapport au suivant : il se veut comme une intermédiaire entre le cours et la partie en autonomie. Il est important por bien réussir que les participants comprennent ce que sont les fonctions `init` et `boucle` ainsi que leur fonctionnement au sein du jeu. L'idée d'une boucle qui se répéte peut être nouvelle, il conviendra donc de la tester en vérifiant que le participant est capable de faire afficher la taille du serpent à chaque tour.
+
+Le premier sous-objectif consiste en la création des variables internes et l'affichage de la taille du serpent, il ne contient pas de notions nouvelles à l'exception des variable internes qui seront très rapidement comprises.
+
+Dans le second sous-objectif, les participants sont invités à créer une zone de jeu réelle avec affichage du désert en fond. Il s'agit ici de la première étape véritable pour la partie ludique, ayant pour objectif de faire découvrir les structures de contrôle utilisés dans la suite du jeu, en particulier le `if`, à travers la gestion de la fermeture de la fenêtre de jeu lors de l'appui sur la petite croix du système. Les `else` pourront être abordés pour les participants ayant bien compris le fonctionnement du `if`.
