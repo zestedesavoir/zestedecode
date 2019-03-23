@@ -90,13 +90,13 @@ class Snake:
 		return len(self.sX)
 
 	def grow(self):
-        # On regarde d'abord la direction de la dernière partie du serpent
+		# On regarde d'abord la direction de la dernière partie du serpent
 		direction = self.sR[len(self.sR) - 1] / 90
 
-        # On ajoute une composante de rotation similaire
+		# On ajoute une composante de rotation similaire
 		self.sR.append(direction * 90)
 
-        # En fonction de la direction, il faut ajouter la composante à différents endroits
+		# En fonction de la direction, il faut ajouter la composante à différents endroits
 		if direction == self.DIRECTIONS.RIGHT:
 			self.sX.append(self.sX[len(self.sX) - 1] - GRID)
 			self.sY.append(self.sY[len(self.sY) - 1])
@@ -163,7 +163,7 @@ class Game:
 			# Lancement de la boucle utilisateur
 			self.__loop(self)
 
-    # Chargement d'un asset dans PyGame
+	# Chargement d'un asset dans PyGame
 	def addAsset(self, name, path):
 		self.assets[name] = pygame.image.load(path)
 
@@ -177,11 +177,11 @@ class Game:
 				for y in range(0, ceil(self.wHeight / GRID)):
 					self.screen.blit(self.assets["background"], (x * GRID, y * GRID))
 
-	def draw(self, spriteName, position, rotation=0):
+	def draw(self, spriteName, params):
 		# Effectue une rotation (éventuelle) de la tile
-		sprite = pygame.transform.rotate(self.assets[spriteName], rotation)
+		sprite = pygame.transform.rotate(self.assets[spriteName], params.get("rotation", 0))
 		# Dessin simple de la sprite à l'écran
-		self.screen.blit(sprite, position)
+		self.screen.blit(sprite, params.get("position", 0))
 
 	def endDraw(self):
 		# Rafraichissement de l'écran
