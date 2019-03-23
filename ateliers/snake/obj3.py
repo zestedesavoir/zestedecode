@@ -7,87 +7,85 @@
 
 # Le troisième objectif vise à animer le serpent
 # (sous-objectif 1) - en ligne droite ;
-# (sous-objectif 2) - dans les autres directions ;
-# (sous-objectif 3) - avec les rotations qui s'imposent.
+# (sous-objectif 2) - dans les autres directions.
 
 # Import de la bibliothèque pygame (gestion des graphismes)
 import pygame
 # Import de la bibliothèque du coding gouter (fonctions d'abstraction)
 import cg
 
-# Tout le code à écrire sera là-dedans
-def main():
-	# Création d'une instance de jeu
-	jeu = cg.Game()
+# Fonction principale d'initialisation
+def init(jeu):
 	# Création d'un serpent à l'écran
-	snake = cg.Snake()
+	jeu.snake = cg.Snake()
 
-	# Déclaration des sprites
+	# (SO1) Donne une direction par défaut au serpent
+	jeu.snakeDir = jeu.snake.DIRECTIONS.STOP
+
+	# Déclaration du cactus
 	jeu.addAsset("Cactus", "assets/cactus.png")
+
 	# Ajout du corps
 	jeu.addAsset("Corps", "assets/body.png")
-	# Ajout queue et tête
+	# Ajout de la queue
 	jeu.addAsset("Queue", "assets/tail.png")
+	# Ajout de la tête
 	jeu.addAsset("Tête", "assets/head.png")
 
 	# Ajout de l'asset spécial qui sera automatiquement mis en fond
 	jeu.addAsset("background", "assets/background.png")
 
-	# Variable controlant l'ouverture de la fenêtre
-	ouvert = True
-	# (SO1) Par défaut, le serpent ne doit pas bouger
-	direction = snake.DIRECTIONS.STOP
+# Fonction executée regulièrement
+def boucle(jeu):
+	# Déclaration d'une variable contenant la taile du serpent
+	taille = jeu.snake.size()
 
-	# Boucle principale du jeu
-	while ouvert:
-		# Récupération des événements de la file d'attente
-		for event in pygame.event.get():
-			# Si l'utilisateur veut quitter...
-			if event.type == pygame.QUIT:
-				# ...sortie de la boucle principale, et fermeture du jeu.
-				ouvert = False
-			# (SO1) Lorsqu'une touche est appuyée...
-			if event.type == pygame.KEYDOWN:
-				# (SO1) ...on vérifie la direction droite...
-				if event.key == pygame.K_RIGHT:
-					direction = snake.DIRECTIONS.RIGHT
-				# (SO2) ...et les autres directions.
-				elif event.key == pygame.K_UP:
-					direction = snake.DIRECTIONS.TOP
-				elif event.key == pygame.K_DOWN:
-					direction = snake.DIRECTIONS.BOTTOM
-				elif event.key == pygame.K_LEFT:
-					direction = snake.DIRECTIONS.LEFT
-
-		# Effacement de l'écran, et remplissage avec les tiles de fond
-		jeu.eraseScreen()
-
-		# Dessin de tous les cactus
-		for tile in jeu.screenIterator():
-			if jeu.isSide(tile):
-				jeu.draw(jeu.asset("Cactus"), tile)
-
-		# Dessin du serpent à l'écran
-		for part in snake.partsIterator():
-			# Choix du sprite en fonction de la partie à dessiner et rotation
-			if part.type == snake.PARTS.HEAD:
-				# (SO3) Rotation de la tête
-				sprite = jeu.asset("Tête", part.rotation)
-			elif part.type == snake.PARTS.TAIL:
-				# (SO3) Idem
-				sprite = jeu.asset("Queue", part.rotation)
-			else:
-				# (SO3) Idem
-				sprite = jeu.asset("Corps", part.rotation)
-
-			# Dessin du sprite à l'écran
-			jeu.draw(sprite, part.position)
-
-		# Ne pas oublier de terminer la phase de dessin
+	# Fermeture du jeu lors de l'appui de la croix
+	if pygame.QUIT in jeu.events:
 		jeu.end()
 
-		# (SO1) Déplacement du serpent
-		snake.move(direction)
+	# (SO1) Lorsqu'une touche est appuyée
+	if pygame.KEYDOWN in jeu.events:
+		# (SO1) On stocke la touche appuyée
+		touche = jeu.events[pygame.KEYDOWN]
 
-# Lancement de main : pas important
-main()
+		# (SO1) ...on vérifie la direction droite...
+		if touche == pygame.K_RIGHT:
+			jeu.snakeDir = jeu.snake.DIRECTIONS.RIGHT
+		# (SO2) ...et les autres directions.
+		elif touche == pygame.K_UP:
+			jeu.snakeDir = jeu.snake.DIRECTIONS.TOP
+		elif touche == pygame.K_DOWN:
+			jeu.snakeDir = jeu.snake.DIRECTIONS.BOTTOM
+		elif touche == pygame.K_LEFT:
+			jeu.snakeDir = jeu.snake.DIRECTIONS.LEFT
+
+	# Effacement de l'écran, et remplissage avec les tiles de fond
+	jeu.eraseScreen()
+
+	# Itération sur tous les morceaux de grille
+	for carreau in jeu.screenIterator():
+		# (SO1) Si l'on est sur un côté...
+		if jeu.isSide(carreau):
+			# (SO1) ...dessine un cactus
+			jeu.draw("Cactus", { "position": carreau })
+
+	# Dessin d'un certain nombre de morceaux à l'écran
+	for partie in jeu.snake.partsIterator(taille):
+		# Choix du sprite en fonction de la partie à dessiner et dessin à l'écran
+		if partie.type == jeu.snake.PARTS.HEAD:
+			jeu.draw("Tête", partie)
+		elif partie.type == jeu.snake.PARTS.TAIL:
+			jeu.draw("Queue", partie)
+		else:
+			# Dessin du corps
+			jeu.draw("Corps", partie)
+		
+	# Ne pas oublier de terminer la phase de dessin
+	jeu.endDraw()
+
+	# (SO1) Déplacement du serpent
+	jeu.snake.move(jeu.snakeDir)
+
+# Lancement du jeu à partir des fonctions d'abstraction
+cg.Game(init, boucle)

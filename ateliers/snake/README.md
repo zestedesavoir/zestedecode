@@ -69,3 +69,13 @@ Le premier sous-objectif consiste à afficher les bordures de la zone en forme d
 Le second sous-objectif voit simplement un autre type de boucle qui itère sur un nombre donné de parties du serpent : `partsIterator`. Une compréhension au moins grossière du fonctionnement des tableaux est nécessaire afin de passer les arguments, mais cet objectif devrait être simple et court.
 
 Le dernier sous-objectif révise les structures conditionnelles en affichant les différentes parties du serpent : queue, tête et corps. Une partie encore une fois simple visant à compléter le second sous-objectif. Les participants veilleront à ne pas oublier de déclarer les sprites avec la fonction `addAsset` avec de les utiliser ; en cas d’oubli, il seront invités à tenter de comprendre les erreurs Python.
+
+#### Troisième objectif
+
+Le troisième objectif complexifie beaucoup le code contrairement aux précédents ; il ajoute en effet une grosse partie de gestion des événements afin de vérifier l’appui des différentes touches de mouvement (les flèche directionnelles). La recherche dans la documentation sera très importante, mais aucune notion nouvelle n’est abordée à partir d’ici. Les participants qui s’arrêteront à cet objectif auront les bases nécessaires en programmation, et ce afin de créer des petits programmes simples.
+
+Ici, le premier sous-objectif consiste à poser les bases de la direction du serpent, en particulier la déclaration d’une variable de direction ainsi que le déplacement effectif du serpent à chaque tour de boucle. Parmi les problèmes rencontrés, il est certain que figureront l’oubli de la portée globale de la variable de direction ainsi que l’oubli de l’appel à la fonction `snake.move`, qui causera le serpent à… ne pas bouger du tout, malgré un code fonctionnel.
+
+Le second sous-objectif est une extension simple du premier qui consiste à gérer les quatre directions en se renseignant dans la documentation ainsi qu’à stocker la direction souhaitée dans la variable du jeu pour pouvoir l’utiliser par la suite.
+
+Les objectifs suivants étant prévus pour les plus avancés, ils seront moins documentés pour les organisateurs, sous forme plus synthétique. Après la fin des objectifs, des pistes seront proposées aux participants qui seront libres de les implémenter ou non.
