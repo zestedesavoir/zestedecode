@@ -37,8 +37,5 @@ def boucle(jeu):
 	# (SO1) Affichage de la variable de taille
 	print(taille)
 
-	# (SO2) Ne pas oublier de terminer la phase de dessin
-	jeu.endDraw()
-
 # (OP) Lancement du jeu à partir des fonctions d'abstraction
 cg.Game(init, boucle)

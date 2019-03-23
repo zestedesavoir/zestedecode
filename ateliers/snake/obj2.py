@@ -62,9 +62,6 @@ def boucle(jeu):
 		else:
 			# (SO2) Dessin du corps
 			jeu.draw("Corps", partie)
-		
-	# Ne pas oublier de terminer la phase de dessin
-	jeu.endDraw()
 
 # Lancement du jeu à partir des fonctions d'abstraction
 cg.Game(init, boucle)

@@ -80,9 +80,6 @@ def boucle(jeu):
 		else:
 			# Dessin du corps
 			jeu.draw("Corps", partie)
-		
-	# Ne pas oublier de terminer la phase de dessin
-	jeu.endDraw()
 
 	# (SO1) Déplacement du serpent
 	jeu.snake.move(jeu.snakeDir)

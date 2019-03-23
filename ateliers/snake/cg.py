@@ -163,6 +163,9 @@ class Game:
 			# Lancement de la boucle utilisateur
 			self.__loop(self)
 
+			# Terminer le dessin du jeu
+			self.endDraw()
+
 	# Chargement d'un asset dans PyGame
 	def addAsset(self, name, path):
 		self.assets[name] = pygame.image.load(path)
