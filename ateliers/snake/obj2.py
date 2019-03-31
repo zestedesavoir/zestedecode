@@ -13,55 +13,55 @@
 # Import de la bibliothèque pygame (gestion des graphismes)
 import pygame
 # Import de la bibliothèque du coding gouter (fonctions d'abstraction)
-import cg
+from bibliotheque import Jeu, Serpent
 
 # Fonction principale d'initialisation
-def init(jeu):
+def initialisation(jeu):
 	# Création d'un serpent à l'écran
-	jeu.snake = cg.Snake()
+	jeu.serpent = Serpent()
 
 	# (SO1) Déclaration du cactus
-	jeu.addAsset("Cactus", "assets/cactus.png")
+	jeu.ajouter_image("Cactus", "images/cactus.png")
 
 	# (SO2) Ajout du corps
-	jeu.addAsset("Corps", "assets/body.png")
+	jeu.ajouter_image("Corps", "images/corps.png")
 	# (SO3) Ajout de la queue
-	jeu.addAsset("Queue", "assets/tail.png")
+	jeu.ajouter_image("Queue", "images/queue.png")
 	# (SO3) Ajout de la tête
-	jeu.addAsset("Tête", "assets/head.png")
+	jeu.ajouter_image("Tête", "images/tete.png")
 
 	# Ajout de l'asset spécial qui sera automatiquement mis en fond
-	jeu.addAsset("background", "assets/background.png")
+	jeu.ajouter_image("fond", "images/fond.png")
 
 # Fonction executée regulièrement
 def boucle(jeu):
-	# Déclaration d'une variable contenant la taile du serpent
-	taille = jeu.snake.size()
+	# Déclaration d'une variable contenant la taille du serpent
+	taille = jeu.serpent.taille()
 
 	# Fermeture du jeu lors de l'appui de la croix
-	if pygame.QUIT in jeu.events:
-		jeu.end()
+	if pygame.QUIT in jeu.evenements:
+		jeu.quitter()
 
 	# Effacement de l'écran, et remplissage avec les tiles de fond
-	jeu.eraseScreen()
+	jeu.effacer_ecran()
 
 	# (SO1) Itération sur tous les morceaux de grille
-	for carreau in jeu.screenIterator():
+	for carreau in jeu.carreaux():
 		# (SO1) Si l'on est sur un côté...
-		if jeu.isSide(carreau):
+		if jeu.est_sur_un_bord(carreau):
 			# (SO1) ...dessine un cactus
-			jeu.draw("Cactus", { "position": carreau })
+			jeu.dessiner("Cactus", { "position": carreau })
 
 	# (SO2) Dessin d'un certain nombre de morceaux à l'écran
-	for partie in jeu.snake.partsIterator(taille):
+	for morceau in jeu.serpent.morceaux(taille):
 		# (SO3) Choix du sprite en fonction de la partie à dessiner et dessin à l'écran
-		if partie.type == jeu.snake.PARTS.HEAD:
-			jeu.draw("Tête", partie)
-		elif partie.type == jeu.snake.PARTS.TAIL:
-			jeu.draw("Queue", partie)
+		if morceau.type == jeu.serpent.PARTIES.TETE:
+			jeu.dessiner("Tête", morceau)
+		elif morceau.type == jeu.serpent.PARTIES.QUEUE:
+			jeu.dessiner("Queue", morceau)
 		else:
 			# (SO2) Dessin du corps
-			jeu.draw("Corps", partie)
+			jeu.dessiner("Corps", morceau)
 
 # Lancement du jeu à partir des fonctions d'abstraction
-cg.Game(init, boucle)
+Jeu(initialisation, boucle)
