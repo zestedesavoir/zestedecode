@@ -18,6 +18,20 @@ LARGEUR = 640
 HAUTEUR = 416
 GRILLE = 32
 
+# Liste des évenements possibles dans le jeu
+Evenements = DotMap({
+	"QUITTER": pygame.QUIT,
+	"TOUCHE_APPUYEE": pygame.KEYDOWN
+})
+
+# Liste des touches autorisées
+Touches = DotMap({
+	"FLECHE_DROITE": pygame.K_RIGHT,
+	"FLECHE_GAUCHE": pygame.K_LEFT,
+	"FLECHE_HAUT": pygame.K_UP,
+	"FLECHE_BAS": pygame.K_DOWN
+})
+
 class Serpent:
 	# Liste de directions pour une utilisation simplifiée
 	DIRECTIONS = DotMap({
@@ -119,20 +133,6 @@ class Serpent:
 		return (self.sX[0], self.sY[0])
 
 class Jeu:
-	# Liste des évenements possibles dans le jeu
-	EVENEMENTS = DotMap({
-		"QUITTER": pygame.QUIT,
-		"TOUCHE_APPUYEE": pygame.KEYDOWN
-	})
-
-	# Liste des touches autorisées
-	TOUCHES = DotMap({
-		"FLECHE_DROITE": pygame.K_RIGHT,
-		"FLECHE_GAUCHE": pygame.K_LEFT,
-		"FLECHE_HAUT": pygame.K_UP,
-		"FLECHE_BAS": pygame.K_DOWN
-	})
-
 	def __init__(self, initialisation=None, boucle=None, largeur=LARGEUR, hauteur=HAUTEUR):
 		# Initialisation de PyGame
 		pygame.init()

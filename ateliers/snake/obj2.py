@@ -11,7 +11,7 @@
 # (sous-objectif 3) - affichage du serpent avec une tête et une queue.
 
 # Import de la bibliothèque du coding gouter (fonctions d'abstraction)
-from bibliotheque import Jeu, Serpent
+from bibliotheque import *
 
 # Fonction principale d'initialisation
 def initialisation(jeu):
@@ -37,7 +37,7 @@ def boucle(jeu):
 	taille = jeu.serpent.taille
 
 	# Fermeture du jeu lors de l'appui de la croix
-	if Jeu.EVENEMENTS.QUITTER in jeu.evenements:
+	if Evenements.QUITTER in jeu.evenements:
 		jeu.quitter()
 
 	# Effacement de l'écran, et remplissage avec les tiles de fond

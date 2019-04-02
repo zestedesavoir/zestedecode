@@ -10,7 +10,7 @@
 # (sous-objectif 2) - dans les autres directions.
 
 # Import de la bibliothèque du coding gouter (fonctions d'abstraction)
-from bibliotheque import Jeu, Serpent
+from bibliotheque import *
 
 # Fonction principale d'initialisation
 def initialisation(jeu):
@@ -39,23 +39,23 @@ def boucle(jeu):
 	taille = jeu.serpent.taille
 
 	# Fermeture du jeu lors de l'appui de la croix
-	if Jeu.EVENEMENTS.QUITTER in jeu.evenements:
+	if Evenements.QUITTER in jeu.evenements:
 		jeu.quitter()
 
 	# (SO1) Lorsqu'une touche est appuyée
-	if Jeu.EVENEMENTS.TOUCHE_APPUYEE in jeu.evenements:
+	if Evenements.TOUCHE_APPUYEE in jeu.evenements:
 		# (SO1) On stocke la touche appuyée
-		touche = jeu.evenements[Jeu.EVENEMENTS.TOUCHE_APPUYEE]
+		touche = jeu.evenements[Evenements.TOUCHE_APPUYEE]
 
 		# (SO1) ...on vérifie la direction droite...
-		if touche == Jeu.TOUCHES.FLECHE_DROITE:
+		if touche == Touches.FLECHE_DROITE:
 			jeu.direction_serpent = jeu.serpent.DIRECTIONS.DROITE
 		# (SO2) ...et les autres directions.
-		elif touche == Jeu.TOUCHES.FLECHE_HAUT:
+		elif touche == Touches.FLECHE_HAUT:
 			jeu.direction_serpent = jeu.serpent.DIRECTIONS.HAUT
-		elif touche == Jeu.TOUCHES.FLECHE_BAS:
+		elif touche == Touches.FLECHE_BAS:
 			jeu.direction_serpent = jeu.serpent.DIRECTIONS.BAS
-		elif touche == Jeu.TOUCHES.FLECHE_GAUCHE:
+		elif touche == Touches.FLECHE_GAUCHE:
 			jeu.direction_serpent = jeu.serpent.DIRECTIONS.GAUCHE
 
 	# Effacement de l'écran, et remplissage avec les tiles de fond

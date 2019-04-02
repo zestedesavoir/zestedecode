@@ -10,7 +10,7 @@
 # (sous-objectif 2) - création de la fenêtre de jeu et gestion de la fermeture d'icelle.
 
 # Import de la bibliothèque du coding gouter (fonctions d'abstraction)
-from bibliotheque import Jeu, Serpent
+from bibliotheque import *
 
 # (OP) Fonction principale d'initialisation
 def initialisation(jeu):
@@ -26,7 +26,7 @@ def boucle(jeu):
 	taille = jeu.serpent.taille
 
 	# (SO2) Fermeture du jeu lors de l'appui de la croix
-	if Jeu.EVENEMENTS.QUITTER in jeu.evenements:
+	if Evenements.QUITTER in jeu.evenements:
 		jeu.quitter()
 
 	# (SO2) Effacement de l'écran, et remplissage avec les tiles de fond
