@@ -9,8 +9,6 @@
 # (sous-objectif 1) - création des variables internes et affichage de la taille du serpent ;
 # (sous-objectif 2) - création de la fenêtre de jeu et gestion de la fermeture d'icelle.
 
-# Import de la bibliothèque pygame (gestion des graphismes)
-import pygame
 # Import de la bibliothèque du coding gouter (fonctions d'abstraction)
 from bibliotheque import Jeu, Serpent
 
@@ -25,10 +23,10 @@ def initialisation(jeu):
 # (OP) Fonction executée regulièrement
 def boucle(jeu):
 	# (SO1) Déclaration d'une variable contenant la taille du serpent
-	taille = jeu.serpent.taille()
+	taille = jeu.serpent.taille
 
 	# (SO2) Fermeture du jeu lors de l'appui de la croix
-	if pygame.QUIT in jeu.evenements:
+	if Jeu.EVENEMENTS.QUITTER in jeu.evenements:
 		jeu.quitter()
 
 	# (SO2) Effacement de l'écran, et remplissage avec les tiles de fond

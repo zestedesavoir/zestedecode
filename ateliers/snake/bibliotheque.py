@@ -50,20 +50,19 @@ class Serpent:
 			self.sY[i] = self.sY[i - 1]
 			self.sR[i] = self.sR[i - 1]
 
-	# TODO: Traduire "step"
-	def deplacer(self, direction, step=GRILLE):
+	def deplacer(self, direction, pas=GRILLE):
 		# D'abord, bouger tout le corps
 		if direction != self.DIRECTIONS.STOP: self.__avancer_serpent()
 
 		# Puis mettre à jour la tête selon la direction souhaitée
 		if direction == self.DIRECTIONS.DROITE:
-			self.sX[0] += step
+			self.sX[0] += pas
 		elif direction == self.DIRECTIONS.GAUCHE:
-			self.sX[0] -= step
+			self.sX[0] -= pas
 		elif direction == self.DIRECTIONS.BAS:
-			self.sY[0] += step
+			self.sY[0] += pas
 		elif direction == self.DIRECTIONS.HAUT:
-			self.sY[0] -= step
+			self.sY[0] -= pas
 
 		# Les rotations sont plus simples grâce aux constantes
 		self.sR[0] = 90 * direction
@@ -87,7 +86,8 @@ class Serpent:
 				"type": type
 			})
 	
-	# TODO: Renommer le nom de la fonction ou ajouter un décorateur pour l'utiliser comme une variable
+	# NOTE: la taille ne doit pas pouvoir être modifiée directement par l'utilisateur
+	@property
 	def taille(self):
 		return len(self.sX)
 
@@ -112,12 +112,27 @@ class Serpent:
 			self.sX.append(self.sX[len(self.sX) - 1])
 			self.sY.append(self.sY[len(self.sY) - 1] + GRILLE)
 
-	# TODO: Renommer le nom de la fonction ou ajouter un décorateur pour l'utiliser comme une variable
+	# NOTE: la position de la tete ne doit pas pouvoir être modifiée directement par l'utilisateur
+	@property
 	def position_tete(self):
 		# Donne la position de la tête du serpent
 		return (self.sX[0], self.sY[0])
 
 class Jeu:
+	# Liste des évenements possibles dans le jeu
+	EVENEMENTS = DotMap({
+		"QUITTER": pygame.QUIT,
+		"TOUCHE_APPUYEE": pygame.KEYDOWN
+	})
+
+	# Liste des touches autorisées
+	TOUCHES = DotMap({
+		"FLECHE_DROITE": pygame.K_RIGHT,
+		"FLECHE_GAUCHE": pygame.K_LEFT,
+		"FLECHE_HAUT": pygame.K_UP,
+		"FLECHE_BAS": pygame.K_DOWN
+	})
+
 	def __init__(self, initialisation=None, boucle=None, largeur=LARGEUR, hauteur=HAUTEUR):
 		# Initialisation de PyGame
 		pygame.init()
@@ -198,12 +213,11 @@ class Jeu:
 	def quitter(self):
 		self.__ouvert = False
 
-	def __position_aleatoire(self):
+	def position_aleatoire(self):
 		# Donne une position sur la zone de jeu
 		return (randint(0, ceil(self.largeur / GRILLE)) * GRILLE, randint(0, ceil(self.hauteur / GRILLE)) * GRILLE)
 
-	# TODO: Traduire "randomApplePosition"
-	def randomApplePosition(self):
+	def position_aleatoire_pomme(self):
 		# Stockage de la position de la pomme
 		pomme = self.__position_aleatoire()
 
@@ -225,12 +239,12 @@ class Jeu:
 		return (p1[0] < p2[0] + GRILLE) and (p1[0] + GRILLE > p2[0]) and (p1[1] < p2[1] + GRILLE) and (p1[1] + GRILLE > p2[1])
 
 	# TODO: Renommer le nom de la fonction ou ajouter un décorateur pour l'utiliser comme une variable
-	def carreaux(self):
+	def grille(self):
 		# Renvoie un itérateur de chaque x et y disponible sur la grille
 		for x in range(0, ceil(self.largeur / GRILLE)):
 			for y in range(0, ceil(self.hauteur / GRILLE)):
 				yield (x * GRILLE, y * GRILLE)
 
-	def est_sur_un_bord(self, position):
+	def est_un_bord(self, position):
 		# Fonction de détection de côté de la zone de jeu
 		return position[0] == 0 or position[1] == 0 or position[0] >= self.largeur - GRILLE or position[1] >= self.hauteur - GRILLE

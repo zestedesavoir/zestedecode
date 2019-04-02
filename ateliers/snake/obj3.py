@@ -9,8 +9,6 @@
 # (sous-objectif 1) - en ligne droite ;
 # (sous-objectif 2) - dans les autres directions.
 
-# Import de la bibliothèque pygame (gestion des graphismes)
-import pygame
 # Import de la bibliothèque du coding gouter (fonctions d'abstraction)
 from bibliotheque import Jeu, Serpent
 
@@ -38,35 +36,35 @@ def initialisation(jeu):
 # Fonction executée regulièrement
 def boucle(jeu):
 	# Déclaration d'une variable contenant la taille du serpent
-	taille = jeu.serpent.taille()
+	taille = jeu.serpent.taille
 
 	# Fermeture du jeu lors de l'appui de la croix
-	if pygame.QUIT in jeu.evenements:
+	if Jeu.EVENEMENTS.QUITTER in jeu.evenements:
 		jeu.quitter()
 
 	# (SO1) Lorsqu'une touche est appuyée
-	if pygame.KEYDOWN in jeu.evenements:
+	if Jeu.EVENEMENTS.TOUCHE_APPUYEE in jeu.evenements:
 		# (SO1) On stocke la touche appuyée
-		touche = jeu.evenements[pygame.KEYDOWN]
+		touche = jeu.evenements[Jeu.EVENEMENTS.TOUCHE_APPUYEE]
 
 		# (SO1) ...on vérifie la direction droite...
-		if touche == pygame.K_RIGHT:
+		if touche == Jeu.TOUCHES.FLECHE_DROITE:
 			jeu.direction_serpent = jeu.serpent.DIRECTIONS.DROITE
 		# (SO2) ...et les autres directions.
-		elif touche == pygame.K_UP:
+		elif touche == Jeu.TOUCHES.FLECHE_HAUT:
 			jeu.direction_serpent = jeu.serpent.DIRECTIONS.HAUT
-		elif touche == pygame.K_DOWN:
+		elif touche == Jeu.TOUCHES.FLECHE_BAS:
 			jeu.direction_serpent = jeu.serpent.DIRECTIONS.BAS
-		elif touche == pygame.K_LEFT:
+		elif touche == Jeu.TOUCHES.FLECHE_GAUCHE:
 			jeu.direction_serpent = jeu.serpent.DIRECTIONS.GAUCHE
 
 	# Effacement de l'écran, et remplissage avec les tiles de fond
 	jeu.effacer_ecran()
 
 	# Itération sur tous les morceaux de grille
-	for carreau in jeu.carreaux():
+	for carreau in jeu.grille():
 		# (SO1) Si l'on est sur un côté...
-		if jeu.est_sur_un_bord(carreau):
+		if jeu.est_un_bord(carreau):
 			# (SO1) ...dessine un cactus
 			jeu.dessiner("Cactus", { "position": carreau })
 

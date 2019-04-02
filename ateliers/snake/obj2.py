@@ -10,8 +10,6 @@
 # (sous-objectif 2) - affichage du serpent comme un ensemble de corps ;
 # (sous-objectif 3) - affichage du serpent avec une tête et une queue.
 
-# Import de la bibliothèque pygame (gestion des graphismes)
-import pygame
 # Import de la bibliothèque du coding gouter (fonctions d'abstraction)
 from bibliotheque import Jeu, Serpent
 
@@ -36,19 +34,19 @@ def initialisation(jeu):
 # Fonction executée regulièrement
 def boucle(jeu):
 	# Déclaration d'une variable contenant la taille du serpent
-	taille = jeu.serpent.taille()
+	taille = jeu.serpent.taille
 
 	# Fermeture du jeu lors de l'appui de la croix
-	if pygame.QUIT in jeu.evenements:
+	if Jeu.EVENEMENTS.QUITTER in jeu.evenements:
 		jeu.quitter()
 
 	# Effacement de l'écran, et remplissage avec les tiles de fond
 	jeu.effacer_ecran()
 
 	# (SO1) Itération sur tous les morceaux de grille
-	for carreau in jeu.carreaux():
+	for carreau in jeu.grille():
 		# (SO1) Si l'on est sur un côté...
-		if jeu.est_sur_un_bord(carreau):
+		if jeu.est_un_bord(carreau):
 			# (SO1) ...dessine un cactus
 			jeu.dessiner("Cactus", { "position": carreau })
 
