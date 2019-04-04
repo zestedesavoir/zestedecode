@@ -39,7 +39,7 @@ Dans le dossier `ateliers` vous trouverez les différents ateliers prêts à l'e
 
 #### Jeu Snake
 
-Située dans le dossier `ateliers/snake`, cette partie est constituée de tout le code Python nécessaire à l'évènement, incluant la bibliothèque d'abstraction utilisée et les images utilisées dans le jeu, qui se situent dans `ateliers/snak/assets`.
+Située dans le dossier `ateliers/snake`, cette partie est constituée de tout le code Python nécessaire à l'évènement, incluant la bibliothèque d'abstraction utilisée et les images utilisées dans le jeu, qui se situent dans `ateliers/snake/assets`.
 
 Les différents fichiers Python (obj1.py, obj2.py, etc) constituent le corrigé des divers objectifs à atteindre durant l'évènement ; les participants ne les ayant pas tous réalisés à la fin de l'évènement sont encouragés, s'ils le souhaitent, à continuer chez eux, en récupérant les fichiers mis à leur disposition.
 

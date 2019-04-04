@@ -1,79 +1,81 @@
 # ZdS Coding Goûter – Partie Code
 
+Ce dossier traite de la partie **Snake** (Python) des ateliers de programmation Zeste de Code.
+
 ## Licence
 
 TL;DR : **Have fun**, tout en respectant les auteurs du projet.
 
 Comme mentionné dans le README commun, cette partie est placée sous licence GNU GPL v3.0 (voir LICENCE.md), pour rappel, cette licence impose :
 
-- le crédit des auteurs : les commentaires en début de fichier ne sauraient donc être retirés lors de la réutilisation de tout ou partie du code, sauf à obtenir l'accord particulier de l'association Zeste de Savoir ;
+- le crédit des auteurs : les commentaires en début de fichier ne sauraient donc être retirés lors de la réutilisation de tout ou partie du code, sauf à obtenir l’accord particulier de l’association Zeste de Savoir ;
 - la redistribution de la source : toute modification du présent code doit être redistribuée à tous sous la même licence, afin que le partage du savoir ne se perde pas ;
-- la documentation des changements effectués : en cas de redistribution d'un code dérivé, il doit être porté mention des changements effectués, et ce afin de ne pas berner l'utilisateur.
+- la documentation des changements effectués : en cas de redistribution d’un code dérivé, il doit être porté mention des changements effectués, et ce afin de ne pas berner l’utilisateur.
 
 En contrepartie, vous obtenez les droits de faire ce que vous souhaitez de ce code, en particulier :
 
-- d'en faire un usage personnel ;
+- d’en faire un usage personnel ;
 - de le modifier pour réaliser votre propre atelier ;
 - de le vendre ;
 - de le partager à quiconque et sans restriction autre que celles mentionnés ci-dessus ;
-- d'expérimenter vos propres projets, et de tout casser.
+- d’expérimenter vos propres projets, et de tout casser.
 
-Dans tous les cas mentionnés, l'association Zeste de Savoir ainsi que les auteurs du code ne sauraient être tenus responsable de tous dégâts éventuels provoqués par le code, qui est distribué sans aucune garantie. De plus, ce court texte ne saurait en aucun cas se substituer au texte intégral de la licence (voir LICENCE.md).
+Dans tous les cas mentionnés, l’association Zeste de Savoir ainsi que les auteurs du code ne sauraient être tenus responsable de tous dégâts éventuels provoqués par le code, qui est distribué sans aucune garantie. De plus, ce court texte ne saurait en aucun cas se substituer au texte intégral de la licence (voir LICENCE.md).
 
 ## Présentation
 
-Ces objectifs sont des recommandations pour l'apprentissage, et ne sont en aucun cas figés : si un participant nécessite de l'aide pour autre chose, il apprendra autant par ce biais.
+Ces objectifs sont des recommandations pour l’apprentissage, et ne sont en aucun cas figés : si un participant nécessite de l’aide pour autre chose, il apprendra autant par ce biais.
 
-La présentation ici vise à guider les organisateurs afin d'aiguiller les participants perdus au cas par cas ; ce document n'est pas destiné à être lu oralement dans son intégralité.
+La présentation ici vise à guider les organisateurs afin d’aiguiller les participants perdus au cas par cas ; ce document n’est pas destiné à être lu oralement dans son intégralité.
 
-Note avant de commencer : ce projet ne tourne plus que sous Python 3, suite aux gestions calamiteuses d'à-peu-près tout dans Python 2 ; de plus, le support de Python 2 s'arrête cette année, profitez-en pour vous  mettre à jour.
+Note avant de commencer : ce projet ne tourne plus que sous Python 3, suite aux gestions calamiteuses d’à-peu-près tout dans Python 2 ; de plus, le support de Python 2 s’arrête cette année, profitez-en pour vous mettre à jour.
 
-### Code initial : affichage d'une fenêtre
+### Première partie : découverte des outils
 
-Le code initialement proposé est à réaliser avec les participants, il s'agit simplement d'afficher la fenêtre de jeu vide et d'écouter l'évènement de fermeture afin d'éviter d'être bloqué.
+Durée recommandée : **moins d’une heure**
 
-C'est un code extrêmement simple qui doit servir de base pour présenter les rudiments de la programmation (boucles, conditions, variables).
+Avant de commencer à coder le Snake, il est nécessaire de prendre du temps pour découvrir les outils de travail ainsi que le fonctionnement de l’interpréteur Python. À ce titre, il faudra présenter aux participants le fonctionnement des outils utilisés, en particulier la gestion des erreurs, très importante pour avancer en programmation. La présentation de l’association pourra tenir au début de l’heure, et la présentation des métiers de l’informatique à la fin ; ainsi, trois heures pleines peuvent être réservées au code.
 
-### Objectif 1 : Remplissage de la fenêtre
+#### Présentation de l’association et de l’atelier
 
-Cet objectif est très varié (boucles, conditions, variables), et peu prendre beaucoup de temps aux participants, car il nécessite la prise en main de la bibliothèque ; il est nécessaire de les orienter **sans donner la solution** sauf s'ils sont réellement perdus.
+Se réferer aux diapositives de présentation proposées sur ce dépôt ; ne pas oublier d’expliquer les enjeux de la programmation et le principe de l’atelier. Les participants devront, à l’issu de ces présentations, être répartis en groupe selon qu’ils traitent le Snake (Python) ou le Flappy Bird (Scratch).
 
-Sous-objectif 1 : L'objectif consiste à proposer une solution pour remplir entièrement l'espace de jeu avec les tiles de fond fournies (`background.png`). La fonction `jeu.screenIterator()` est complexe et devra sans doute être expliquée.
+#### Calculs simples avec l’interpréteur
 
-Sous-objectif 2 : Ensuite, il conviendra de délimiter la zone pour montrer à l'utilisateur où sont les limites du terrain, et plus tard pour la gestion des collisions.
+La première démonstration consiste à montrer quelques calculs simples pouvant être effectués avec l’interpréteur ; se référer aux diapositives pour quelques exemples d’opérations simples. Après la démonstration, proposer quelques exercices simples.
 
-### Objectif 2 : Affichage du serpent
+#### Déclaration de variables
 
-Cet objectif vise à réviser les bases de la programmation, déjà survolées dans l'objectif 1, mais de façon plus brève, comme un rappel des fondamentaux.
+Il conviendra ensuite de montrer aux participants comment déclarer des variables ainsi que quelques types courants – en particulier, les nombres, booléens et types personnalisés qui seront nécessaires par la suite.
 
-Sous-objectif 1 : Ici, il faudra trouver un moyen d'ajouter à l'écran le serpent, de sa déclaration à son affichage pratique comme des morceaux de corps. La fonction de bibliothèque associée (`snake.partsIterator()`) n'est pas évidente mais les participants pourront se rendre compte qu'elle ressemble à `jeu.screenIterator()`, expliquée plus tôt.
+Suite à cette initiation, les participants seront invités à créer un premier fichier pour leur jeu dans le bon répertoire, et à importer la bibliothèque. Dans ce fichier, ils pourront tenter de créer quelques variables, puis il sera temps de passer à la conception du jeu (note : présenter les métiers de l’informatique ici peut être une bonne idée, car les participants n’auront pas encore trop la tête dans le code à ce moment).
 
-Sous-objectif 2 : Il faudra ensuite afficher une tête à l'avant et une queue à l'arrière ; c'est un objectif rapide, car il ne fait appel qu'à des conditions et un peu de logique.
+### Seconde partie : création d’un Snake
 
-### Objectif 3 : Animation du serpent
+#### Premier objectif
 
-Cet objectif est fortement marqué par la nécessité de lire la documentation (*RTFM*), fondement de la programmation, les participants sont donc censés se débrouiller seuls excepté pour la boucle de gestion des événements, qui pourra leur être expliquée.
+Le premier objectif consiste en la découverte du fonctionnement de la bibliothèque ; cet objectif reste très guidé par rapport au suivant : il se veut comme un intermédiaire entre le cours et la partie en autonomie. Il est important pour bien réussir que les participants comprennent ce que sont les fonctions `init` et `boucle` ainsi que leur fonctionnement au sein du jeu. L’idée d’une boucle peut être nouvelle, il conviendra donc de la tester en vérifiant que le participant est capable de faire afficher la taille du serpent à chaque tour.
 
-Sous-objectif 1 : Le premier objectif vraiment amusant du jeu consiste à animer le serpent en ligne droite lorsque l'utilisateur appuie sur la touche correspondante (au choix, cf. doc). Il conviendra d'expliquer la gestion des événements afin de ne pas laisser les participants se perdre.
+Le premier sous-objectif consiste en la création des variables internes et l’affichage de la taille du serpent, il ne contient pas de notions nouvelles à l’exception des variables internes qui seront très rapidement comprises.
 
-Sous-objectif 2 : Très simple, cet objectif complète le premier en ajoutant les trois autres directions, il est une application directe de la documentation.
+Dans le second sous-objectif, les participants sont invités à créer une zone de jeu réelle avec affichage du désert en fond. Il s’agit ici de la première étape véritable pour la partie ludique, ayant pour objectif de faire découvrir les structures de contrôle utilisées dans la suite du jeu, en particulier le `if`, à travers la gestion de la fermeture de la fenêtre de jeu lors de l’appui sur la petite croix du système. Les `else` pourront être abordés pour les participants ayant bien compris le fonctionnement du `if`.
 
-Sous-objectif 3 : Un objectif pour le moins complexe qui doit répondre à la problématique : les tiles ne tournent pas ; hormis la phase de recherche de la fonction de rotation (la même que pour le dessin), les conditions à mettre en place sont non-triviales et peu documentées, une aide pourra être nécessaire à ce niveau.
+#### Second objectif
 
-### Objectif 4 : Gestion de la pomme
+Cet objectif présente le fonctionnement des boucles, et initie les participants à la gestion de tableaux. Il est très peu guidé, et présente comme objectif de faire lire la documentation aux participants. La réalisation des trois sous-objectifs peut être longue et demander beaucoup de patience aux organisateurs, afin de poser les bases. Les rudiments de la programmation vu précédemment (structures conditionnelles et variables) seront aussi réutilisés afin de les consolider.
 
-Outre les notions précédentes, cet objectif traite de l'aléatoire et des collisions, et dispose d'une boucle while avancée. Il n'est pas particulièrement complexe mais nécessite plus de réflexion et de logique que les précédents.
+Le premier sous-objectif consiste à afficher les bordures de la zone en forme de cactus ; en cela, il est très simple et vise surtout à comprendre l’intérêt des boucles. Il est conseillé de montrer aux participants comment remplir la zone de jeu de cactus avant se limiter à en afficher seulement sur les bords. La phase de recherche de fonctions est très importante à ce stade car deux fonctions utiles : `screenIterator` et `isSide` seront nécessaires pour finaliser cet objectif.
 
-Sous-objectif 1 : La pomme apparaît indépendamment du serpent, n'importe où sur la zone de jeu, grâce à la fonction intégrée d'aléatoire documentée. C'est un sous-objectif simple, pour bien aborder le problème.
+Le second sous-objectif voit simplement un autre type de boucle qui itère sur un nombre donné de parties du serpent : `partsIterator`. Une compréhension au moins grossière du fonctionnement des tableaux est nécessaire afin de passer les arguments, mais cet objectif devrait être simple et court.
 
-Sous-objectif 2 : Par la suite, le serpent doit pouvoir manger la pomme, il faudra pour cela détecter la collision entre la tête du serpent et la pomme, par la fonction prévue à cet effet. L'utilisation de `snake.partsIterator()` ayant déjà été abordée, les participants sont invités à se référer au code déjà écrit.
+Le dernier sous-objectif révise les structures conditionnelles en affichant les différentes parties du serpent : queue, tête et corps. Une partie encore une fois simple visant à compléter le second sous-objectif. Les participants veilleront à ne pas oublier de déclarer les sprites avec la fonction `addAsset` avant de les utiliser ; en cas d’oubli, ils seront invités à tenter de comprendre les erreurs Python.
 
-Sous-objectif 3 : Cet objectif de transition vise à initier les participants à la gestion des collisions, avec la fonctions d'abstraction `jeu.isSide()` déjà utilisée et vérifiant si la pomme se situe sur un cactus afin de la déplacer le cas échéant.
+#### Troisième objectif
 
-### Objectif 5 : Ajout de collisions
+Le troisième objectif complexifie beaucoup le code contrairement aux précédents ; il ajoute en effet une grosse partie de gestion des événements afin de vérifier l’appui des différentes touches de mouvement (les flèches directionnelles). La recherche dans la documentation sera très importante, mais aucune notion nouvelle n’est abordée à partir d’ici. Les participants qui s’arrêteront à cet objectif auront les bases nécessaires en programmation, et ce afin de créer des petits programmes simples.
 
-Cet objectif voit le jeu se terminer, et est le dernier principal (avant les objectifs bonus) ; il étudie particulièrement les fonctions de collision, très importantes en programmation vidéoludique. Il se conclut par un sous-objectif bonus non-documenté ici visant à étudier les déclarations de fonctions.
+Ici, le premier sous-objectif consiste à poser les bases de la direction du serpent, en particulier la déclaration d’une variable de direction ainsi que le déplacement effectif du serpent à chaque tour de boucle. Parmi les problèmes rencontrés, il est certain que figureront l’oubli de la portée globale de la variable de direction ainsi que l’oubli de l’appel à la fonction `snake.move`, qui causera le serpent à… ne pas bouger du tout, malgré un code fonctionnel.
 
-Sous-objectif 1 : Lorsque le serpent heurte un cactus, il doit mourir ; en l’occurrence, la zone de jeu doit se fermer. Une solution devra être proposée par les participants, en réutilisant ce qui a été vu précédemment et la nouvelle fonction de collision.
+Le second sous-objectif est une extension simple du premier qui consiste à gérer les quatre directions en se renseignant dans la documentation ainsi qu’à stocker la direction souhaitée dans la variable du jeu pour pouvoir l’utiliser par la suite.
 
-Sous-objectif 2 : Le serpent ne doit pas se mordre la queue ; il incombe au participant de ne quitter le jeu le cas échéant, mais il faudra faire attention au cas où il se mord la tête.
+Les objectifs suivants étant prévus pour les plus avancés, ils seront moins documentés pour les organisateurs, sous forme plus synthétique. Après la fin des objectifs, des pistes seront proposées aux participants qui seront libres de les implémenter ou non.

@@ -5,71 +5,61 @@
 ###         Auteur : TAlone          ###
 ########################################
 
-# Ce second objectif à pour objet d'afficher le serpent :
-# (sous-objectif 1) - comme un ensemble de corps ;
-# (sous-objectif 2) - avec une tête et une queue.
+# Ce second objectif à pour objet d'afficher les bordures et le serpent :
+# (sous-objectif 1) - affichage des cactus ;
+# (sous-objectif 2) - affichage du serpent comme un ensemble de corps ;
+# (sous-objectif 3) - affichage du serpent avec une tête et une queue.
 
-# Import de la bibliothèque pygame (gestion des graphismes)
-import pygame
 # Import de la bibliothèque du coding gouter (fonctions d'abstraction)
-import cg
+from bibliotheque import *
 
-# Tout le code à écrire sera là-dedans
-def main():
-	# Création d'une instance de jeu
-	jeu = cg.Game()
-	# (SO1) Création d'un serpent à l'écran
-	snake = cg.Snake()
+# Fonction principale d'initialisation
+def initialisation(jeu):
+	# Création d'un serpent à l'écran
+	jeu.serpent = Serpent()
 
-	# Déclaration des sprites
-	jeu.addAsset("Cactus", "assets/cactus.png")
-	# (SO1) Ajout du corps
-	jeu.addAsset("Corps", "assets/body.png")
-	# (SO2) Ajout queue et tête
-	jeu.addAsset("Queue", "assets/tail.png")
-	jeu.addAsset("Tête", "assets/head.png")
+	# (SO1) Déclaration du cactus
+	jeu.ajouter_image("Cactus", "images/cactus.png")
+
+	# (SO2) Ajout du corps
+	jeu.ajouter_image("Corps", "images/corps.png")
+	# (SO3) Ajout de la queue
+	jeu.ajouter_image("Queue", "images/queue.png")
+	# (SO3) Ajout de la tête
+	jeu.ajouter_image("Tête", "images/tete.png")
 
 	# Ajout de l'asset spécial qui sera automatiquement mis en fond
-	jeu.addAsset("background", "assets/background.png")
+	jeu.ajouter_image("fond", "images/fond.png")
 
-	# Variable controlant l'ouverture de la fenêtre
-	ouvert = True
+# Fonction executée regulièrement
+def boucle(jeu):
+	# Déclaration d'une variable contenant la taille du serpent
+	taille = jeu.serpent.taille
 
-	# Boucle principale du jeu
-	while ouvert:
-		# Récupération des événements de la file d'attente
-		for event in pygame.event.get():
-			# Si l'utilisateur veut quitter...
-			if event.type == pygame.QUIT:
-				# ...sortie de la boucle principale, et fermeture du jeu.
-				ouvert = False
+	# Fermeture du jeu lors de l'appui de la croix
+	if Evenements.QUITTER in jeu.evenements:
+		jeu.quitter()
 
-		# Effacement de l'écran, et remplissage avec les tiles de fond
-		jeu.eraseScreen()
+	# Effacement de l'écran, et remplissage avec les tiles de fond
+	jeu.effacer_ecran()
 
-		# Dessin de tous les cactus
-		for tile in jeu.screenIterator():
-			if jeu.isSide(tile):
-				jeu.draw(jeu.asset("Cactus"), tile)
+	# (SO1) Itération sur tous les morceaux de grille
+	for carreau in jeu.grille():
+		# (SO1) Si l'on est sur un côté...
+		if jeu.est_un_bord(carreau):
+			# (SO1) ...dessine un cactus
+			jeu.dessiner("Cactus", { "position": carreau })
 
-		# (SO1) Dessin du serpent à l'écran
-		for part in snake.partsIterator():
-			# (SO1) Dessin du sprite à l'écran (/!\ hors SO2)
-			# jeu.draw(jeu.asset("Corps"), part.position)
+	# (SO2) Dessin d'un certain nombre de morceaux à l'écran
+	for morceau in jeu.serpent.morceaux(taille):
+		# (SO3) Choix du sprite en fonction de la partie à dessiner et dessin à l'écran
+		if morceau.type == jeu.serpent.PARTIES.TETE:
+			jeu.dessiner("Tête", morceau)
+		elif morceau.type == jeu.serpent.PARTIES.QUEUE:
+			jeu.dessiner("Queue", morceau)
+		else:
+			# (SO2) Dessin du corps
+			jeu.dessiner("Corps", morceau)
 
-			# (SO2) Choix du sprite en fonction de la partie à dessiner et rotation
-			if part.type == snake.PARTS.HEAD:
-				sprite = jeu.asset("Tête")
-			elif part.type == snake.PARTS.TAIL:
-				sprite = jeu.asset("Queue")
-			else:
-				sprite = jeu.asset("Corps")
-
-			# (SO2) Dessin du sprite à l'écran
-			jeu.draw(sprite, part.position)
-
-		# Ne pas oublier de terminer la phase de dessin
-		jeu.end()
-
-# Lancement de main : pas important
-main()
+# Lancement du jeu à partir des fonctions d'abstraction
+Jeu(initialisation, boucle)
