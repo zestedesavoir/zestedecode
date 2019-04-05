@@ -2,7 +2,7 @@
 ###        Bibliothèque Snake        ###
 ###      (c) Zeste de Savoir (c)     ###
 ###           Licence GPL            ###
-###         Auteur : TAlone          ###
+###    Auteurs : TAlone, Situphen    ###
 ########################################
 
 # Import des bibliothèques pygame et dotmap (faire attention à les installer: pip install pygame dotmap)
@@ -84,7 +84,7 @@ class Serpent:
 	def morceaux(self, longueur):
 		# Vérifions que les participants ne fassent pas n'importe quoi
 		if(longueur > len(self.sX)):
-			longueur = len(self.sX)
+			longueur = self.taille
 
 		# Pour chaque partie du corps...
 		for i in range(longueur, 0, -1):
@@ -213,7 +213,7 @@ class Jeu:
 	def quitter(self):
 		self.__ouvert = False
 
-	def position_aleatoire(self):
+	def __position_aleatoire(self):
 		# Donne une position sur la zone de jeu
 		return (randint(0, ceil(self.largeur / GRILLE)) * GRILLE, randint(0, ceil(self.hauteur / GRILLE)) * GRILLE)
 
@@ -222,23 +222,25 @@ class Jeu:
 		pomme = self.__position_aleatoire()
 
 		# Tant que la pomme est hors-zone, on la change de place
-		while self.est_sur_un_bord(pomme):
+		while self.est_un_bord(pomme):
 			pomme = self.__position_aleatoire()
 
 			# Ne pas mettre la pomme sur le serpent
-			for morceau in self.snake.morceaux():
+			for morceau in self.serpent.morceaux(self.serpent.taille):
 				if self.collision(pomme, morceau.position):
 					# Tant que la pomme est sur le joueur, on la change de place
-					pomme = self.position_aleatoire()
+					pomme = self.__position_aleatoire()
 
 		# Retourne la position trouvée
-		return pomme
+		return DotMap({
+			"position": pomme,
+			"rotation": 0
+		})
 
 	def collision(self, p1, p2):
 		# cf. https://developer.mozilla.org/en-US/docs/Games/Techniques/2D_collision_detection
 		return (p1[0] < p2[0] + GRILLE) and (p1[0] + GRILLE > p2[0]) and (p1[1] < p2[1] + GRILLE) and (p1[1] + GRILLE > p2[1])
 
-	# TODO: Renommer le nom de la fonction ou ajouter un décorateur pour l'utiliser comme une variable
 	def grille(self):
 		# Renvoie un itérateur de chaque x et y disponible sur la grille
 		for x in range(0, ceil(self.largeur / GRILLE)):

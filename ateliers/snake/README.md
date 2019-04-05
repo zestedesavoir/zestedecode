@@ -78,4 +78,14 @@ Ici, le premier sous-objectif consiste à poser les bases de la direction du ser
 
 Le second sous-objectif est une extension simple du premier qui consiste à gérer les quatre directions en se renseignant dans la documentation ainsi qu’à stocker la direction souhaitée dans la variable du jeu pour pouvoir l’utiliser par la suite.
 
-Les objectifs suivants étant prévus pour les plus avancés, ils seront moins documentés pour les organisateurs, sous forme plus synthétique. Après la fin des objectifs, des pistes seront proposées aux participants qui seront libres de les implémenter ou non.
+L'objectif suivant étant prévu pour les plus avancés, ils est moins documenté pour les organisateurs, sous forme plus synthétique. Après la fin des objectifs, des pistes seront proposées aux participants qui seront libres de les implémenter ou non.
+
+#### Quatrième objectif
+
+Cet objectif complet revient sur tout ce qui a été vu avant, et permet au participant d'acquérir une vue globale sur son code. En plus de celà, l'objectif finalise en quelque sort le jeu en y ajoutant toutes les collisions nécessaires, ainsi que la pomme (enfin!). Comme indiqué ci-avant, voici une description synthétique de ce qui est proposé :
+
+Le premier sous-objectif consiste simplement en l'ajout de la pomme et son dessin en fin de boucle. En outre, les participants auront besoin de la fonction `position_aleatoire_pomme`, qu'ils seront fortement invités à trouver dans la documentation.
+
+Le second sous-objectif a pour objet la mise en place des collisions entre le serpent et la pomme. La fonction `collision` sera découverte. Pour les plus curieux, les objets pourront être abordés par la nécessité d'utiliser `pomme.position`.
+
+Les troisième et quatrième sous-objectifs sont aussi des objectifs de collisions, simple si les participants ont compris le premier module de collisions.
