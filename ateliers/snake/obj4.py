@@ -42,9 +42,6 @@ def initialisation(jeu):
 
 # Fonction executée regulièrement
 def boucle(jeu):
-	# Déclaration d'une variable contenant la taille du serpent
-	taille = jeu.serpent.taille
-
 	# Fermeture du jeu lors de l'appui de la croix
 	if Evenements.QUITTER in jeu.evenements:
 		jeu.quitter()
@@ -86,6 +83,9 @@ def boucle(jeu):
 			if jeu.collision(carreau, jeu.serpent.position_tete):
 				# (SO3) Ferme le jeu si il y a contact entre la tête et un bord
 				jeu.quitter()
+
+	# Déclaration d'une variable contenant la taille du serpent
+	taille = jeu.serpent.taille
 
 	# Dessin d'un certain nombre de morceaux à l'écran
 	for morceau in jeu.serpent.morceaux(taille):
