@@ -64,7 +64,7 @@ Dans le second sous-objectif, les participants sont invités à créer une zone 
 
 Cet objectif présente le fonctionnement des boucles, et initie les participants à la gestion de tableaux. Il est très peu guidé, et présente comme objectif de faire lire la documentation aux participants. La réalisation des trois sous-objectifs peut être longue et demander beaucoup de patience aux organisateurs, afin de poser les bases. Les rudiments de la programmation vu précédemment (structures conditionnelles et variables) seront aussi réutilisés afin de les consolider.
 
-Le premier sous-objectif consiste à afficher les bordures de la zone en forme de cactus ; en cela, il est très simple et vise surtout à comprendre l’intérêt des boucles. Il est conseillé de montrer aux participants comment remplir la zone de jeu de cactus avant se limiter à en afficher seulement sur les bords. La phase de recherche de fonctions est très importante à ce stade car deux fonctions utiles : `grille` et `est_une_cote` seront nécessaires pour finaliser cet objectif.
+Le premier sous-objectif consiste à afficher les bordures de la zone en forme de cactus ; en cela, il est très simple et vise surtout à comprendre l’intérêt des boucles. Il est conseillé de montrer aux participants comment remplir la zone de jeu de cactus avant se limiter à en afficher seulement sur les bords. La phase de recherche de fonctions est très importante à ce stade car deux fonctions utiles : `grille` et `est_un_bord` seront nécessaires pour finaliser cet objectif.
 
 Le second sous-objectif voit simplement un autre type de boucle qui itère sur un nombre donné de parties du serpent : `serpent.morceaux`. Une compréhension au moins grossière du fonctionnement des tableaux est nécessaire afin de passer les arguments, mais cet objectif devrait être simple et court.
 
@@ -78,11 +78,11 @@ Ici, le premier sous-objectif consiste à poser les bases de la direction du ser
 
 Le second sous-objectif est une extension simple du premier qui consiste à gérer les quatre directions en se renseignant dans la documentation ainsi qu’à stocker la direction souhaitée dans la variable du jeu pour pouvoir l’utiliser par la suite.
 
-L'objectif suivant étant prévu pour les plus avancés, ils est moins documenté pour les organisateurs, sous forme plus synthétique. Après la fin des objectifs, des pistes seront proposées aux participants qui seront libres de les implémenter ou non.
+L'objectif suivant étant prévu pour les plus avancés, il est moins documenté pour les organisateurs, sous forme plus synthétique. Après la fin des objectifs, des pistes seront proposées aux participants qui seront libres de les implémenter ou non.
 
 #### Quatrième objectif
 
-Cet objectif complet revient sur tout ce qui a été vu avant, et permet au participant d'acquérir une vue globale sur son code. En plus de celà, l'objectif finalise en quelque sort le jeu en y ajoutant toutes les collisions nécessaires, ainsi que la pomme (enfin!). Comme indiqué ci-avant, voici une description synthétique de ce qui est proposé :
+Cet objectif complet revient sur tout ce qui a été vu avant, et permet au participant d'acquérir une vue globale sur son code. En plus de celà, l'objectif finalise en quelque sorte le jeu en y ajoutant toutes les collisions nécessaires, ainsi que la pomme (enfin !). Comme indiqué ci-avant, voici une description synthétique de ce qui est proposé :
 
 Le premier sous-objectif consiste simplement en l'ajout de la pomme et son dessin en fin de boucle. En outre, les participants auront besoin de la fonction `position_aleatoire_pomme`, qu'ils seront fortement invités à trouver dans la documentation.
 
