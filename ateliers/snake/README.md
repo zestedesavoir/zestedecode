@@ -78,14 +78,26 @@ Ici, le premier sous-objectif consiste à poser les bases de la direction du ser
 
 Le second sous-objectif est une extension simple du premier qui consiste à gérer les quatre directions en se renseignant dans la documentation ainsi qu’à stocker la direction souhaitée dans la variable du jeu pour pouvoir l’utiliser par la suite.
 
-L'objectif suivant étant prévu pour les plus avancés, il est moins documenté pour les organisateurs, sous forme plus synthétique. Après la fin des objectifs, des pistes seront proposées aux participants qui seront libres de les implémenter ou non.
+L’objectif suivant étant prévu pour les plus avancés, il est moins documenté pour les organisateurs, sous forme plus synthétique. Après la fin des objectifs, des pistes seront proposées aux participants qui seront libres de les implémenter ou non.
 
 #### Quatrième objectif
 
-Cet objectif complet revient sur tout ce qui a été vu avant, et permet au participant d'acquérir une vue globale sur son code. En plus de celà, l'objectif finalise en quelque sorte le jeu en y ajoutant toutes les collisions nécessaires, ainsi que la pomme (enfin !). Comme indiqué ci-avant, voici une description synthétique de ce qui est proposé :
+Cet objectif complet revient sur tout ce qui a été vu avant, et permet au participant d’acquérir une vue globale sur son code. En plus de celà, l’objectif finalise en quelque sorte le jeu en y ajoutant toutes les collisions nécessaires, ainsi que la pomme (enfin !). Comme indiqué ci-avant, voici une description synthétique de ce qui est proposé :
 
-Le premier sous-objectif consiste simplement en l'ajout de la pomme et son dessin en fin de boucle. En outre, les participants auront besoin de la fonction `position_aleatoire_pomme`, qu'ils seront fortement invités à trouver dans la documentation.
+Le premier sous-objectif consiste simplement en l’ajout de la pomme et son dessin en fin de boucle. En outre, les participants auront besoin de la fonction `position_aleatoire_pomme`, qu’ils seront fortement invités à trouver dans la documentation.
 
-Le second sous-objectif a pour objet la mise en place des collisions entre le serpent et la pomme. La fonction `collision` sera découverte. Pour les plus curieux, les objets pourront être abordés par la nécessité d'utiliser `pomme.position`.
+Le second sous-objectif a pour objet la mise en place des collisions entre le serpent et la pomme. La fonction `collision` sera découverte. Pour les plus curieux, les objets pourront être abordés par la nécessité d’utiliser `pomme.position`.
 
 Les troisième et quatrième sous-objectifs sont aussi des objectifs de collisions, simple si les participants ont compris le premier module de collisions.
+
+#### Bonus
+
+Une fois le quatrième objectif terminé, les participants pourront, selon leur choix, soit développer une fonctionnalité qu’ils souhaiteraient voir dans le jeu, soit tenter de concevoir un des bonus proposés. L’objectif des bonus n’est pas de les terminer tous, mais plutôt de revenir sur son code afin d’en acquérir une vision plus globale, ainsi que de revoir les acquis du jour. Il peut être bon pour les participants de réaliser ces bonus quelques jours après l’atelier, afin d’assimiler correctement et même d’approfondir les notions étudiées.
+
+Le premier bonus, plutôt simple, résoud un problème présent dans les objectifs précédents : le serpent peut se mordre en allant en arrière. Or, dans la plupart des jeux Snake, il n’est pas possible d’aller vers l’arrière ; les participants seront donc invités à résoudre ce problème pour se faire la main.
+
+Le second objectif bonus ajoute un compteur de points (qui est simplement la taille du serpent moins la taille initiale). L’idée est ici de se familiariser avec les fonctions de texte, particulièrement la fonction `ajouter_texte`, qui fonctionne de la même façon que `ajouter_image`.
+
+Le troisième bonus, un peu plus complexe, vise à utiliser ces fonctions de texte afin d’afficher au joueur son score en fin de partie et lui permettre de rejouer.
+
+Enfin, les participants les plus doués pourront proposer une solution pour gérer les rotations du serpent proprement en utilisant l’image `coin.png` mise à leur disposition. Cet objectif est complexe car il demande une bonne compréhension du fonctionnement des objets, ainsi qu’une idée (au moins vague), de la façon dont est géré le dessin du serpent en interne.
