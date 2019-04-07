@@ -7,8 +7,8 @@
 
 # Quelques bonus pour les participants en avance :
 # (bonus 1 - aisé) - empêche le serpent d'aller en arrière ;
-# (bonus 2 - moyen) - ajout d'un compte de points ;
-# (bonus 3 - difficile) - ajout d'un écran pour rejouer ;
+# (bonus 2 - aisé) - ajout d'un compteur de points ;
+# (bonus 3 - moyen) - ajout d'un écran pour rejouer ;
 # (bonus 4 - difficile) - ajout de coins au serpent.
 
 # Import de la bibliothèque du coding gouter (fonctions d'abstraction)
@@ -22,13 +22,10 @@ def initialisation(jeu):
 	# Création d'une pomme
 	jeu.pomme = jeu.position_aleatoire_pomme()
 
-	# (B2) Déclaration d'un compteur de points
-	jeu.points = 0
-
 	# (B3) Création d'une variable de perte
 	jeu.serpent.vivant = True
 	# (B3) Ajout du texte pour relancer la partie
-	jeu.ajouter_texte("NVPartie", "Pour rejouer, appuyez sur ESPACE")
+	jeu.ajouter_texte("Nouvelle Partie", "Pour rejouer, appuyez sur ESPACE")
 
 	# Donne une direction par défaut au serpent
 	jeu.direction_serpent = jeu.serpent.DIRECTIONS.STOP
@@ -80,8 +77,6 @@ def boucle(jeu):
 			# (B3) Le serpent est vivant et à l'arrêt
 			jeu.serpent.vivant = True
 			jeu.direction_serpent = jeu.serpent.DIRECTIONS.STOP
-			# (B3) Remise à zéro des points
-			jeu.points = 0
 
 	# Si il y a collision entre la pomme et la tête du serpent
 	if jeu.collision(jeu.serpent.position_tete, jeu.pomme.position):
@@ -89,14 +84,15 @@ def boucle(jeu):
 		jeu.serpent.grandir()
 		# La pomme change de position
 		jeu.pomme = jeu.position_aleatoire_pomme()
-		# (B2) Le score est incrémenté
-		jeu.points += 1
 
 	# Effacement de l'écran, et remplissage avec les tiles de fond
 	jeu.effacer_ecran()
 
+	# Déclaration d'une variable contenant la taille du serpent
+	taille = jeu.serpent.taille
+
 	# (B2) Ajoute le texte de score et le dessine
-	jeu.ajouter_texte("Score", "Score : " + str(jeu.points))
+	jeu.ajouter_texte("Score", "Score : " + str(taille - 3))
 
 	# (B3) Change la position du score si l'écran "Rejouer" est affiché
 	if jeu.serpent.vivant:
@@ -104,7 +100,7 @@ def boucle(jeu):
 	else:
 		jeu.dessiner("Score", { "position": (260, 150) })
 		# (B3) Ajoute le message pour rejouer
-		jeu.dessiner("NVPartie", { "position": (50, 200) })
+		jeu.dessiner("Nouvelle Partie", { "position": (50, 200) })
 
 	# Itération sur tous les morceaux de grille
 	for carreau in jeu.grille():
@@ -120,9 +116,6 @@ def boucle(jeu):
 				# (B3) Le serpent meurt s'il rentre dans un mur
 				jeu.serpent.vivant = False
 
-	# Déclaration d'une variable contenant la taille du serpent
-	taille = jeu.serpent.taille
-
 	# (B3) Dessin du serpent uniquement s'il est en vie
 	if jeu.serpent.vivant:
 		# Dessin d'un certain nombre de morceaux à l'écran
@@ -134,13 +127,13 @@ def boucle(jeu):
 				jeu.dessiner("Queue", morceau)
 			else:
 				# (B4) Vérification de la rotation dans le sens des aiguilles
-				if morceau.direction_rotation == jeu.serpent.ROTATIONS.AIGUILLE:
+				if morceau.direction_rotation == jeu.serpent.ROTATIONS.HORAIRE:
 					# (B4) On doit alors orienter de -90° la tuile
 					morceau.rotation -= 90
 
 					# (B4) Ne pas oublier de dessiner
 					jeu.dessiner("Coin", morceau)
-				elif morceau.direction_rotation == jeu.serpent.ROTATIONS.INVERSE:
+				elif morceau.direction_rotation == jeu.serpent.ROTATIONS.ANTI_HORAIRE:
 					# (B4) Pour une rotation en sens inverse des aiguilles, il faut tourner de 180°
 					morceau.rotation += 180
 

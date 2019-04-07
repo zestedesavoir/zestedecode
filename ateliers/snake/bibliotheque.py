@@ -46,8 +46,8 @@ class Serpent:
 
 	# Liste des directions de rotations possibles
 	ROTATIONS = DotMap({
-		"AIGUILLE": 90,
-		"INVERSE": 270
+		"HORAIRE": 90,
+		"ANTI_HORAIRE": 270
 	})
 
 	# Liste des parties du serpent pour une plus grande aisance
