@@ -1,8 +1,8 @@
 # Communication autour de l'événement
 
-## Affiches
+## Affiche
 
-Une version blanche et une version bleue. Seule la version blanche a été imprimée pour l'événement du mercredi 24 avril 2019.
+Affiche imprimée pour l'événement du mercredi 24 avril 2019 et diffusée dans des établissements scolaires autour d'Orsay ainsi qu'à Orsay même avec la coopération de la mairie.
 
 Créés par Situphen, sous licence CC-BY-NC-SA.
 
@@ -22,7 +22,7 @@ Créé par TAlone, sous licence CC-BY.
 
 Variante de l'icône avec le nom de l'événement, utilisé pour la mise en Une des billets ou articles.
 
-Créé par Situphen à partir de l'icône de TAlone, sous licence CC-BY-NC-SA.
+Créé par Situphen à partir de l'icône de TAlone, sous licence CC-BY.
 
 ## Logo et mascotte de Zeste de Savoir
 
