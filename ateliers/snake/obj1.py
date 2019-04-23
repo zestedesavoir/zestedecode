@@ -22,15 +22,15 @@ def initialisation(jeu):
 
 # (OP) Fonction executée regulièrement
 def boucle(jeu):
-	# (SO1) Déclaration d'une variable contenant la taille du serpent
-	taille = jeu.serpent.taille
-
 	# (SO2) Fermeture du jeu lors de l'appui de la croix
 	if Evenements.QUITTER in jeu.evenements:
 		jeu.quitter()
 
 	# (SO2) Effacement de l'écran, et remplissage avec les tiles de fond
 	jeu.effacer_ecran()
+
+	# (SO1) Déclaration d'une variable contenant la taille du serpent
+	taille = jeu.serpent.taille
 
 	# (SO1) Affichage de la variable de taille
 	print(taille)

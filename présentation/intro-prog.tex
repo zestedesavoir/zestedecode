@@ -2,7 +2,7 @@
 
 \usepackage[utf8x]{inputenc}
 \usepackage{listings}
-
+\usepackage[ddmmyyyy]{datetime}
 
 \title{Notions de programmation}
 \author{Zeste de Savoir}
@@ -17,21 +17,21 @@
 
 \begin{frame}
     \frametitle{Découverte de l'interpréteur}
-    Faire des calculs mathématiques simple
+    Faire des calculs mathématiques simples :
     \begin{itemize}
     \item \(1+1\)
     \item \(6\times 7\)
     \item \(4-2\)
     \item \((6-4)\times 2\)
-    \item \(3.6 / 2\)
+    \item \(\frac{ 3,6 }{ 2 }\)
     \end{itemize}
 
-    Exercice : calculer le triple de 5,2
+    Exercice : calculer le triple de 5,2.
 \end{frame}
 
 \begin{frame}
-    \frametitle{Découverte de l'interpréteur}
-    \textbf{Variable} : boite dans laquelle on peut mettre une valeur
+    \frametitle{Déclaration de variables}
+    \textbf{Variable} : boite dans laquelle on peut mettre une valeur.
     \begin{itemize}
         \item Taper \texttt{x=3} puis taper \texttt{x}
         \item Taper \texttt{x+1} puis taper \texttt{x}
@@ -50,87 +50,96 @@
     \end{lstlisting}
 \end{frame}
 
-\begin{frame}
-  \frametitle{Votre premier programme}
-  \begin{block}{Exercice}
-    Écrivez un programme qui calcule le double d'un nombre. Pour cela, votre programme va prendre en entrée une variable \texttt{x} et affichera le double de \texttt{x}.
-  \end{block}
-  Par exemple si \texttt{x=3}, le programme doit afficher \texttt{6}.
-\end{frame}
-
 \begin{frame}[fragile]
-  \frametitle{Correction}
-  \begin{lstlisting}[language=python]
-    x = 3
-    x= 2*x
-    print(x)
-  \end{lstlisting}
+    \frametitle{Variables et fonctions pour le Snake}
+    Gestions des variables dans le Snake :
+    \begin{itemize}
+        \item Variables locales : portée limitée
+        \item Variables de jeu : disponibles partout
+    \end{itemize}
+    Gestion des fonctions dans le Snake :
+    \begin{itemize}
+        \item Fonctions principales : \texttt{initialisation} et \texttt{boucle}
+        \item Fonctions internes : \textbf{les méthodes}
+    \end{itemize}
+    \textbf{Un exemple ?} Créons notre première fenêtre.
 \end{frame}
 
 \begin{frame}[fragile]
     \frametitle{Conditions}
-    Si ton age est supérieur ou égal à 18 ans, alors tu es majeur !
-    \begin{lstlisting}[language=python]
-    age = 23\\
-    if age >= 18:\\
-    ... print("Tu es majeur")
-    \end{lstlisting}
-
-    \medbreak
-    Liste des tests possibles :
-
-    \texttt{>}  : supérieur à\\
-    \texttt{>=} : supérieur ou égal à\\
-    \texttt{<}  : inférieur à\\
-    \texttt{<=} : inférieur ou égal à\\
-    \texttt{==} : égal à\\
-    \texttt{!=} : différent de\\
-
-\end{frame}
-
-\begin{frame}[fragile]
-    \frametitle{Conditions (ET et OU)}
-    Si tu as plus que 11 ans mais moins que 18, alors tu es adolescent.
-    \medbreak
-    \begin{lstlisting}[language=python]
-    age = 14
-    if age > 11 && age < 18:
-    ... print("Tu es adolescent ! ")
-    \end{lstlisting}
-
-    \medbreak
-    \begin{itemize}
-    \item     \texttt{\&\&} correspond au ``ET'' logique \\
-    \item     \texttt{||} correspond au ``OU'' logique
-    \end{itemize}
-\end{frame}
-
-\begin{frame}[fragile]
-    \frametitle{Conditions (avec else)}
-    Si tu as au moins 18 ans alors tu es majeur. Sinon, tu es mineur :
+    \textbf{Condition} : Expression qui exécute un morceau de code seulement si elle est vérifiée.
     \medbreak
     \begin{lstlisting}[language=python]
     age = 23
     if age >= 18:
     ... print("Tu es majeur")
+    \end{lstlisting}
+    \medbreak
+    Liste des tests utiles :
+    
+    \texttt{>}  : supérieur à\\
+    \texttt{<}  : inférieur à\\
+    \texttt{==} : égal à\\
+    \texttt{!=} : différent de\\
+    \medbreak
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Conditions (avec else et elif)}
+    Si tu as au moins 18 ans alors tu es majeur.
+    Sinon, tu es mineur.
+    La majorité internationale est quand à elle atteinte à 21 ans :
+    \medbreak
+    \begin{lstlisting}[language=python]
+    age = 15
+    if age >= 21:
+    ... print("Majorite internationale")
+    elif age >= 18:
+    ... print("Tu es majeur")
     else:
     ... print("Tu es mineur")
     \end{lstlisting}
+\end{frame}
 
+\begin{frame}
+    \frametitle{Conditions pour le Snake}
+    \textbf{Exercice} : Affecter une taille au serpent et afficher des messages :
+    \begin{itemize}
+        \item Tu es un tricheur si \texttt{taille < 3}
+        \item Début de partie si \texttt{taille = 3}
+        \item Serpent long si \texttt{taille > 3}
+    \end{itemize}
+    \textbf{Exercice (avec la doc.)} : Fermer la fenêtre lorsque l'on clique sur la croix.
 \end{frame}
 
 \begin{frame}[fragile]
     \frametitle{Boucles}
-
-    Pour tout les ages de 5 à 25 ans, dire si la personne est majeur.
+    \textbf{Boucle} : Morceau de code répété un certain nombre de fois.
+    \medbreak
+    \textbf{Application} :
     \begin{lstlisting}[language=python]
-    for age in range(5,26):
-    ... print(age)
-    ... if age > 18:
-    ... ... print(" = majeur \n")
-    ... else:
-    ... ... print(" = mineur \n")
+    for carreau in jeu.grille():
+    ... if jeu.est_un_bord(carreau):
+    ... ... print(carreau)
     \end{lstlisting}
+    À vous de jouer maintenant !
+\end{frame}
+
+\begin{frame}
+    \frametitle{Liste des objectifs}
+    \begin{itemize}
+        \item Création de la fenêtre et gestion de sa fermeture (déjà fait!)
+        \item Affichage des éléments : fond, cactus et serpent (déjà entamé)
+        \item Gestion des déplacements du serpent
+        \item Ajout de la pomme et gestion des collisions (avec la pomme, le bord et le serpent lui-même)
+    \end{itemize}
+    \textbf{Bonus} pour les plus avancés :
+    \begin{itemize}
+        \item Empêcher le serpent d'aller en arrière
+        \item Ajout d'un compteur de points
+        \item Ajout d'un écran pour rejouer
+        \item Optimisation du serpent (ajout de coins)
+    \end{itemize}
 \end{frame}
 
 \end{document}
