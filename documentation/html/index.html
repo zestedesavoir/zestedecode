@@ -1,0 +1,244 @@
+<h1 id="zeste-de-code--guide-participants--snake">Zeste de Code – Guide participants – Snake<a aria-hidden="true" href="#zeste-de-code--guide-participants--snake"><span class="icon icon-link"></span></a></h1>
+<p>Ce document est une documentation complète des fonctions de la bibliothèque de l'atelier Zeste de Code ; n'hésitez pas à vous référer à lui afin de <em>rechercher une fonctionnalité</em>. Si quelque chose ne vous semble pas clair, vous pouvez toujours <em>appeler un animateur</em>, qui viendra alors vous aider.</p>
+<h2 id="les-bases-de-python">Les bases de Python<a aria-hidden="true" href="#les-bases-de-python"><span class="icon icon-link"></span></a></h2>
+<p>Cette partie est un rappel des notions abordées ci-avant, dans le cas où tu aurais besoin de revoir les bases du langage, pendant l'atelier ou chez toi.</p>
+<h3 id="quelques-calculs-simples">Quelques calculs simples<a aria-hidden="true" href="#quelques-calculs-simples"><span class="icon icon-link"></span></a></h3>
+<p>Pour rappel, le langage Python interprétera et exécutera tout calcul présent dans son code. Quelques exemples sont proposés ci-dessous :</p>
+<div class="hljs-code-div"><div class="hljs-line-numbers"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div><pre><code class="hljs language-python"><span class="hljs-number">1</span>+<span class="hljs-number">1</span>
+<span class="hljs-meta">>>> </span><span class="hljs-number">2</span>
+<span class="hljs-number">6</span>*<span class="hljs-number">7</span>
+<span class="hljs-meta">>>> </span><span class="hljs-number">42</span>
+<span class="hljs-number">4</span><span class="hljs-number">-2</span>
+<span class="hljs-meta">>>> </span><span class="hljs-number">2</span>
+<span class="hljs-number">2</span><span class="hljs-number">-4</span>
+<span class="hljs-meta">>>> </span><span class="hljs-number">-2</span>
+(<span class="hljs-number">4</span><span class="hljs-number">-2</span>)*<span class="hljs-number">2</span>
+<span class="hljs-meta">>>> </span><span class="hljs-number">4</span>
+<span class="hljs-number">3.6</span>/<span class="hljs-number">2</span>
+<span class="hljs-meta">>>> </span><span class="hljs-number">1.8</span>
+<span class="hljs-number">3</span>*<span class="hljs-number">5.2</span>
+<span class="hljs-meta">>>> </span><span class="hljs-number">15.6</span>
+</code></pre></div>
+<h3 id="les-variables-et-fonctions">Les variables et fonctions<a aria-hidden="true" href="#les-variables-et-fonctions"><span class="icon icon-link"></span></a></h3>
+<p><strong>Variable</strong> : boite dans laquelle on peut mettre une valeur.</p>
+<p><strong>Fonction</strong> : morceau de code que quelqu'un d'autre a déjà écrit pour vous, qu'on appelle avec son nom pour ne pas le ré-écrire.</p>
+<p>Quelques rappels issus de l'initiation au code :</p>
+<div class="hljs-code-div"><div class="hljs-line-numbers"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div><pre><code class="hljs language-python"><span class="hljs-comment"># Appel de la fonction d'affichage, avec pour paramètre "Bonjour !"</span>
+print(<span class="hljs-string">"Bonjour !"</span>)
+<span class="hljs-meta">>>> </span>Bonjour !
+
+x=<span class="hljs-number">3</span>
+print(x)
+<span class="hljs-meta">>>> </span><span class="hljs-number">3</span>
+</code></pre></div>
+<p>On notera ici que x est passée directement à la fonction, on parle donc de la variable x donnée en argument. Pour le cas du texte "Bonjour !", il est passé entre guillemets, ce qui indique que la chaîne de caractères "Bonjour !" est donnée en argument.</p>
+<p>Pour rappel, seul une nouvelle déclaration changera la valeur d'une variable :</p>
+<div class="hljs-code-div"><div class="hljs-line-numbers"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div><pre><code class="hljs language-python">x=<span class="hljs-number">3</span>
+x+<span class="hljs-number">1</span>
+<span class="hljs-meta">>>> </span><span class="hljs-number">4</span>
+print(x)
+<span class="hljs-meta">>>> </span><span class="hljs-number">3</span>
+x=x+<span class="hljs-number">1</span>
+<span class="hljs-meta">>>> </span><span class="hljs-number">4</span>
+print(x)
+<span class="hljs-meta">>>> </span><span class="hljs-number">4</span>
+</code></pre></div>
+<p>Enfin, on rappelle les deux types de variables :</p>
+<ul>
+<li><strong>locale</strong> : disponible uniquement dans la fonction en cours ;</li>
+<li><strong>interne</strong> : disponible partout où l'objet concerné est présent (pratique pour passer une variable de <code>initialisation</code> à <code>boucle</code>, par exemple).</li>
+</ul>
+<p>Les deux types de fonctions sont de même nature :</p>
+<ul>
+<li><strong>principale</strong> : disponible pour le fichier en cours ;</li>
+<li><strong>interne</strong> : peut être utilisée par le jeu lui-même (c'est le cas de <code>boucle</code>, par exemple) ou utilisée depuis la variable jeu (<code>jeu.quitter()</code> par exemple).</li>
+</ul>
+<p>Pour approfondir un peu ce qui a été étudié en introduction, une déclaration de fonction ressemble toujours à ceci :</p>
+<div class="hljs-code-div"><div class="hljs-line-numbers"><span></span><span></span></div><pre><code class="hljs language-python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">nom_de_la_fonction</span><span class="hljs-params">(premier_argument, second_argument, ...)</span>:</span>
+    print(<span class="hljs-string">"Contenu de la fonction"</span>)
+</code></pre></div>
+<p>Par exemple, notre fonction <code>boucle</code> ressemble à ceci :</p>
+<div class="hljs-code-div"><div class="hljs-line-numbers"><span></span></div><pre><code class="hljs language-python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">boucle</span><span class="hljs-params">(jeu)</span>:</span>
+</code></pre></div>
+<p>Elle attend donc un argument appelé jeu, qui lui sera passé par la bibliothèque avant d'exécuter le contenu de la fonction ; cet objet contiendra tout ce qui est nécessaire pour l'affichage de notre jeu.</p>
+<h3 id="structures-conditionnelles">Structures conditionnelles<a aria-hidden="true" href="#structures-conditionnelles"><span class="icon icon-link"></span></a></h3>
+<p><strong>Condition</strong> : Expression qui exécute un morceau de code seulement si elle est vérifiée.</p>
+<p>Aucun rappel particulier n'est nécessaire pour les conditions, mais nous te proposons le code final de l'initiation afin d'avoir les idées claires. En cas de question, n'hésite pas à appeler un animateur.</p>
+<div class="hljs-code-div"><div class="hljs-line-numbers"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div><pre><code class="hljs language-python">age = <span class="hljs-number">15</span>
+<span class="hljs-keyword">if</span> age >= <span class="hljs-number">21</span>:
+    print(<span class="hljs-string">"Majorite internationale"</span>)
+<span class="hljs-keyword">elif</span> age >= <span class="hljs-number">18</span>:
+    print(<span class="hljs-string">"Tu es majeur"</span>)
+<span class="hljs-keyword">else</span>:
+    print(<span class="hljs-string">"Tu es mineur"</span>)
+</code></pre></div>
+<p>Aussi, les tests dont nous pourrions avoir besoin par la suite sont les suivants :</p>
+<ul>
+<li><code>></code> supérieur à ;</li>
+<li><code>&#x3C;</code> inférieur à ;</li>
+<li><code>==</code> strictement égal à ;</li>
+<li><code>!=</code> différent de.</li>
+</ul>
+<h3 id="les-boucles">Les boucles<a aria-hidden="true" href="#les-boucles"><span class="icon icon-link"></span></a></h3>
+<p><strong>Boucle</strong> : Morceau de code répété un certain nombre de fois, jusqu'à ce qu'une condition soit vraie.</p>
+<p>Ici encore, tout devrait aller, et pour référence, voici le code écrit en introduction. Dans la documentation ci-après, les méthodes destinées à être utilisées dans une boucle sont toujours explicitement mentionnées comme tel.</p>
+<div class="hljs-code-div"><div class="hljs-line-numbers"><span></span><span></span><span></span></div><pre><code class="hljs language-python"><span class="hljs-keyword">for</span> carreau <span class="hljs-keyword">in</span> jeu.grille():
+    <span class="hljs-keyword">if</span> jeu.est_un_bord(carreau):
+        print(carreau)
+</code></pre></div>
+<h2 id="fonctions-du-jeu">Fonctions du jeu<a aria-hidden="true" href="#fonctions-du-jeu"><span class="icon icon-link"></span></a></h2>
+<h3 id="présentation-générale">Présentation générale<a aria-hidden="true" href="#présentation-générale"><span class="icon icon-link"></span></a></h3>
+<h4 id="déclaration-de-lobjet-jeu">Déclaration de l'objet Jeu<a aria-hidden="true" href="#déclaration-de-lobjet-jeu"><span class="icon icon-link"></span></a></h4>
+<p>Après avoir importé la bibliothèque Zeste de Code, tu auras accès aux fonctions principales du jeu ; pour rappel, un objet Jeu est créé comme suit :</p>
+<div class="hljs-code-div"><div class="hljs-line-numbers"><span></span></div><pre><code class="hljs language-py">mon_jeu = Jeu(initialisation, boucle)
+</code></pre></div>
+<p>Où <code>initialisation</code> et <code>boucle</code> sont deux fonctions qui doivent avoir été définies précédemment (voir la partie d'initiation au code) ; ces fonctions prendront en paramètre l'instance du jeu afin de pouvoir la modifier.</p>
+<h4 id="gestion-des-événements">Gestion des événements<a aria-hidden="true" href="#gestion-des-événements"><span class="icon icon-link"></span></a></h4>
+<h5 id="variables-passées-à-la-boucle">Variables passées à la boucle<a aria-hidden="true" href="#variables-passées-à-la-boucle"><span class="icon icon-link"></span></a></h5>
+<p>Lorsque le jeu est récupéré à l'intérieur de la boucle, il dispose de variables accessibles de façon directe (hors fonctions / méthodes) :</p>
+<ul>
+<li><code>largeur</code>, qui contient la largeur de la fenêtre ;</li>
+<li><code>hauteur</code>, qui contient la hauteur de la fenêtre ;</li>
+<li><code>evenements</code>, qui contient la liste des événements déclenchés depuis le dernier tour de boucle.</li>
+</ul>
+<p>La variable événements nous intéressera particulièrement, et nous pourrons vérifier si un certain événement est déclenché en utilisant une condition :</p>
+<div class="hljs-code-div"><div class="hljs-line-numbers"><span></span><span></span></div><pre><code class="hljs language-py"><span class="hljs-keyword">if</span> Evenements.QUITTER <span class="hljs-keyword">in</span> jeu.evenements:
+    print(<span class="hljs-string">"Je veux quitter"</span>)
+</code></pre></div>
+<h5 id="variables-de-la-bibliothèque">Variables de la bibliothèque<a aria-hidden="true" href="#variables-de-la-bibliothèque"><span class="icon icon-link"></span></a></h5>
+<p>Dans la suite de ce guide, nous te présenterons les fonctions ayant attrait à la zone de jeu et au serpent. Toutefois, certains objets transcendent et ne peuvent aller dans aucune des deux catégories ; ces objets sont importés par défaut et ne requièrent donc pas l'appel par une méthode.</p>
+<p>Le premier objet concerne la gestion des événements, et est naturellement nommé <code>Evenements</code> ; nous l'avons vu ci-dessus sans bien comprendre à quoi il correspondait ; cet objet contient deux variantes qui nous intéressent :</p>
+<div class="hljs-code-div"><div class="hljs-line-numbers"><span></span><span></span><span></span><span></span></div><pre><code class="hljs language-py"><span class="hljs-comment"># Déclenché lorsque le joueur demande à fermer le jeu</span>
+Evenements.QUITTER
+<span class="hljs-comment"># Déclenché lorsqu'une touche est appuyée</span>
+Evenements.TOUCHE_APPUYEE
+</code></pre></div>
+<h5 id="récupération-de-la-touche-appuyée">Récupération de la touche appuyée<a aria-hidden="true" href="#récupération-de-la-touche-appuyée"><span class="icon icon-link"></span></a></h5>
+<p>Une fois l'événement de <code>TOUCHE_APPUYEE</code> intercepté, il serait bon de savoir sur quelle touche le joueur a appuyé afin de déplacer le serpent dans la bonne direction ; pour cela, il suffit de tester <code>mon_jeu.evenements[Evenement.TOUCHE_APPUYEE]</code>, magique non ? La valeur peut alors être égale à (notons la seconde variable interne de la bibliothèque : <code>Touches</code>) :</p>
+<div class="hljs-code-div"><div class="hljs-line-numbers"><span></span><span></span><span></span><span></span><span></span></div><pre><code class="hljs language-py">Touches.FLECHE_DROITE
+Touches.FLECHE_GAUCHE
+Touches.FLECHE_HAUT
+Touches.FLECHE_BAS
+Touches.ESPACE
+</code></pre></div>
+<p>Pas plus de détails ici afin de vous faire chercher par vous-même ; n'oublie pas en tout cas qu'en informatique, il faut tester, tu ne peux rien casser. En cas de problème persistant, un animateur sera heureux de te guider.</p>
+<h3 id="ajout-dimages-et-de-texte">Ajout d'images et de texte<a aria-hidden="true" href="#ajout-dimages-et-de-texte"><span class="icon icon-link"></span></a></h3>
+<h4 id="déclaration-des-variables-internes">Déclaration des variables internes<a aria-hidden="true" href="#déclaration-des-variables-internes"><span class="icon icon-link"></span></a></h4>
+<p>Une fois l'objet de jeu créé, et récupéré dans une des fonctions <code>initialisation</code> ou <code>boucle</code>, il est possible de déclarer à tout moment une image par la méthode <code>ajouter_image</code>, appelée avec le nom à donner à l'image ainsi que le chemin relatif de l'image.</p>
+<div class="custom-block custom-block-information"><div class="custom-block-body"><p>Le chemin relatif d'un fichier est l'endroit où il se trouve par rapport au fichier actuel. Par exemple, l'image <code>image.png</code> située dans le dossier <code>images</code> du dossier du fichier actuel est de chemin relatif <code>images/image.png</code>.</p></div></div>
+<p>Puisqu'un exemple vaut mieux qu'un long discours :</p>
+<div class="hljs-code-div"><div class="hljs-line-numbers"><span></span><span></span></div><pre><code class="hljs language-py"><span class="hljs-comment"># Déclaration de l'image du cactus</span>
+mon_jeu.ajouter_image(<span class="hljs-string">"Cactus"</span>, <span class="hljs-string">"images/cactus.png"</span>)
+</code></pre></div>
+<p>La méthode permettant d'ajouter du texte fonctionne de la même façon, mais prend comme second paramètre le texte à afficher ; elle est nommée <code>ajouter_texte</code>.</p>
+<h4 id="récupération-et-dessin">Récupération et dessin<a aria-hidden="true" href="#récupération-et-dessin"><span class="icon icon-link"></span></a></h4>
+<p>Afin de dessiner une image ou un texte précédemment déclaré, il faut faire appel à la fonction <code>dessin</code> ; cette fonction prend en paramètre :</p>
+<ol>
+<li>le nom déclaré de l'image ou du texte ;</li>
+<li>un objet de paramètres, pouvant prendre deux clefs : <code>position</code> et <code>rotation</code>, <strong>toute valeur différente sera ignorée</strong>.</li>
+</ol>
+<p>Par exemple, pour dessiner un cactus (déclaré précédemment), en haut à gauche de l'écran, il suffit d’appeler la fonction :</p>
+<div class="hljs-code-div"><div class="hljs-line-numbers"><span></span></div><pre><code class="hljs language-py">mon_jeu.dessiner(<span class="hljs-string">"Cactus"</span>, { <span class="hljs-string">"position"</span>: (<span class="hljs-number">0</span>, <span class="hljs-number">0</span>) })
+</code></pre></div>
+<p>Une autre fonction de dessin utile est la fonction <code>effacer_ecran</code>, qui permet d'effacer entièrement le contenu de la zone de jeu ; elle ne prend aucun paramètre en entrée :</p>
+<div class="hljs-code-div"><div class="hljs-line-numbers"><span></span></div><pre><code class="hljs language-py">mon_jeu.effacer_ecran()
+</code></pre></div>
+<h3 id="gestion-des-positions-et-collisions">Gestion des positions et collisions<a aria-hidden="true" href="#gestion-des-positions-et-collisions"><span class="icon icon-link"></span></a></h3>
+<h4 id="itérateur-principal">Itérateur principal<a aria-hidden="true" href="#itérateur-principal"><span class="icon icon-link"></span></a></h4>
+<p>Dès le second objectif, vous aurez besoin de réaliser une boucle sur l'ensemble de la grille du jeu ; pour cela, un itérateur <code>grille</code> existe, et donne la position (x, y) d'un morceau de grille à chaque itération ; pour bien comprendre, voici un petit exemple d'utilisation :</p>
+<div class="hljs-code-div"><div class="hljs-line-numbers"><span></span><span></span></div><pre><code class="hljs language-py"><span class="hljs-keyword">for</span> carreau <span class="hljs-keyword">in</span> mon_jeu.grille():
+    print(carreau)
+</code></pre></div>
+<p>Ce code affichera la liste de tous les carreaux possibles dans la console.</p>
+<h4 id="fonctions-utiles">Fonctions utiles<a aria-hidden="true" href="#fonctions-utiles"><span class="icon icon-link"></span></a></h4>
+<p>Afin de vérifier une collision entre deux objets, il existe une fonction <code>collision</code> qui renvoie true lorsqu'il y a collision et false sinon. Cette fonction prend deux paramètres, la position du premier objet, et la position du second ; cette fonction est principalement destinée à être utilisée dans des conditions, par exemple :</p>
+<div class="hljs-code-div"><div class="hljs-line-numbers"><span></span><span></span></div><pre><code class="hljs language-py"><span class="hljs-keyword">if</span> mon_jeu.collision(pomme, morceau.position):
+    print(<span class="hljs-string">"Collision Serpent-Pomme"</span>)
+</code></pre></div>
+<p>Vérifiera s'il y a collision entre la pomme et la variable nommée <code>morceau.position</code>.</p>
+<p>Afin d'afficher les cactus sur un bord, tu pourrais avoir besoin de savoir si une position correspond ou non à un bord, pour cela, une fonction <code>est_un_bord</code> existe, et prend comme unique paramètre la position à tester ; elle retourne un booléen. Pas d'exemple ici, on vous laisse essayer d'utiliser cette fonction par vous-même afin de bien comprendre son principe.</p>
+<h4 id="divers">Divers<a aria-hidden="true" href="#divers"><span class="icon icon-link"></span></a></h4>
+<p>Enfin, si tu es très avancé, tu pourras essayer d'afficher une pomme à l'écran et faire en sorte que le serpent puisse la manger. Pour générer la position de la pomme, deux solutions sont possibles :</p>
+<ul>
+<li>la solution simple, utiliser <code>position_aleatoire_pomme</code>, fonction intégrée retournant simplement une position (x, y) aléatoire bien choisie ;</li>
+<li>la solution plus complexe, qui consiste à créer cette fonction par toi-même ; nous donnerons évidemment des indices aux participants arrivant jusqu'ici.</li>
+</ul>
+<p>L'idée est de commencer par utiliser la fonction intégrée puis éventuellement de la (re)coder soi-même par la suite.</p>
+<h3 id="fonctions-diverses-et-bonus">Fonctions diverses et bonus<a aria-hidden="true" href="#fonctions-diverses-et-bonus"><span class="icon icon-link"></span></a></h3>
+<p>Cette partie regroupe les fonctions qui ne trouvent leur place nulle part ailleurs ; l'une d'entre elle est très utile, les autres sont des bonus destinés aux participants les plus avancés.</p>
+<h4 id="quitter-le-jeu">Quitter le jeu<a aria-hidden="true" href="#quitter-le-jeu"><span class="icon icon-link"></span></a></h4>
+<p>La fonction très utile mentionnée ci-dessus est la fonction <code>quitter</code>, qui fermera simplement le jeu ; il sera nécessaire de l'utiliser lors de l'appui sur la croix de fermeture par le joueur, ou à la mort du serpent... éventuellement <img src="/static/smileys/clin.png" alt=";)" class="smiley"> .</p>
+<h4 id="fonctions-bonus">Fonctions bonus<a aria-hidden="true" href="#fonctions-bonus"><span class="icon icon-link"></span></a></h4>
+<p>Quelques détails du jeu vous ont été cachés dans les parties précédentes, mais les objectifs bonus nous obligent à révéler certains de nos secrets les mieux gardés.</p>
+<p>Tout d'abord, la fonction d'initialisation prend en réalité non pas deux mais bien quatre paramètres ; il est en effet possible de changer la taille de la fenêtre de jeu en passant en paramètres la largeur puis la hauteur, par exemple :</p>
+<div class="hljs-code-div"><div class="hljs-line-numbers"><span></span></div><pre><code class="hljs language-py">mon_jeu = Jeu(initialisation, boucle, <span class="hljs-number">1024</span>, <span class="hljs-number">576</span>)
+</code></pre></div>
+<p>créera une fenêtre plus grande que celle par défaut.</p>
+<div class="custom-block custom-block-warning"><div class="custom-block-body"><p>Il faudra veiller à ce que les deux paramètres de largeur et de hauteur soient des multiples de 32, sinon... à toi de tester.</p></div></div>
+<p>La deuxième fonction utile pour les bonus permet d'afficher du texte en plus grand que celui par défaut ; il s'agit de la fonction <code>init_text</code>. Cette méthode est pour être exact déjà appelée lors de l'initialisation du jeu (mais masquée, bien entendu). Elle permet de régler la police et la taille du texte ; un exemple pour comprendre :</p>
+<div class="hljs-code-div"><div class="hljs-line-numbers"><span></span></div><pre><code class="hljs language-py">init_text(<span class="hljs-string">"sans-serif"</span>, <span class="hljs-number">32</span>)
+</code></pre></div>
+<p>Cet appel rendra le texte en police sans-serif, et en taille 32, ce sont d’ailleurs les paramètres par défaut.</p>
+<h2 id="fonctions-du-serpent">Fonctions du serpent<a aria-hidden="true" href="#fonctions-du-serpent"><span class="icon icon-link"></span></a></h2>
+<h3 id="présentation-générale-1">Présentation générale<a aria-hidden="true" href="#présentation-générale-1"><span class="icon icon-link"></span></a></h3>
+<h4 id="déclaration-de-lobjet-serpent">Déclaration de l'objet Serpent<a aria-hidden="true" href="#déclaration-de-lobjet-serpent"><span class="icon icon-link"></span></a></h4>
+<p>Après avoir importé la bibliothèque Zeste de Code, tu auras accès aux fonctions concernant le serpent. Une nouvelle instance de serpent devra ensuite être crée, préférentiellement à l'intérieur du jeu :</p>
+<div class="hljs-code-div"><div class="hljs-line-numbers"><span></span><span></span></div><pre><code class="hljs language-python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">init</span><span class="hljs-params">(jeu)</span>:</span>
+    jeu.serpent = Serpent()
+</code></pre></div>
+<h4 id="constantes-du-serpent">Constantes du serpent<a aria-hidden="true" href="#constantes-du-serpent"><span class="icon icon-link"></span></a></h4>
+<p>Dans l'objet Serpent précédemment créé, en plus des méthodes mentionnées ci-dessous, tu trouveras trois constantes (variables qui ne changent pas) importantes.</p>
+<h5 id="gestion-de-la-direction">Gestion de la direction<a aria-hidden="true" href="#gestion-de-la-direction"><span class="icon icon-link"></span></a></h5>
+<p>La première, <code>jeu.serpent.DIRECTIONS</code> permet de donner au serpent une direction ; elle est particulièrement utilisée avec la fonction <code>deplacer</code>, qui la prend en argument. Cet objet se décline en cinq clefs :</p>
+<div class="hljs-code-div"><div class="hljs-line-numbers"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div><pre><code class="hljs language-python"><span class="hljs-comment"># Le serpent va vers la droite</span>
+jeu.serpent.DIRECTIONS.DROITE
+<span class="hljs-comment"># Le serpent se déplace à gauche</span>
+jeu.serpent.DIRECTIONS.GAUCHE
+<span class="hljs-comment"># Le serpent monte</span>
+jeu.serpent.DIRECTIONS.HAUT
+<span class="hljs-comment"># Le serpent part en bas</span>
+jeu.serpent.DIRECTIONS.BAS
+<span class="hljs-comment"># Le serpent s'arrête (pas tout à fait une direction)</span>
+jeu.serpent.DIRECTIONS.STOP
+</code></pre></div>
+<h5 id="gestion-des-rotations">Gestion des rotations<a aria-hidden="true" href="#gestion-des-rotations"><span class="icon icon-link"></span></a></h5>
+<p>Pour les plus avancés d'entre vous, il sera nécessaire de détecter quand le serpent tourne et dans quel sens. C'est à cet effet qu'a été créé la constante <code>ROTATIONS</code> :</p>
+<div class="hljs-code-div"><div class="hljs-line-numbers"><span></span><span></span><span></span><span></span></div><pre><code class="hljs language-python"><span class="hljs-comment"># Le serpent tourne dans le sens des aiguilles d'une montre</span>
+jeu.serpent.ROTATIONS.HORAIRE
+<span class="hljs-comment"># Le serpent tourne dans le sens inverse</span>
+jeu.serpent.ROTATIONS.ANTI_HORAIRE
+</code></pre></div>
+<h5 id="parties-du-serpent">Parties du serpent<a aria-hidden="true" href="#parties-du-serpent"><span class="icon icon-link"></span></a></h5>
+<p>Le serpent se décompose automatiquement en diverses partie :</p>
+<ul>
+<li>une tête, pour indiquer l'avant ;</li>
+<li>une queue, pour indiquer l'arrière ;</li>
+<li>le reste est composé de morceaux de corps.</li>
+</ul>
+<p>Afin de détecter ces différentes parties, une constante <code>jeu.serpent.PARTIES</code> existe, et peut prendre les valeurs suivantes :</p>
+<div class="hljs-code-div"><div class="hljs-line-numbers"><span></span><span></span><span></span><span></span><span></span><span></span></div><pre><code class="hljs language-python"><span class="hljs-comment"># Renseigne la tête du serpent (donc l'avant)</span>
+jeu.serpent.PARTIES.TETE
+<span class="hljs-comment"># Renseigne une partie de corps du serpent</span>
+jeu.serpent.PARTIES.CORPS
+<span class="hljs-comment"># Renseigne la queue du serpent (donc l'arrière)</span>
+jeu.serpent.PARTIES.QUEUE
+</code></pre></div>
+<p>Notons que lors de l'itération, les parties sont ordonnées dans le sens inverse (et si tu ne comprends rien à cette phrase, reviens plus tard).</p>
+<p>Lorsque le serpent grandit, la bibliothèque ajoute automatiquement un morceau de corps juste après la tête, ce qui a pour effet de l'allonger.</p>
+<h3 id="déplacement-et-taille">Déplacement et taille<a aria-hidden="true" href="#déplacement-et-taille"><span class="icon icon-link"></span></a></h3>
+<p>Dans cette partie sont détaillées les fonctions concernant la taille du serpent ainsi que la gestion de ses déplacements.</p>
+<h4 id="taille-du-serpent-et-agrandissement">Taille du serpent et agrandissement<a aria-hidden="true" href="#taille-du-serpent-et-agrandissement"><span class="icon icon-link"></span></a></h4>
+<p>En premier lieu, voyons une fonction très utile, qui permet d'obtenir la taille du serpent : <code>serpent.taille()</code>. Cette fonction ne nécessite aucun paramètre (sauf celui implicite passé par l'appel via une méthode) ; elle retourne simplement la taille brute du serpent. Par exemple, au début du jeu, elle renverra 3.</p>
+<p>Pour faire grandir le serpent, nous en avons parlé plus haut, il est possible d'appeler la fonction <code>serpent.grandir()</code>. Elle ne prend aucun paramètre et ne retourne rien, mais modifie en interne la taille du serpent en ajoutant en morceau juste après la tête.</p>
+<h4 id="fonction-de-déplacement">Fonction de déplacement<a aria-hidden="true" href="#fonction-de-déplacement"><span class="icon icon-link"></span></a></h4>
+<p>Afin de déplacer le serpent, il faut appeler la méthode <code>serpent.deplacer(direction)</code> avec direction une des constantes de direction vue ci-dessus. Par exemple, pour déplacer le serpent d'une case vers le haut :</p>
+<div class="hljs-code-div"><div class="hljs-line-numbers"><span></span></div><pre><code class="hljs language-python">serpent.deplacer(jeu.serpent.DIRECTIONS.HAUT)
+</code></pre></div>
+<h3 id="position-du-serpent">Position du serpent<a aria-hidden="true" href="#position-du-serpent"><span class="icon icon-link"></span></a></h3>
+<p>Un itérateur existe et permet d'obtenir tous les morceaux de serpent dans l'ordre allant de la queue à la tête, il s'agit de <code>serpent.morceaux(taille)</code> ; le seul argument est la taille du serpent, ou plus simplement le nombre de morceaux à prendre. Pour afficher les positions successives du serpent :</p>
+<div class="hljs-code-div"><div class="hljs-line-numbers"><span></span><span></span></div><pre><code class="hljs language-python"><span class="hljs-keyword">for</span> morceau <span class="hljs-keyword">in</span> jeu.serpent.morceaux(taille):
+    print(morceau.position)
+</code></pre></div>
+<p>Comme tu peux le voir, morceau contient une information <code>position</code>, mais aussi une information <code>direction_rotation</code>, qui contient une des constantes de rotation vue ci-dessus, et enfin <code>type</code>, qui contient une constante de partie du serpent (tête, queue ou corps).</p>
+<p>Pour obtenir la position de la tête du serpent, une fonction peut te simplifier la vie, c'est la fonction <code>serpent.position_tete</code>, qui retourne simplement la position (x, y) de la tête du serpent.</p>
+<p>Nous espérons que cet atelier vous plaît, merci pour votre participation !</p>
