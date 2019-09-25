@@ -384,8 +384,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1"
-     inkscape:cx="-70.03332"
-     inkscape:cy="322.28547"
+     inkscape:cx="-201.94488"
+     inkscape:cy="318.28547"
      inkscape:document-units="mm"
      inkscape:current-layer="g5486"
      showgrid="false"
@@ -432,7 +432,10 @@
          x="0.023623468"
          y="149.02231"
          style="fill:#19516b;fill-opacity:1;stroke-width:0.38576609"
-         inkscape:label="cadre-reel" />
+         inkscape:label="cadre-reel"
+         inkscape:export-filename="/home/amaury/Documents/ZdS/zestedecode/communication/rendus/flyer-verso-sorbonne-universite.png"
+         inkscape:export-xdpi="300.03983"
+         inkscape:export-ydpi="300.03983" />
     </g>
     <g
        id="g4792"
@@ -858,67 +861,67 @@
                  id="g13164">
                 <polygon
                    id="polygon13138"
-                   points="576.1,453.3 661.5,404.4 577.2,455.2 "
+                   points="661.5,404.4 577.2,455.2 576.1,453.3 "
                    class="st5"
                    style="fill:#537022" />
                 <polygon
                    id="polygon13140"
-                   points="587.3,420.5 696.5,359.8 588.4,422.3 "
+                   points="696.5,359.8 588.4,422.3 587.3,420.5 "
                    class="st5"
                    style="fill:#537022" />
                 <polygon
                    id="polygon13142"
-                   points="598.6,387.6 712.4,324.5 599.6,389.5 "
+                   points="712.4,324.5 599.6,389.5 598.6,387.6 "
                    class="st5"
                    style="fill:#537022" />
                 <polygon
                    id="polygon13144"
-                   points="609.8,354.7 725.9,288 610.8,356.6 "
+                   points="725.9,288 610.8,356.6 609.8,354.7 "
                    class="st5"
                    style="fill:#537022" />
                 <polygon
                    id="polygon13146"
-                   points="621,321.9 736.8,253 622.1,323.7 "
+                   points="736.8,253 622.1,323.7 621,321.9 "
                    class="st5"
                    style="fill:#537022" />
                 <polygon
                    id="polygon13148"
-                   points="632.3,289 737.2,229.7 633.3,290.9 "
+                   points="737.2,229.7 633.3,290.9 632.3,289 "
                    class="st5"
                    style="fill:#537022" />
                 <polygon
                    id="polygon13150"
-                   points="643.5,256.2 737.2,206.4 644.5,258 "
+                   points="737.2,206.4 644.5,258 643.5,256.2 "
                    class="st5"
                    style="fill:#537022" />
                 <polygon
                    id="polygon13152"
-                   points="654.7,223.3 746,174.2 655.8,225.2 "
+                   points="746,174.2 655.8,225.2 654.7,223.3 "
                    class="st5"
                    style="fill:#537022" />
                 <polygon
                    id="polygon13154"
-                   points="665.9,190.5 746.7,149.8 667,192.3 "
+                   points="746.7,149.8 667,192.3 665.9,190.5 "
                    class="st5"
                    style="fill:#537022" />
                 <polygon
                    id="polygon13156"
-                   points="677.2,157.6 741.8,122.6 678.2,159.5 "
+                   points="741.8,122.6 678.2,159.5 677.2,157.6 "
                    class="st5"
                    style="fill:#537022" />
                 <polygon
                    id="polygon13158"
-                   points="688.4,124.8 740.7,97.1 689.4,126.6 "
+                   points="740.7,97.1 689.4,126.6 688.4,124.8 "
                    class="st5"
                    style="fill:#537022" />
                 <polygon
                    id="polygon13160"
-                   points="699.6,91.9 729.2,76.3 700.7,93.7 "
+                   points="729.2,76.3 700.7,93.7 699.6,91.9 "
                    class="st5"
                    style="fill:#537022" />
                 <polygon
                    id="polygon13162"
-                   points="710.8,59 735.4,46.5 711.9,60.9 "
+                   points="735.4,46.5 711.9,60.9 710.8,59 "
                    class="st5"
                    style="fill:#537022" />
               </g>
@@ -970,7 +973,7 @@
                  style="fill:#b8bf7b" />
               <polygon
                  id="polygon13181"
-                 points="543.8,555.6 571.9,559.4 555.9,547.1 571.2,532.8 538.7,541 516.9,528.2 524,543.9 492.7,552.7 522.7,554.1 527.8,569.9 "
+                 points="571.9,559.4 555.9,547.1 571.2,532.8 538.7,541 516.9,528.2 524,543.9 492.7,552.7 522.7,554.1 527.8,569.9 543.8,555.6 "
                  class="st9"
                  style="fill:#e1793b" />
               <path
@@ -1101,7 +1104,7 @@
                  class="st15" />
               <polygon
                  id="polygon13219"
-                 points="538.8,534.2 729.7,9.9 548.8,537.7 "
+                 points="729.7,9.9 548.8,537.7 538.8,534.2 "
                  class="st5"
                  style="fill:#537022" />
               <g
@@ -1114,7 +1117,7 @@
                    style="fill:#4b632f" />
                 <polygon
                    id="polygon13223"
-                   points="269.7,119.2 547.5,536.5 538.6,542.3 "
+                   points="547.5,536.5 538.6,542.3 269.7,119.2 "
                    class="st5"
                    style="fill:#537022" />
               </g>
@@ -1140,67 +1143,67 @@
                  id="g13259">
                 <polygon
                    id="polygon13233"
-                   points="567.9,462.6 537.9,379.7 566,463.4 "
+                   points="537.9,379.7 566,463.4 567.9,462.6 "
                    class="st5"
                    style="fill:#537022" />
                 <polygon
                    id="polygon13235"
-                   points="579.5,429.8 537.4,321.6 577.5,430.6 "
+                   points="537.4,321.6 577.5,430.6 579.5,429.8 "
                    class="st5"
                    style="fill:#537022" />
                 <polygon
                    id="polygon13237"
-                   points="591.1,397.1 540.9,277 589.1,397.9 "
+                   points="540.9,277 589.1,397.9 591.1,397.1 "
                    class="st5"
                    style="fill:#537022" />
                 <polygon
                    id="polygon13239"
-                   points="602.6,364.4 553,240.1 600.7,365.2 "
+                   points="553,240.1 600.7,365.2 602.6,364.4 "
                    class="st5"
                    style="fill:#537022" />
                 <polygon
                    id="polygon13241"
-                   points="614.2,331.6 566.1,205.8 612.2,332.4 "
+                   points="566.1,205.8 612.2,332.4 614.2,331.6 "
                    class="st5"
                    style="fill:#537022" />
                 <polygon
                    id="polygon13243"
-                   points="625.8,298.9 580.3,187.3 623.8,299.7 "
+                   points="580.3,187.3 623.8,299.7 625.8,298.9 "
                    class="st5"
                    style="fill:#537022" />
                 <polygon
                    id="polygon13245"
-                   points="637.3,266.2 594.7,169 635.4,267 "
+                   points="594.7,169 635.4,267 637.3,266.2 "
                    class="st5"
                    style="fill:#537022" />
                 <polygon
                    id="polygon13247"
-                   points="648.9,233.4 607.8,138.2 647,234.2 "
+                   points="607.8,138.2 647,234.2 648.9,233.4 "
                    class="st5"
                    style="fill:#537022" />
                 <polygon
                    id="polygon13249"
-                   points="660.5,200.7 622.3,118.7 658.5,201.5 "
+                   points="622.3,118.7 658.5,201.5 660.5,200.7 "
                    class="st5"
                    style="fill:#537022" />
                 <polygon
                    id="polygon13251"
-                   points="672,167.9 643.1,100.4 670.1,168.7 "
+                   points="643.1,100.4 670.1,168.7 672,167.9 "
                    class="st5"
                    style="fill:#537022" />
                 <polygon
                    id="polygon13253"
-                   points="683.6,135.2 659.7,81.1 681.7,136 "
+                   points="659.7,81.1 681.7,136 683.6,135.2 "
                    class="st5"
                    style="fill:#537022" />
                 <polygon
                    id="polygon13255"
-                   points="695.2,102.5 681.6,71.9 693.2,103.3 "
+                   points="681.6,71.9 693.2,103.3 695.2,102.5 "
                    class="st5"
                    style="fill:#537022" />
                 <polygon
                    id="polygon13257"
-                   points="706.8,69.7 695.3,44.7 704.8,70.5 "
+                   points="695.3,44.7 704.8,70.5 706.8,69.7 "
                    class="st5"
                    style="fill:#537022" />
               </g>
@@ -1210,67 +1213,67 @@
                    id="g13287">
                   <polygon
                      id="polygon13261"
-                     points="417.5,452.1 502.3,484.5 502.8,482.6 "
+                     points="502.3,484.5 502.8,482.6 417.5,452.1 "
                      class="st5"
                      style="fill:#537022" />
                   <polygon
                      id="polygon13263"
-                     points="377.2,419.2 484.6,456.8 485.2,454.9 "
+                     points="484.6,456.8 485.2,454.9 377.2,419.2 "
                      class="st5"
                      style="fill:#537022" />
                   <polygon
                      id="polygon13265"
-                     points="352.8,391.7 467,429.1 467.5,427.2 "
+                     points="467,429.1 467.5,427.2 352.8,391.7 "
                      class="st5"
                      style="fill:#537022" />
                   <polygon
                      id="polygon13267"
-                     points="330.5,364.6 449.4,401.4 449.9,399.5 "
+                     points="449.4,401.4 449.9,399.5 330.5,364.6 "
                      class="st5"
                      style="fill:#537022" />
                   <polygon
                      id="polygon13269"
-                     points="315.1,334.4 431.8,373.8 432.3,371.8 "
+                     points="431.8,373.8 432.3,371.8 315.1,334.4 "
                      class="st5"
                      style="fill:#537022" />
                   <polygon
                      id="polygon13271"
-                     points="305.9,313.3 414.1,346.1 414.6,344.2 "
+                     points="414.1,346.1 414.6,344.2 305.9,313.3 "
                      class="st5"
                      style="fill:#537022" />
                   <polygon
                      id="polygon13273"
-                     points="299.9,291.6 396.5,318.4 397,316.5 "
+                     points="396.5,318.4 397,316.5 299.9,291.6 "
                      class="st5"
                      style="fill:#537022" />
                   <polygon
                      id="polygon13275"
-                     points="293.1,264 378.9,290.7 379.4,288.8 "
+                     points="378.9,290.7 379.4,288.8 293.1,264 "
                      class="st5"
                      style="fill:#537022" />
                   <polygon
                      id="polygon13277"
-                     points="287,241.7 361.2,263 361.8,261.1 "
+                     points="361.2,263 361.8,261.1 287,241.7 "
                      class="st5"
                      style="fill:#537022" />
                   <polygon
                      id="polygon13279"
-                     points="277,215.6 343.6,235.4 344.1,233.4 "
+                     points="343.6,235.4 344.1,233.4 277,215.6 "
                      class="st5"
                      style="fill:#537022" />
                   <polygon
                      id="polygon13281"
-                     points="272.3,192 326,207.7 326.5,205.7 "
+                     points="326,207.7 326.5,205.7 272.3,192 "
                      class="st5"
                      style="fill:#537022" />
                   <polygon
                      id="polygon13283"
-                     points="278.2,170.4 308.3,180 308.9,178.1 "
+                     points="308.3,180 308.9,178.1 278.2,170.4 "
                      class="st5"
                      style="fill:#537022" />
                   <polygon
                      id="polygon13285"
-                     points="266.8,144 291,152.2 289.6,150 "
+                     points="291,152.2 289.6,150 266.8,144 "
                      class="st5"
                      style="fill:#537022" />
                 </g>
@@ -1278,67 +1281,67 @@
                    id="g13315">
                   <polygon
                      id="polygon13289"
-                     points="516.2,412.9 514.4,489.5 512.4,489.2 "
+                     points="514.4,489.5 512.4,489.2 516.2,412.9 "
                      class="st5"
                      style="fill:#537022" />
                   <polygon
                      id="polygon13291"
-                     points="508.2,364.1 496.5,462.1 494.5,461.7 "
+                     points="496.5,462.1 494.5,461.7 508.2,364.1 "
                      class="st5"
                      style="fill:#537022" />
                   <polygon
                      id="polygon13293"
-                     points="494.4,325.9 478.5,434.6 476.6,434.2 "
+                     points="478.5,434.6 476.6,434.2 494.4,325.9 "
                      class="st5"
                      style="fill:#537022" />
                   <polygon
                      id="polygon13295"
-                     points="476.4,288.2 460.6,407.1 458.6,406.8 "
+                     points="460.6,407.1 458.6,406.8 476.4,288.2 "
                      class="st5"
                      style="fill:#537022" />
                   <polygon
                      id="polygon13297"
-                     points="459.4,263.3 442.7,379.6 440.7,379.3 "
+                     points="442.7,379.6 440.7,379.3 459.4,263.3 "
                      class="st5"
                      style="fill:#537022" />
                   <polygon
                      id="polygon13299"
-                     points="439.8,239.1 424.8,352.1 422.8,351.8 "
+                     points="424.8,352.1 422.8,351.8 439.8,239.1 "
                      class="st5"
                      style="fill:#537022" />
                   <polygon
                      id="polygon13301"
-                     points="422.4,225.5 406.9,324.6 404.9,324.3 "
+                     points="406.9,324.6 404.9,324.3 422.4,225.5 "
                      class="st5"
                      style="fill:#537022" />
                   <polygon
                      id="polygon13303"
-                     points="402.1,204.5 388.7,299.2 387,296.8 "
+                     points="388.7,299.2 387,296.8 402.1,204.5 "
                      class="st5"
                      style="fill:#537022" />
                   <polygon
                      id="polygon13305"
-                     points="384.6,190.7 370.7,271.8 369,269.3 "
+                     points="370.7,271.8 369,269.3 384.6,190.7 "
                      class="st5"
                      style="fill:#537022" />
                   <polygon
                      id="polygon13307"
-                     points="362.7,173.3 352.7,245.2 351.1,241.8 "
+                     points="352.7,245.2 351.1,241.8 362.7,173.3 "
                      class="st5"
                      style="fill:#537022" />
                   <polygon
                      id="polygon13309"
-                     points="343.1,159.2 334.7,217.4 333,215.1 "
+                     points="334.7,217.4 333,215.1 343.1,159.2 "
                      class="st5"
                      style="fill:#537022" />
                   <polygon
                      id="polygon13311"
-                     points="320.9,155.7 316.9,191 315,188.1 "
+                     points="316.9,191 315,188.1 320.9,155.7 "
                      class="st5"
                      style="fill:#537022" />
                   <polygon
                      id="polygon13313"
-                     points="301.9,137.3 298.8,163.7 297.1,161.9 "
+                     points="298.8,163.7 297.1,161.9 301.9,137.3 "
                      class="st5"
                      style="fill:#537022" />
                 </g>
