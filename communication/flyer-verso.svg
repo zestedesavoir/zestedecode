@@ -14,7 +14,7 @@
    viewBox="0 0 111 154"
    version="1.1"
    id="svg4131"
-   inkscape:version="0.92.4 5da689c313, 2019-01-14"
+   inkscape:version="0.92.4 (f8dce91, 2019-08-02)"
    sodipodi:docname="flyer-verso.svg"
    inkscape:export-filename="/home/amaury/Documents/ZdS/zestedecode/communication/flyer-verso.png"
    inkscape:export-xdpi="599.99573"
@@ -384,15 +384,15 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1"
-     inkscape:cx="-300.03332"
-     inkscape:cy="318.28547"
+     inkscape:cx="398.75001"
+     inkscape:cy="221.3495"
      inkscape:document-units="mm"
-     inkscape:current-layer="g5486"
+     inkscape:current-layer="g5132"
      showgrid="false"
-     inkscape:window-width="1920"
-     inkscape:window-height="1016"
+     inkscape:window-width="1366"
+     inkscape:window-height="698"
      inkscape:window-x="0"
-     inkscape:window-y="27"
+     inkscape:window-y="34"
      inkscape:window-maximized="1" />
   <metadata
      id="metadata4128">
@@ -402,7 +402,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -608,7 +608,7 @@
            y="271.37213"
            x="55.714161"
            style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:2.11666656px;font-family:'Source Sans Pro';-inkscape-font-specification:'Source Sans Pro, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#19516b;fill-opacity:1;stroke-width:0.02613213"
-           sodipodi:role="line">© Zeste de Savoir, CC BY–SA. Imprimé par H2Impression. Soyez quelqu'un de bien, ne me jetez pas sur la voie publique :-)</tspan></text>
+           sodipodi:role="line">© Zeste de Savoir, CC BY–SA. Imprimé par h2impression. Soyez quelqu'un de bien, ne me jetez pas sur la voie publique :-)</tspan></text>
       <text
          xml:space="preserve"
          style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:3.18945551px;line-height:1.25;font-family:'Source Sans Pro';-inkscape-font-specification:'Source Sans Pro, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#19516b;fill-opacity:1;stroke:none;stroke-width:0.05704656"

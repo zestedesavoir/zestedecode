@@ -18,7 +18,7 @@
    inkscape:export-xdpi="600.01221"
    inkscape:export-ydpi="600.01221"
    sodipodi:docname="affiche.svg"
-   inkscape:version="0.92.4 5da689c313, 2019-01-14">
+   inkscape:version="0.92.4 (f8dce91, 2019-08-02)">
   <defs
      id="defs2">
     <inkscape:path-effect
@@ -92,20 +92,20 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.50373354"
-     inkscape:cx="186.41131"
-     inkscape:cy="837.8985"
+     inkscape:zoom="0.3561934"
+     inkscape:cx="521.39115"
+     inkscape:cy="613.53352"
      inkscape:document-units="mm"
-     inkscape:current-layer="layer1"
+     inkscape:current-layer="g2285"
      showgrid="false"
      inkscape:measure-start="0.469178,1586.53"
      inkscape:measure-end="568,1588"
      showguides="true"
      inkscape:guide-bbox="true"
-     inkscape:window-width="1920"
-     inkscape:window-height="1016"
+     inkscape:window-width="1366"
+     inkscape:window-height="698"
      inkscape:window-x="0"
-     inkscape:window-y="27"
+     inkscape:window-y="34"
      inkscape:window-maximized="1" />
   <metadata
      id="metadata5">
@@ -426,7 +426,7 @@
                style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Source Sans Pro';-inkscape-font-specification:'Source Sans Pro';fill:#19516b;fill-opacity:1"
                x="148.79428"
                y="-31.804394"
-               id="tspan1330">Vous avez entre 12 et 24 ans ?</tspan><tspan
+               id="tspan1330">Vous avez entre 12 et 18 ans ?</tspan><tspan
                sodipodi:role="line"
                style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Source Sans Pro';-inkscape-font-specification:'Source Sans Pro';fill:#19516b;fill-opacity:1"
                x="148.79428"
@@ -471,7 +471,7 @@
                  y="152.85368"
                  x="202.70715"
                  sodipodi:role="line">Envie d'y participer ?</tspan><tspan
-                 style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:14.11111069px;font-family:'Source Sans Pro';-inkscape-font-specification:'Source Sans Pro Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#19516b;fill-opacity:1;stroke-width:0.2585645"
+                 style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:12.7px;font-family:'Source Sans Pro';-inkscape-font-specification:'Source Sans Pro Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#19516b;fill-opacity:1;stroke-width:0.2585645"
                  y="169.96341"
                  x="202.70715"
                  sodipodi:role="line"
@@ -505,9 +505,9 @@
                  id="tspan11686"
                  style="font-style:normal;font-variant:normal;font-weight:300;font-stretch:normal;font-size:12.69999981px;font-family:'Source Sans Pro';-inkscape-font-specification:'Source Sans Pro, Light';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle">14h00 – 18h00, à <tspan
    style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:12.69999981px;font-family:'Source Sans Pro';-inkscape-font-specification:'Source Sans Pro, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle"
-   id="tspan1036">Paris 5</tspan><tspan
+   id="tspan1036">Paris 5e</tspan><tspan
    style="font-style:normal;font-variant:normal;font-weight:600;font-stretch:normal;font-size:12.69999981px;font-family:'Source Sans Pro';-inkscape-font-specification:'Source Sans Pro, Semi-Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;baseline-shift:super;text-anchor:middle"
-   id="tspan1040">è</tspan></tspan></text>
+   id="tspan1040" /></tspan></text>
           </g>
           <g
              id="g7496"
