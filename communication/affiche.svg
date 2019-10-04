@@ -14,9 +14,9 @@
    viewBox="0 0 297 420"
    version="1.1"
    id="svg8"
-   inkscape:export-filename="/home/amaury/Documents/ZdS/zestedecode/communication/affiche.png"
-   inkscape:export-xdpi="600.01221"
-   inkscape:export-ydpi="600.01221"
+   inkscape:export-filename="png/affiche.png"
+   inkscape:export-xdpi="600"
+   inkscape:export-ydpi="600"
    sodipodi:docname="affiche.svg"
    inkscape:version="0.92.4 (f8dce91, 2019-08-02)">
   <defs
@@ -93,7 +93,7 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.3561934"
-     inkscape:cx="521.39115"
+     inkscape:cx="-775.65703"
      inkscape:cy="613.53352"
      inkscape:document-units="mm"
      inkscape:current-layer="g2285"
