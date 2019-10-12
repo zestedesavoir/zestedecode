@@ -16,14 +16,14 @@ Où `initialisation` et `boucle` sont deux fonctions qui doivent avoir été dé
 
 Lorsque le jeu est récupéré à l'intérieur de la boucle, il dispose de variables accessibles de façon directe (hors fonctions / méthodes) :
 
-- `largeur`, qui contient la largeur de la fenêtre ;
-- `hauteur`, qui contient la hauteur de la fenêtre ;
-- `evenements`, qui contient la liste des événements déclenchés depuis le dernier tour de boucle.
+- `mon_jeu.largeur`, qui contient la largeur de la fenêtre ;
+- `mon_jeu.hauteur`, qui contient la hauteur de la fenêtre ;
+- `mon_jeu.evenements`, qui contient la liste des événements déclenchés depuis le dernier tour de boucle.
 
-La variable événements nous intéressera particulièrement, et nous pourrons vérifier si un certain événement est déclenché en utilisant une condition :
+La variable `evenments` nous intéressera particulièrement, et nous pourrons vérifier si un certain événement est déclenché en utilisant une condition :
 
 ```py
-if Evenements.QUITTER in jeu.evenements:
+if Evenements.QUITTER in mon_jeu.evenements:
 	print("Je veux quitter")
 ```
 
@@ -58,7 +58,7 @@ Pas plus de détails ici afin de vous faire chercher par vous-même ; n'oublie p
 
 ## Déclaration des variables internes
 
-Une fois l'objet de jeu créé, et récupéré dans une des fonctions `initialisation` ou `boucle`, il est possible de déclarer à tout moment une image par la méthode `ajouter_image`, appelée avec le nom à donner à l'image ainsi que le chemin relatif de l'image.
+Une fois l'objet de jeu créé, et récupéré dans une des fonctions `initialisation` ou `boucle`, il est possible de déclarer à tout moment une image par la méthode `ajouter_image`, appelée avec le nom à donner à l'image ainsi que le chemin relatif de l'image. Par la suite, on pourra afficher notre image où on veut dans la fenêtre en l'appelant par son nom (voir un peu plus loin comment faire).
 
 [[information]]
 | Le chemin relatif d'un fichier est l'endroit où il se trouve par rapport au fichier actuel. Par exemple, l'image `image.png` située dans le dossier `images` du dossier du fichier actuel est de chemin relatif `images/image.png`.
@@ -106,7 +106,7 @@ Ce code affichera la liste de tous les carreaux possibles dans la console.
 
 ## Fonctions utiles
 
-Afin de vérifier une collision entre deux objets, il existe une fonction `collision` qui renvoie true lorsqu'il y a collision et false sinon. Cette fonction prend deux paramètres, la position du premier objet, et la position du second ; cette fonction est principalement destinée à être utilisée dans des conditions, par exemple :
+Afin de vérifier une collision entre deux objets, il existe une fonction `collision` qui renvoie `True` lorsqu'il y a collision et `False` sinon. Cette fonction prend deux paramètres, la position du premier objet, et la position du second ; cette fonction est principalement destinée à être utilisée dans des conditions, par exemple :
 
 ```py
 if mon_jeu.collision(pomme, morceau.position):

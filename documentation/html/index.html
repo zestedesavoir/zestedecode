@@ -4,24 +4,24 @@
 <p>Cette partie est un rappel des notions abordées ci-avant, dans le cas où tu aurais besoin de revoir les bases du langage, pendant l'atelier ou chez toi.</p>
 <h3 id="quelques-calculs-simples">Quelques calculs simples<a aria-hidden="true" href="#quelques-calculs-simples"><span class="icon icon-link"></span></a></h3>
 <p>Pour rappel, le langage Python interprétera et exécutera tout calcul présent dans son code. Quelques exemples sont proposés ci-dessous :</p>
-<div class="hljs-code-div"><div class="hljs-line-numbers"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div><pre><code class="hljs language-python"><span class="hljs-number">1</span>+<span class="hljs-number">1</span>
-<span class="hljs-meta">>>> </span><span class="hljs-number">2</span>
-<span class="hljs-number">6</span>*<span class="hljs-number">7</span>
-<span class="hljs-meta">>>> </span><span class="hljs-number">42</span>
-<span class="hljs-number">4</span><span class="hljs-number">-2</span>
-<span class="hljs-meta">>>> </span><span class="hljs-number">2</span>
-<span class="hljs-number">2</span><span class="hljs-number">-4</span>
-<span class="hljs-meta">>>> </span><span class="hljs-number">-2</span>
-(<span class="hljs-number">4</span><span class="hljs-number">-2</span>)*<span class="hljs-number">2</span>
-<span class="hljs-meta">>>> </span><span class="hljs-number">4</span>
-<span class="hljs-number">3.6</span>/<span class="hljs-number">2</span>
-<span class="hljs-meta">>>> </span><span class="hljs-number">1.8</span>
-<span class="hljs-number">3</span>*<span class="hljs-number">5.2</span>
-<span class="hljs-meta">>>> </span><span class="hljs-number">15.6</span>
+<div class="hljs-code-div"><div class="hljs-line-numbers"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div><pre><code class="hljs language-python"><span class="hljs-meta">>>> </span><span class="hljs-number">1</span> + <span class="hljs-number">1</span>
+<span class="hljs-number">2</span>
+<span class="hljs-meta">>>> </span><span class="hljs-number">6</span> * <span class="hljs-number">7</span>
+<span class="hljs-number">42</span>
+<span class="hljs-meta">>>> </span><span class="hljs-number">4</span><span class="hljs-number">-2</span>
+<span class="hljs-number">2</span>
+<span class="hljs-meta">>>> </span><span class="hljs-number">2</span><span class="hljs-number">-4</span>
+<span class="hljs-number">-2</span>
+<span class="hljs-meta">>>> </span>(<span class="hljs-number">4</span><span class="hljs-number">-2</span>)*<span class="hljs-number">2</span>
+<span class="hljs-number">4</span>
+<span class="hljs-meta">>>> </span><span class="hljs-number">3.6</span>/<span class="hljs-number">2</span>
+<span class="hljs-number">1.8</span>
+<span class="hljs-meta">>>> </span><span class="hljs-number">3</span>*<span class="hljs-number">5.2</span>
+<span class="hljs-number">15.6</span>
 </code></pre></div>
 <h3 id="les-variables-et-fonctions">Les variables et fonctions<a aria-hidden="true" href="#les-variables-et-fonctions"><span class="icon icon-link"></span></a></h3>
 <p><strong>Variable</strong> : boite dans laquelle on peut mettre une valeur.</p>
-<p><strong>Fonction</strong> : morceau de code que quelqu'un d'autre a déjà écrit pour vous, qu'on appelle avec son nom pour ne pas le ré-écrire.</p>
+<p><strong>Fonction</strong> : morceau de code que quelqu'un d'autre a déjà écrit pour vous, qu'on appelle avec son nom pour ne pas le ré-écrire. On peut également écrire nos propres fonctions (comme mentionné un peu plus bas).</p>
 <p>Quelques rappels issus de l'initiation au code :</p>
 <div class="hljs-code-div"><div class="hljs-line-numbers"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div><pre><code class="hljs language-python"><span class="hljs-comment"># Appel de la fonction d'affichage, avec pour paramètre "Bonjour !"</span>
 print(<span class="hljs-string">"Bonjour !"</span>)
@@ -31,8 +31,8 @@ x=<span class="hljs-number">3</span>
 print(x)
 <span class="hljs-meta">>>> </span><span class="hljs-number">3</span>
 </code></pre></div>
-<p>On notera ici que x est passée directement à la fonction, on parle donc de la variable x donnée en argument. Pour le cas du texte "Bonjour !", il est passé entre guillemets, ce qui indique que la chaîne de caractères "Bonjour !" est donnée en argument.</p>
-<p>Pour rappel, seul une nouvelle déclaration changera la valeur d'une variable :</p>
+<p>On notera ici que <code>x</code> est passée directement à la fonction. En effet, une variable est une boîte qu'on peut donner tel quel et Python comprend très bien qu'on veut donner à la fonction le <em>contenu</em> de la boîte. Pour le cas du texte "Bonjour !", il est passé entre guillemets, ce qui indique que la chaîne de caractères "Bonjour !" est donnée directement en argument.</p>
+<p>Pour rappel, seule une nouvelle déclaration changera la valeur d'une variable :</p>
 <div class="hljs-code-div"><div class="hljs-line-numbers"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div><pre><code class="hljs language-python">x=<span class="hljs-number">3</span>
 x+<span class="hljs-number">1</span>
 <span class="hljs-meta">>>> </span><span class="hljs-number">4</span>
@@ -53,22 +53,26 @@ print(x)
 <li><strong>principale</strong> : disponible pour le fichier en cours ;</li>
 <li><strong>interne</strong> : peut être utilisée par le jeu lui-même (c'est le cas de <code>boucle</code>, par exemple) ou utilisée depuis la variable jeu (<code>jeu.quitter()</code> par exemple).</li>
 </ul>
-<p>Pour approfondir un peu ce qui a été étudié en introduction, une déclaration de fonction ressemble toujours à ceci :</p>
+<p>Comme mentionné en introduction, on peut créer (on dit « déclarer ») des fonctions nous-même. Ça ressemble toujours à ceci :</p>
 <div class="hljs-code-div"><div class="hljs-line-numbers"><span></span><span></span></div><pre><code class="hljs language-python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">nom_de_la_fonction</span><span class="hljs-params">(premier_argument, second_argument, ...)</span>:</span>
     print(<span class="hljs-string">"Contenu de la fonction"</span>)
 </code></pre></div>
 <p>Par exemple, notre fonction <code>boucle</code> ressemble à ceci :</p>
-<div class="hljs-code-div"><div class="hljs-line-numbers"><span></span></div><pre><code class="hljs language-python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">boucle</span><span class="hljs-params">(jeu)</span>:</span>
+<div class="hljs-code-div"><div class="hljs-line-numbers"><span></span><span></span></div><pre><code class="hljs language-python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">boucle</span><span class="hljs-params">(jeu)</span>:</span>
+    <span class="hljs-comment"># Mettre ici le code de la fonction</span>
 </code></pre></div>
 <p>Elle attend donc un argument appelé jeu, qui lui sera passé par la bibliothèque avant d'exécuter le contenu de la fonction ; cet objet contiendra tout ce qui est nécessaire pour l'affichage de notre jeu.</p>
 <h3 id="structures-conditionnelles">Structures conditionnelles<a aria-hidden="true" href="#structures-conditionnelles"><span class="icon icon-link"></span></a></h3>
 <p><strong>Condition</strong> : Expression qui exécute un morceau de code seulement si elle est vérifiée.</p>
 <p>Aucun rappel particulier n'est nécessaire pour les conditions, mais nous te proposons le code final de l'initiation afin d'avoir les idées claires. En cas de question, n'hésite pas à appeler un animateur.</p>
-<div class="hljs-code-div"><div class="hljs-line-numbers"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div><pre><code class="hljs language-python">age = <span class="hljs-number">15</span>
+<div class="hljs-code-div"><div class="hljs-line-numbers"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div><pre><code class="hljs language-python">age = <span class="hljs-number">15</span>
+<span class="hljs-comment"># Si l'âge est supérieur ou égal à 21…</span>
 <span class="hljs-keyword">if</span> age >= <span class="hljs-number">21</span>:
-    print(<span class="hljs-string">"Majorite internationale"</span>)
+    print(<span class="hljs-string">"Majorité internationale"</span>)
+<span class="hljs-comment"># Sinon, si l'âge est supérieur à 18…</span>
 <span class="hljs-keyword">elif</span> age >= <span class="hljs-number">18</span>:
     print(<span class="hljs-string">"Tu es majeur"</span>)
+<span class="hljs-comment"># Sinon…</span>
 <span class="hljs-keyword">else</span>:
     print(<span class="hljs-string">"Tu es mineur"</span>)
 </code></pre></div>
@@ -97,12 +101,12 @@ print(x)
 <h5 id="variables-passées-à-la-boucle">Variables passées à la boucle<a aria-hidden="true" href="#variables-passées-à-la-boucle"><span class="icon icon-link"></span></a></h5>
 <p>Lorsque le jeu est récupéré à l'intérieur de la boucle, il dispose de variables accessibles de façon directe (hors fonctions / méthodes) :</p>
 <ul>
-<li><code>largeur</code>, qui contient la largeur de la fenêtre ;</li>
-<li><code>hauteur</code>, qui contient la hauteur de la fenêtre ;</li>
-<li><code>evenements</code>, qui contient la liste des événements déclenchés depuis le dernier tour de boucle.</li>
+<li><code>mon_jeu.largeur</code>, qui contient la largeur de la fenêtre ;</li>
+<li><code>mon_jeu.hauteur</code>, qui contient la hauteur de la fenêtre ;</li>
+<li><code>mon_jeu.evenements</code>, qui contient la liste des événements déclenchés depuis le dernier tour de boucle.</li>
 </ul>
-<p>La variable événements nous intéressera particulièrement, et nous pourrons vérifier si un certain événement est déclenché en utilisant une condition :</p>
-<div class="hljs-code-div"><div class="hljs-line-numbers"><span></span><span></span></div><pre><code class="hljs language-py"><span class="hljs-keyword">if</span> Evenements.QUITTER <span class="hljs-keyword">in</span> jeu.evenements:
+<p>La variable <code>evenments</code> nous intéressera particulièrement, et nous pourrons vérifier si un certain événement est déclenché en utilisant une condition :</p>
+<div class="hljs-code-div"><div class="hljs-line-numbers"><span></span><span></span></div><pre><code class="hljs language-py"><span class="hljs-keyword">if</span> Evenements.QUITTER <span class="hljs-keyword">in</span> mon_jeu.evenements:
     print(<span class="hljs-string">"Je veux quitter"</span>)
 </code></pre></div>
 <h5 id="variables-de-la-bibliothèque">Variables de la bibliothèque<a aria-hidden="true" href="#variables-de-la-bibliothèque"><span class="icon icon-link"></span></a></h5>
@@ -124,7 +128,7 @@ Touches.ESPACE
 <p>Pas plus de détails ici afin de vous faire chercher par vous-même ; n'oublie pas en tout cas qu'en informatique, il faut tester, tu ne peux rien casser. En cas de problème persistant, un animateur sera heureux de te guider.</p>
 <h3 id="ajout-dimages-et-de-texte">Ajout d'images et de texte<a aria-hidden="true" href="#ajout-dimages-et-de-texte"><span class="icon icon-link"></span></a></h3>
 <h4 id="déclaration-des-variables-internes">Déclaration des variables internes<a aria-hidden="true" href="#déclaration-des-variables-internes"><span class="icon icon-link"></span></a></h4>
-<p>Une fois l'objet de jeu créé, et récupéré dans une des fonctions <code>initialisation</code> ou <code>boucle</code>, il est possible de déclarer à tout moment une image par la méthode <code>ajouter_image</code>, appelée avec le nom à donner à l'image ainsi que le chemin relatif de l'image.</p>
+<p>Une fois l'objet de jeu créé, et récupéré dans une des fonctions <code>initialisation</code> ou <code>boucle</code>, il est possible de déclarer à tout moment une image par la méthode <code>ajouter_image</code>, appelée avec le nom à donner à l'image ainsi que le chemin relatif de l'image. Par la suite, on pourra afficher notre image où on veut dans la fenêtre en l'appelant par son nom (voir un peu plus loin comment faire).</p>
 <div class="custom-block custom-block-information"><div class="custom-block-body"><p>Le chemin relatif d'un fichier est l'endroit où il se trouve par rapport au fichier actuel. Par exemple, l'image <code>image.png</code> située dans le dossier <code>images</code> du dossier du fichier actuel est de chemin relatif <code>images/image.png</code>.</p></div></div>
 <p>Puisqu'un exemple vaut mieux qu'un long discours :</p>
 <div class="hljs-code-div"><div class="hljs-line-numbers"><span></span><span></span></div><pre><code class="hljs language-py"><span class="hljs-comment"># Déclaration de l'image du cactus</span>
@@ -151,7 +155,7 @@ mon_jeu.ajouter_image(<span class="hljs-string">"Cactus"</span>, <span class="hl
 </code></pre></div>
 <p>Ce code affichera la liste de tous les carreaux possibles dans la console.</p>
 <h4 id="fonctions-utiles">Fonctions utiles<a aria-hidden="true" href="#fonctions-utiles"><span class="icon icon-link"></span></a></h4>
-<p>Afin de vérifier une collision entre deux objets, il existe une fonction <code>collision</code> qui renvoie true lorsqu'il y a collision et false sinon. Cette fonction prend deux paramètres, la position du premier objet, et la position du second ; cette fonction est principalement destinée à être utilisée dans des conditions, par exemple :</p>
+<p>Afin de vérifier une collision entre deux objets, il existe une fonction <code>collision</code> qui renvoie <code>True</code> lorsqu'il y a collision et <code>False</code> sinon. Cette fonction prend deux paramètres, la position du premier objet, et la position du second ; cette fonction est principalement destinée à être utilisée dans des conditions, par exemple :</p>
 <div class="hljs-code-div"><div class="hljs-line-numbers"><span></span><span></span></div><pre><code class="hljs language-py"><span class="hljs-keyword">if</span> mon_jeu.collision(pomme, morceau.position):
     print(<span class="hljs-string">"Collision Serpent-Pomme"</span>)
 </code></pre></div>
@@ -182,7 +186,7 @@ mon_jeu.ajouter_image(<span class="hljs-string">"Cactus"</span>, <span class="hl
 <h2 id="fonctions-du-serpent">Fonctions du serpent<a aria-hidden="true" href="#fonctions-du-serpent"><span class="icon icon-link"></span></a></h2>
 <h3 id="présentation-générale-1">Présentation générale<a aria-hidden="true" href="#présentation-générale-1"><span class="icon icon-link"></span></a></h3>
 <h4 id="déclaration-de-lobjet-serpent">Déclaration de l'objet Serpent<a aria-hidden="true" href="#déclaration-de-lobjet-serpent"><span class="icon icon-link"></span></a></h4>
-<p>Après avoir importé la bibliothèque Zeste de Code, tu auras accès aux fonctions concernant le serpent. Une nouvelle instance de serpent devra ensuite être crée, préférentiellement à l'intérieur du jeu :</p>
+<p>Après avoir importé la bibliothèque Zeste de Code, tu auras accès aux fonctions concernant le serpent. Une nouvelle instance de serpent devra ensuite être créée, préférentiellement à l'intérieur du jeu :</p>
 <div class="hljs-code-div"><div class="hljs-line-numbers"><span></span><span></span></div><pre><code class="hljs language-python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">init</span><span class="hljs-params">(jeu)</span>:</span>
     jeu.serpent = Serpent()
 </code></pre></div>
@@ -228,7 +232,7 @@ jeu.serpent.PARTIES.QUEUE
 <h3 id="déplacement-et-taille">Déplacement et taille<a aria-hidden="true" href="#déplacement-et-taille"><span class="icon icon-link"></span></a></h3>
 <p>Dans cette partie sont détaillées les fonctions concernant la taille du serpent ainsi que la gestion de ses déplacements.</p>
 <h4 id="taille-du-serpent-et-agrandissement">Taille du serpent et agrandissement<a aria-hidden="true" href="#taille-du-serpent-et-agrandissement"><span class="icon icon-link"></span></a></h4>
-<p>En premier lieu, voyons une fonction très utile, qui permet d'obtenir la taille du serpent : <code>serpent.taille()</code>. Cette fonction ne nécessite aucun paramètre (sauf celui implicite passé par l'appel via une méthode) ; elle retourne simplement la taille brute du serpent. Par exemple, au début du jeu, elle renverra 3.</p>
+<p>En premier lieu, voyons une fonction très utile, qui permet d'obtenir la taille du serpent : <code>serpent.taille()</code>. Cette fonction ne nécessite aucun paramètre ; elle retourne simplement la taille brute du serpent. Par exemple, au début du jeu, elle renverra 3.</p>
 <p>Pour faire grandir le serpent, nous en avons parlé plus haut, il est possible d'appeler la fonction <code>serpent.grandir()</code>. Elle ne prend aucun paramètre et ne retourne rien, mais modifie en interne la taille du serpent en ajoutant en morceau juste après la tête.</p>
 <h4 id="fonction-de-déplacement">Fonction de déplacement<a aria-hidden="true" href="#fonction-de-déplacement"><span class="icon icon-link"></span></a></h4>
 <p>Afin de déplacer le serpent, il faut appeler la méthode <code>serpent.deplacer(direction)</code> avec direction une des constantes de direction vue ci-dessus. Par exemple, pour déplacer le serpent d'une case vers le haut :</p>

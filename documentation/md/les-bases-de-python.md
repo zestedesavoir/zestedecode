@@ -6,27 +6,27 @@ Pour rappel, le langage Python interprétera et exécutera tout calcul présent 
 
 
 ```python
-1+1
->>> 2
-6*7
->>> 42
-4-2
->>> 2
-2-4
->>> -2
-(4-2)*2
->>> 4
-3.6/2
->>> 1.8
-3*5.2
->>> 15.6
+>>> 1 + 1
+2
+>>> 6 * 7
+42
+>>> 4-2
+2
+>>> 2-4
+-2
+>>> (4-2)*2
+4
+>>> 3.6/2
+1.8
+>>> 3*5.2
+15.6
 ```
 
 # Les variables et fonctions
 
 **Variable** : boite dans laquelle on peut mettre une valeur.
 
-**Fonction** : morceau de code que quelqu'un d'autre a déjà écrit pour vous, qu'on appelle avec son nom pour ne pas le ré-écrire.
+**Fonction** : morceau de code que quelqu'un d'autre a déjà écrit pour vous, qu'on appelle avec son nom pour ne pas le ré-écrire. On peut également écrire nos propres fonctions (comme mentionné un peu plus bas).
 
 Quelques rappels issus de l'initiation au code :
 
@@ -40,9 +40,9 @@ print(x)
 >>> 3
 ```
 
-On notera ici que x est passée directement à la fonction, on parle donc de la variable x donnée en argument. Pour le cas du texte "Bonjour !", il est passé entre guillemets, ce qui indique que la chaîne de caractères "Bonjour !" est donnée en argument.
+On notera ici que `x` est passée directement à la fonction. En effet, une variable est une boîte qu'on peut donner tel quel et Python comprend très bien qu'on veut donner à la fonction le *contenu* de la boîte. Pour le cas du texte "Bonjour !", il est passé entre guillemets, ce qui indique que la chaîne de caractères "Bonjour !" est donnée directement en argument.
 
-Pour rappel, seul une nouvelle déclaration changera la valeur d'une variable :
+Pour rappel, seule une nouvelle déclaration changera la valeur d'une variable :
 
 ```python
 x=3
@@ -66,7 +66,7 @@ Les deux types de fonctions sont de même nature :
 - **principale** : disponible pour le fichier en cours ;
 - **interne** : peut être utilisée par le jeu lui-même (c'est le cas de `boucle`, par exemple) ou utilisée depuis la variable jeu (`jeu.quitter()` par exemple).
 
-Pour approfondir un peu ce qui a été étudié en introduction, une déclaration de fonction ressemble toujours à ceci :
+Comme mentionné en introduction, on peut créer (on dit « déclarer ») des fonctions nous-même. Ça ressemble toujours à ceci :
 
 ```python
 def nom_de_la_fonction(premier_argument, second_argument, ...):
@@ -77,6 +77,7 @@ Par exemple, notre fonction `boucle` ressemble à ceci :
 
 ```python
 def boucle(jeu):
+	# Mettre ici le code de la fonction
 ```
 
 Elle attend donc un argument appelé jeu, qui lui sera passé par la bibliothèque avant d'exécuter le contenu de la fonction ; cet objet contiendra tout ce qui est nécessaire pour l'affichage de notre jeu.
@@ -89,10 +90,13 @@ Aucun rappel particulier n'est nécessaire pour les conditions, mais nous te pro
 
 ```python
 age = 15
+# Si l'âge est supérieur ou égal à 21…
 if age >= 21:
-	print("Majorite internationale")
+	print("Majorité internationale")
+# Sinon, si l'âge est supérieur à 18…
 elif age >= 18:
 	print("Tu es majeur")
+# Sinon…
 else:
 	print("Tu es mineur")
 ```

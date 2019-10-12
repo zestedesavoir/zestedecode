@@ -2,7 +2,7 @@
 
 ## Déclaration de l'objet Serpent
 
-Après avoir importé la bibliothèque Zeste de Code, tu auras accès aux fonctions concernant le serpent. Une nouvelle instance de serpent devra ensuite être crée, préférentiellement à l'intérieur du jeu :
+Après avoir importé la bibliothèque Zeste de Code, tu auras accès aux fonctions concernant le serpent. Une nouvelle instance de serpent devra ensuite être créée, préférentiellement à l'intérieur du jeu :
 
 ```python
 def init(jeu):
@@ -70,7 +70,7 @@ Dans cette partie sont détaillées les fonctions concernant la taille du serpen
 
 ## Taille du serpent et agrandissement
 
-En premier lieu, voyons une fonction très utile, qui permet d'obtenir la taille du serpent : `serpent.taille()`. Cette fonction ne nécessite aucun paramètre (sauf celui implicite passé par l'appel via une méthode) ; elle retourne simplement la taille brute du serpent. Par exemple, au début du jeu, elle renverra 3.
+En premier lieu, voyons une fonction très utile, qui permet d'obtenir la taille du serpent : `serpent.taille()`. Cette fonction ne nécessite aucun paramètre ; elle retourne simplement la taille brute du serpent. Par exemple, au début du jeu, elle renverra 3.
 
 Pour faire grandir le serpent, nous en avons parlé plus haut, il est possible d'appeler la fonction `serpent.grandir()`. Elle ne prend aucun paramètre et ne retourne rien, mais modifie en interne la taille du serpent en ajoutant en morceau juste après la tête.
 
