@@ -1,0 +1,106 @@
+---
+layout: default
+---
+
+<section>
+  <header class="major">
+    <h2>{{ page.title }}</h2>
+    <p>{{ page.subtitle }}</p>
+  </header>
+  
+  <article>
+    {{ content }}
+  </article>
+
+  {% if page.inscription %}
+    <ul class="actions">
+      <li><a href="#inscription" class="button">S'inscrire</a></li>
+    </ul>
+  {% endif %}
+</section>
+
+<section class="special">
+  <header>
+    <h2>Prochains ateliers</h2>
+  </header>
+
+  {% assign now = 'now' | date: '%s' | minus: 86400 %}
+
+  <div class="row">
+    {% assign planned_events=false %}
+    {% for post in site.posts reversed %}
+      {% assign date = post.date | date: '%s' | plus: 0 %}
+      {% if date > now %}
+        {% assign planned_events=true %}
+        <article class="col-6 col-12-xsmall work-item">
+          {% if post.image %}
+            <a href="{{ post.url | relative_url }}" class="image fit thumb">
+              <img src="{{ post.image | relative_url }}" alt="{{ post.title }}" />
+            </a>
+          {% endif %}
+          <h3><a href="{{ post.url | relative_url }}">{% include date.html date=post.date %} — {{ post.title }}</a></h3>
+          {% if post.place %}
+            <p class="place">{{ post.place }}</p>
+          {% endif %}
+          <p class="text-italic">{{ post.excerpt | truncatewords:16 | strip_html }}</p>
+        </article>
+      {% endif %}
+    {% endfor %}
+  </div>
+
+  {% unless planned_events %}
+    <article>
+      <p class="text-italic">Il n'y a aucun événement de prévu actuellement. Vous êtes intéressé⋅e ? Dites-le nous, en précisant dans quelle région vous êtes ! Cela nous aidera à choisir le lieu des prochains ateliers organisés.</p>
+    </article>
+
+    <ul class="actions">
+      <li><a href="mailto:{{ site.author.email }}?subject=Intérêt pour un atelier" class="button">Envoyer un courriel à {{ site.author.email }}</a></li>
+    </ul>
+  {% endunless %}
+</section>
+
+{% if page.inscription %}
+  <section id="inscription" class="special">
+    <header>
+      <h2>{{ page.inscription.title }}</h2>
+    </header>
+
+    <article>
+      {{ page.inscription.intro | strip | newline_to_br | markdownify }}
+    </article>
+
+    <ul class="actions">
+      <li><a href="mailto:{{ site.author.email }}?subject=Inscription à un atelier Zeste de Code" class="button">S'inscrire par courriel à {{ site.author.email }}</a></li>
+    </ul>
+  </section>
+{% endif %}
+
+<section class="special">
+  <header>
+    <h2>{{ page.who.title }}</h2>
+  </header>
+
+  <article>
+    {{ page.who.intro | markdownify }}
+  </article>
+
+  <ul class="people-list">
+    {% for person in page.who.people %}
+      <li>
+        <figure>
+          <img src="{{ person.photo | relative_url }}" alt="{{ person.name }}" />
+          <figcaption>
+            <h3>{{ person.name }}</h3>
+            <p>{{ person.description | markdownify }}</p>
+          </figcaption>
+        </figure>
+      </li>
+    {% endfor %}
+  </ul>
+</section>
+
+<footer class="credit">
+  <p>
+    Habillage par <a href="https://html5up.net" rel="nofollow">HTML5UP</a> et intégration par <a href="http://comfusionllc.com" rel="nofollow">Comfusion LLC</a>&nbsp;; avec quelques modifications.
+  </p>
+</footer>

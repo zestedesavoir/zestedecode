@@ -1,0 +1,47 @@
+locale: "fr"
+title: Zeste de Code # Title of your site
+url: "https://zestedesavoir.github.io" # the base hostname & protocol for your site
+baseurl: "/zestedecode" # the subpath of your site, e.g. /blog/
+google_analytics_key: ""
+
+# Default description in social shares for the jekyll-seo-tag gem
+description: La programmation sans pépins !
+
+# Author details for the jekyll-seo-tag gem
+author:
+  name: Zeste de Code
+  email: zestedecode@gmail.com
+  twitter: ZesteDeSavoir
+
+# Social details for the jekyll-seo-tag gem
+social:
+  name: Strata Reloaded Template
+  links:
+    - https://github.com/comfusion/strata-reloaded-jekyll-template
+
+permalink: pretty
+
+gems:
+  - "jekyll-feed"
+  - "jekyll-seo-tag"
+  - "jekyll-paginate"
+  - "jekyll-sitemap"
+
+sass:
+  sass_dir: assets/css/_sass
+  style: compressed
+
+# Jekyll SEO Tag
+webmaster_verifications:
+  google: # 1234
+  bing: # 1234
+  alexa: # 1234
+  yandex: # 1234
+
+collections:
+  pages:
+    output: true
+
+future: true
+
+github: [metadata]

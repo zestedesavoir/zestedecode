@@ -1,0 +1,49 @@
+---
+layout: default
+---
+
+{% capture separator %}&nbsp;&nbsp;&bull;&nbsp;&nbsp;{% endcapture %}
+
+<section>
+  <header>
+    <h1>{{ page.title }}</h1>
+    <p>{% include date.html date=page.date %}{% if page.author %}{{ separator }}{{ page.author }}{% endif %}{% if page.meta %}{{ separator }}{{ page.meta }}{% endif %}{% if page.place %}{{ separator }}{{ page.place }}{% endif %}</p>
+  </header>
+
+  <article>
+    {% if page.image %}
+      <img src="{{ page.image | relative_url }}" class="fit image" alt="{{ page.title }}" aria-hidden="true" />
+    {% endif %}
+
+    {{ content }}
+  </article>
+</section>
+
+{% assign now = 'now' | date: '%s' | plus: 0 %}
+{% assign date = page.date | date: '%s' | plus: 0 %}
+
+<section class="special">
+  <header>
+    <h2>S'inscrire</h2>
+  </header>
+
+  {% if now < date %}
+    <article>
+      <p>Pour vous inscrire, nous vous invitons à nous envoyer un courriel précisant la date de l'atelier qui vous intéresse.</p>
+    </article>
+
+    <ul class="actions">
+      {% capture subject %}Inscription à l'atelier du {% include date.html date=page.date notags=true notime=true %} ({{ page.title }}){% endcapture %}
+      <li><a href="mailto:{{ site.author.email }}?subject={{ subject | remove: "
+" | strip }}" class="button">S'inscrire par courriel à {{ site.author.email }}</a></li>
+    </ul>
+  {% else %}
+    <article>
+      <p class="text-italic">Désolé, mais il n'est plus possible de s'inscrire à cet atelier. Cela dit, vous pouvez tout de même nous contacter à l'adresse ci-dessous pour nous signifier votre intérêt pour un autre atelier dans votre ville !</p>
+    </article>
+
+    <ul class="actions">
+      <li><a href="mailto:{{ site.author.email }}?subject=Intérêt pour un atelier ({{ page.title }})" class="button">Envoyer un courriel à {{ site.author.email }}</a></li>
+    </ul>
+  {% endif %}
+</section>

@@ -1,0 +1,8 @@
+- name: Facebook
+  link: https://fb.me/ZesteDeSavoir
+  social_icon: fab fa-facebook-f
+  new_window: false
+- name: Twitter
+  link: 'https://twitter.com/ZesteDeSavoir'
+  social_icon: fab fa-twitter
+  new_window: false

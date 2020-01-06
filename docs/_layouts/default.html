@@ -1,0 +1,82 @@
+<!DOCTYPE HTML>
+
+<!--
+    Strata by HTML5 UP
+    html5up.net | @ajlkn
+    Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+
+<html>
+    <head>
+        <title>{{ site.title }} – {{ page.title }}</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+
+        <meta name="author" content="{{ site.author.name }}" />
+        <meta name="description" content="{{ site.description }}" />
+        <meta http-equiv="content-language" content="{{ site.locale }}" />
+        <meta name="generator" content="Jekyll v{{ jekyll.version }}" />
+
+        <link rel="icon" type="image/png" href="{{ '/favicon.png' | relative_url }}">
+
+        <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}" />
+
+        {% seo %}
+        {% feed_meta %}
+    </head>
+    <body class="is-preload">
+
+        <!-- Header -->
+        <header id="header">
+            <div class="inner">
+                <a href="{{ '/' | relative_url }}" class="image avatar">
+                    <img src="{{ '/assets/images/zestedecode.svg' | relative_url }}" alt="{{ site.name }}" />
+                </a>
+                <h1>{{ site.data.contents.tagline }}</h1>
+            </div>
+        </header>
+
+        <div id="main">
+            {{ content }}
+        </div>
+
+        <!-- Footer -->
+        <footer id="footer">
+            <div class="inner">
+                <div class="footer-item">
+                    <a href="https://zestedesavoir.com" class="footer-logo">
+                        <img src="{{ '/assets/images/zestedesavoir.svg' | relative_url }}" alt="Zeste de Savoir" title="Zeste de Code est organisé par l'association à but non lucratif Zeste de Savoir" />
+                    </a>
+                </div>
+                <div class="footer-item">
+                    <ul class="icons">
+                        {% for account in site.data.social %}
+                        <li>
+                            <a href="{% include relative-src.html src=account.link %}"
+                               title="{{ account.name }}" aria-label="{{ account.name }}"
+                               class="icon"
+                               {% if account.new_window %}target="_blank"{% endif %}>
+                                <span class="{{ account.social_icon }}"></span>
+                            </a>
+                        </li>
+                        {% endfor %}
+                        {% if site.author.email %}
+                        <li>
+                          <a href="mailto:{{ site.author.email }}" title="Contacter par courriel" aria-label="Contacter par courriel" class="icon">
+                            <span class="fas fa-envelope-open"></span>
+                          </a>
+                        </li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Scripts -->
+        <script src="{{ '/assets/js/jquery.min.js' | relative_url }}"></script>
+        <script src="{{ '/assets/js/browser.min.js' | relative_url }}"></script>
+        <script src="{{ '/assets/js/breakpoints.min.js' | relative_url }}"></script>
+        <script src="{{ '/assets/js/util.js' | relative_url }}"></script>
+        <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
+    </body>
+</html>
