@@ -1,3 +1,4 @@
+{% capture rendered_date %}
 {% unless include.notags %}<time datetime="{{ include.date | date_to_xmlschema}}">{% endunless %}
 {% assign j = include.date | date: "%-d" %}
 {% assign m = include.date | date: "%-m" %}
@@ -23,3 +24,5 @@
 {% endcase %} 
 {% if include.notime %}{{ include.date | date: "%Y" }}{% else %}{{ include.date | date: "%Y à %H:%M" }}{% endif %}
 {% unless include.notags %}</time>{% endunless %}
+{% endcapture %}{{ rendered_date | remove: "
+" | strip  }}

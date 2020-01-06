@@ -3,6 +3,7 @@ layout: default
 ---
 
 {% capture separator %}&nbsp;&nbsp;&bull;&nbsp;&nbsp;{% endcapture %}
+{% capture page_date %}{% include date.html date=page.date %}{% endcapture %}
 
 <section>
   <header>
@@ -33,9 +34,7 @@ layout: default
     </article>
 
     <ul class="actions">
-      {% capture subject %}Inscription à l'atelier du {% include date.html date=page.date notags=true notime=true %} ({{ page.title }}){% endcapture %}
-      <li><a href="mailto:{{ site.author.email }}?subject={{ subject | remove: "
-" | strip }}" class="button">S'inscrire par courriel à {{ site.author.email }}</a></li>
+      <li><a href="mailto:{{ site.author.email }}?subject=Inscription à l'atelier du {% include date.html date=page.date notags=true notime=true %} ({{ page.title }})" class="button">S'inscrire par courriel à {{ site.author.email }}</a></li>
     </ul>
   {% else %}
     <article>
