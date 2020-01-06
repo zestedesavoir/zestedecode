@@ -2,13 +2,19 @@
 
 ## Affiche
 
-Affiche imprimée pour l'événement du mercredi 24 avril 2019 et diffusée dans des établissements scolaires autour d'Orsay ainsi qu'à Orsay même avec la coopération de la mairie.
+Affiche imprimée pour diffuser l'événement dans les établissements scolaires et les médiathèques.
 
-Créés par Situphen, sous licence CC-BY-NC-SA.
+Créé par Situphen, sous licence CC-BY-NC-SA.
+
+## Flyer
+
+Flyer recto-verso imprimé pour diffuser l'événement dans les établissements scolaires et les médiathèques.
+
+Créé par Situphen et Amaury, sous licence CC-BY-NC-SA.
 
 ## Visuel pour les réseaux sociaux
 
-Encarts avec un ratio 2:1 pour la diffusion de l'événement sur Twitter.
+Encart avec un ratio 2:1 pour la diffusion de l'événement sur Twitter et Facebook.
 
 Créé par Amaury, sous licence CC-BY-NC-SA.
 
@@ -20,7 +26,7 @@ Créé par TAlone, sous licence CC-BY.
 
 ## Icône Cookie avec bandeau
 
-Variante de l'icône avec le nom de l'événement, utilisé pour la mise en Une des billets ou articles.
+Icône utilisée pour la mise en Une des billets et articles autour de l'événement.
 
 Créé par Situphen à partir de l'icône de TAlone, sous licence CC-BY.
 

@@ -414,3 +414,10 @@ flycheck_*.el
 
 # directory configuration
 .dir-locals.el
+
+# Jekyll
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+vendor

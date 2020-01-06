@@ -16,9 +16,9 @@
    id="svg4131"
    inkscape:version="0.92.4 (f8dce91, 2019-08-02)"
    sodipodi:docname="flyer-verso.svg"
-   inkscape:export-filename="/home/amaury/Documents/ZdS/zestedecode/communication/flyer-verso.png"
-   inkscape:export-xdpi="599.99573"
-   inkscape:export-ydpi="599.99573">
+   inkscape:export-filename="png/flyer-verso.png"
+   inkscape:export-xdpi="600"
+   inkscape:export-ydpi="600">
   <defs
      id="defs4125">
     <marker
@@ -384,7 +384,7 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1"
-     inkscape:cx="398.75001"
+     inkscape:cx="167.75001"
      inkscape:cy="221.3495"
      inkscape:document-units="mm"
      inkscape:current-layer="g5132"
@@ -402,7 +402,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>

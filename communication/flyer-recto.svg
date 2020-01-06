@@ -16,7 +16,7 @@
    id="svg4131"
    inkscape:version="0.92.4 (f8dce91, 2019-08-02)"
    sodipodi:docname="flyer-recto.svg"
-   inkscape:export-filename="/home/amaury/Documents/ZdS/zestedecode/communication/flyer-recto.png"
+   inkscape:export-filename="png/flyer-recto.png"
    inkscape:export-xdpi="600.02417"
    inkscape:export-ydpi="600.02417">
   <defs
@@ -156,7 +156,7 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1.4142136"
-     inkscape:cx="289.95359"
+     inkscape:cx="126.61193"
      inkscape:cy="100.59757"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
@@ -195,7 +195,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
