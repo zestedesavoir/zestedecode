@@ -17,7 +17,7 @@ who:
       - name: Amaury Carrade
         description: Étudiant en physique, mathématiques et informatique à Sorbonne Université
         photo: /assets/images/thumbs/02.jpg
-      - name: Titouan Soulard
+      - name: Titouan S.
         description: Gourou des courriels (comment fait-il donc ?)
         photo: /assets/images/thumbs/03.jpg
       - name: Nathanaël Langlois
