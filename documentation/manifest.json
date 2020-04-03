@@ -1,0 +1,27 @@
+{
+  "type" : "TUTORIAL",
+  "object" : "container",
+  "slug" : "zeste-de-code--guide-participants--snake",
+  "title" : "Zeste de Code – Guide participants – Snake",
+  "introduction" : "introduction.md",
+  "conclusion" : "conclusion.md",
+  "children" : [ {
+    "object" : "extract",
+    "slug" : "les-bases-de-python",
+    "title" : "Les bases de Python",
+    "text" : "les-bases-de-python.md"
+  }, {
+    "object" : "extract",
+    "slug" : "fonctions-du-jeu",
+    "title" : "Fonctions du jeu",
+    "text" : "fonctions-du-jeu.md"
+  }, {
+    "object" : "extract",
+    "slug" : "fonctions-du-serpent",
+    "title" : "Fonctions du serpent",
+    "text" : "fonctions-du-serpent.md"
+  } ],
+  "version" : 2,
+  "licence" : "Tous droits réservés",
+  "description" : "Une documentation complète des fonctions du jeu Snake à destination des participants (et organisateurs) des Zeste de Code."
+}
