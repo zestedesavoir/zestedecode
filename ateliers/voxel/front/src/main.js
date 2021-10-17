@@ -9,7 +9,7 @@ import 'codemirror/mode/javascript/javascript.js'
 
 import App from './App.vue'
 import './registerServiceWorker'
-import store from './store'
+import store_builder from './store'
 import Client from './client'
 
 Vue.use(Buefy, {
@@ -28,7 +28,15 @@ Vue.use(VueCodemirror, {
 
 Vue.config.productionTip = false
 
+const client = new Client(
+  process.env.VUE_APP_WS_URL.replace('{hostname}', document.location.hostname),
+  'zdc-voxel-protocol'
+)
+
+const store = store_builder(client)
+client.set_store(store)
+
 new Vue({
-  store: store(new Client()),
+  store,
   render: h => h(App)
 }).$mount('#app')

@@ -10,7 +10,7 @@ Attention : cet atelier est encore en développement, et est très, très incomp
 
 Vous devez avoir Node 12 ou supérieur. Si ce n'est pas le cas, installez-le avec `nvm install 12`.
 
-Ensuite, depuis le dépôt, assurez-vous d'être dans la bonne version de NodeJS (dans le doute, `nvm use` vous passera dans la bonne version), puis exécutez :
+Ensuite, depuis ce dossier, assurez-vous d'être dans la bonne version de NodeJS (dans le doute, `nvm use` vous passera dans la bonne version), puis exécutez :
 
 ```bash
 make install

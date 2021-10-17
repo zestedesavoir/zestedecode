@@ -1,29 +1,42 @@
 @charset "utf-8";
 
+@import "~zestedesavoir-standards/sass/colors";
+@import "~zestedesavoir-standards/sass/lengths";
+@import "~zestedesavoir-standards/sass/shadows";
+@import "~zestedesavoir-standards/sass/radius";
+
 @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital@0;1&Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,400&display=swap');
 
-$blue: hsl(199, 85%, 21%);
-$yellow: hsl(33, 76%, 51%);
-$orange: hsl(22, 82%, 39%);
-$brown: hsl(15, 86%, 30%);
+$blue: $primary-600;
+$yellow: $accent-600;
+$orange: $accent-800;
 
 $family-sans-serif: "Source Sans Pro", sans-serif;
 $family-monospace: "Source Code Pro", monospace;
 
-$grey-light: hsl(210, 16%, 82%);
+$grey-light: $grey-200;
 $primary: $blue;
 $info: $yellow;
 $link: $orange;
-$success: hsl(83, 68%, 74%);
-$warning: $brown;
-$danger: hsl(360, 72%, 38%);
-$light: hsl(198, 40%, 87%);
-$dark: hsl(210, 24%, 16%);
+$success: $green-200;
+$warning: $accent-800;
+$danger: $red-400;
+$light: $primary-000;
+$dark: $grey-700;
 
-$body-background-color: hsl(216, 33%, 97%);
-$dropdown-item-hover-background-color: hsl(199, 92%, 15%);
+$custom-colors: (
+    "accent": ($accent-100, $accent-900)
+);
+
+$title-color: $grey-900;
+$subtitle-color: $grey-700;
+
+$body-background-color: $grey-000;
+$dropdown-item-hover-background-color: $primary-800;
 $dropdown-item-active-background-color: $primary;
-$dropdown-item-hover-color: hsl(0, 100%, 97%);
+$dropdown-item-hover-color: $white;
+
+$input-placeholder-color: $grey-600;
 
 // Import only what you need from Bulma
 @import "~bulma/sass/utilities/_all.sass";

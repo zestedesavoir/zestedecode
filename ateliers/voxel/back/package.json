@@ -1,0 +1,24 @@
+{
+  "name": "zestedecode-voxel-back",
+  "version": "1.0.0",
+  "description": "Zeste de Code — Computer Sciences introduction workshop",
+  "main": "index.js",
+  "dependencies": {
+    "esm": "^3.2.25",
+    "uuid": "^7.0.2",
+    "websocket": "^1.0.31"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  },
+  "esm": {
+    "mode": "all"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "start-prod": "NODE_ENV=production ALLOWED_ORIGIN=\"https://zdc.zestedesavoir.com\" node index.js"
+  },
+  "author": "Amaury Carrade",
+  "license": "CECILL-B"
+}

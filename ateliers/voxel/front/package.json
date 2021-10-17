@@ -9,16 +9,19 @@
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.15",
+    "@fortawesome/free-brands-svg-icons": "^5.14.0",
     "@fortawesome/free-regular-svg-icons": "^5.14.0",
     "@fortawesome/free-solid-svg-icons": "^5.7.2",
     "@fortawesome/vue-fontawesome": "^0.1.5",
     "buefy": "^0.9.3",
     "core-js": "^3.6.5",
+    "markdown-it": "^11.0.1",
     "register-service-worker": "^1.7.1",
     "stacktrace-js": "^2.0.2",
     "vue": "^2.6.11",
     "vue-codemirror": "^4.0.6",
-    "vuex": "^3.4.0"
+    "vuex": "^3.4.0",
+    "zestedesavoir-standards": "^1"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",
