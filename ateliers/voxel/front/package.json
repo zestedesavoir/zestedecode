@@ -15,7 +15,7 @@
     "@fortawesome/vue-fontawesome": "^0.1.5",
     "buefy": "^0.9.3",
     "core-js": "^3.6.5",
-    "markdown-it": "^11.0.1",
+    "markdown-it": "^12.3.2",
     "register-service-worker": "^1.7.1",
     "stacktrace-js": "^2.0.2",
     "vue": "^2.6.11",
